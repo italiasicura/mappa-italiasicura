@@ -1,0 +1,48 @@
+<div class="box-lotti">
+    <div class="title-lotti">
+        <div class="controls-lotti">
+            <div id="lprev"></div>
+            <div id="lnext"></div>
+        </div>
+        <h4></h4>
+    </div>
+    <ul class="sliderLotti">
+        <li ng-repeat="lotto in arrayLotti" on-finish-render="slideristart">
+            <div class="overview-lotto">
+                <div class="link-rendis">
+                    <h4><a href="http://www.rendis.isprambiente.it/rendisweb/lotto.jsp?id={{lotto.int}}&lotto={{lotto.lotto}}" target="_blank">
+                        vai alla scheda del cantiere <i class="fa fa-external-link fa-1"></i></a></h4>
+                </div>
+                <div>
+                    <span>Ente attuatore</span>
+                    <span class="number">{{lotto.ente_attuatore}}</span>
+                </div>
+                <div>
+                    <span>Descrizione cantiere</span>
+                    <span class="number">{{lotto.desc_lotto}}</span>
+                </div>
+                <div>
+                    <span>Località</span>
+                    <span class="number">{{lotto.localita}}</span>
+                </div>
+                <div>
+                    <span>Comune</span>
+                    <span class="number">{{lotto.comune}}</span>
+                </div>
+                <div>
+                    <span>Stato cantiere</span>
+                    <span class="number">{{lotto.fase}}</span>
+                </div>
+                <div>
+                    <span>Importo del lavoro</span>
+                    <span class="number">{{lotto.importo_lo | currency}}</span>
+                </div>
+                <div>
+                    <span>CUP / CIG</span>
+                    <span class="number">{{lotto.cup_cig}}</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

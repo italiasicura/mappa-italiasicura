@@ -1,0 +1,287 @@
+
+
+/* Panel Design */
+
+.app-panel .info{
+    /*  padding-top: 10px;*/
+    background: #fff;
+    padding:0 3px;
+}
+.app-panel .info .small-info span{
+    color:#999;
+    font-size: 0.8em;
+    display: block;
+}
+.app-panel .info .small-info span b{
+    color:#666;
+    font-weight: 600;
+}
+.app-panel .info > div{
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    padding:10px 12px 0 12px;
+}
+.app-panel .info > div:first-child{
+    margin-top: 0;
+}
+.app-panel .info .emergenze{
+    color:#fff;
+    padding-top: 0;
+    padding-left:0;
+    padding-right:0;
+    font-size: 0.9em;
+}
+.app-panel .info .emergenze > div{
+    padding:5px 10px;
+    margin-bottom:2px;
+}
+.app-panel .info .emergenze h4{
+    text-transform: uppercase;
+    font-size:1em;
+    margin:0;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.app-panel .info .emergenze .iactive{
+    background: #ff6000;
+}
+.app-panel .info .emergenze .iclosed{
+    background: #85c355;
+}
+.app-panel .info .emergenze .iother{
+    background: #b2d994;
+}
+.app-panel .info .emergenze .itotal{
+    background: #f5f5f5;
+    color:#666666;
+}
+.app-panel .info .pericolosita{
+    margin-top: 0;
+    padding:10px 0 0 0;
+}
+
+.app-panel .info .pericolosita h4{
+    color:#666;
+    font-size:0.9em;
+    font-weight: 700;
+    margin:0 0 3px 0;
+    padding-left: 12px;
+}
+
+.app-panel .info .pericolosita .legenda{
+    font-size: 0.9em;
+    padding-left: 12px;
+}
+.app-panel .info .pericolosita .square{
+    display: inline-block;
+    height: 0.8em;
+    width:0.8em;
+    margin:0 0.25em 0 0;
+}
+.app-panel .info .pericolosita .square.low{background: #82b1f4}
+.app-panel .info .pericolosita .square.medium{background: #5490f8}
+.app-panel .info .pericolosita .square.hight{background: #3a63f8}
+
+.app-panel .info .pericolosita #parea{
+    font-size: 0.75em;
+    margin-bottom: 2px;
+    color:#fff;
+}
+.app-panel .info .pericolosita #parea td,
+.app-panel .info .pericolosita #parea th{
+    width:25%;
+    text-align: center;
+}
+.app-panel .info .pericolosita #parea thead{
+    color:#666;
+
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(1){
+    background: #82b1f4;
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(2){
+    background: #5490f8;
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(3){
+    background: #3a63f8;
+}
+/* Emergenze / info INTERVENTI*/
+.app-panel .link-rendis{
+    background: #f5f5f5;
+    color:#666666;
+    padding:10px 10px;
+}
+.app-panel .info .emergenze, .app-panel .info .info-emergenze {
+    color:#fff;
+    padding-top: 0;
+    padding-left:0;
+    padding-right:0;
+    font-size: 0.9em;
+}
+.app-panel .info .emergenze > div, .app-panel .info .info-emergenze > div{
+    padding:5px 10px;
+    margin-bottom:2px;
+}
+.app-panel .info .emergenze h4, .app-panel .info .info-emergenze h4{
+    text-transform: uppercase;
+    font-size:1em;
+    margin:0;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.app-panel .info .emergenze .etotal, .app-panel .info .info-emergenze .etotal{
+    background: #f5f5f5;
+    color:#666666;
+    padding:10px 10px;
+}
+
+.app-panel .info .emergenze .box-emergenze{
+    padding:0;
+}
+.app-panel .info .emergenze .box-emergenze .eactive{
+    background: #ff6000;
+    text-align: center;
+    padding:7px 0;
+}
+.app-panel .info .emergenze .box-emergenze .tieactive h4{
+    padding:0;
+}
+
+.app-panel .info .emergenze .box-emergenze .sliderEmergenze{
+    padding:0;
+}
+
+.app-panel .info .box-emergenze .sliderEmergenze .overview-emergenza > div{
+    padding:0 10px;
+}
+.app-panel .info .box-emergenze .sliderEmergenze .overview-emergenza > div.link-rendis{
+    padding: 5px 10px;
+}
+.app-panel .info .box-emergenze .sliderEmergenze span{
+    display:block;
+    color:#333;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1.35em;
+}
+
+.app-panel .info .box-emergenze .sliderEmergenze table{
+    font-size: 0.85em;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.app-panel .info .box-emergenze .sliderEmergenze td{
+    color: #ff6000;
+}
+
+/**************************************************/
+
+
+.app-panel .info .box-emergenze .sliderEmergenze span.number{
+    font-weight: normal;
+    color: #ff6000;
+}
+.app-panel .info .box-emergenze .controls-emergenze{
+    position:absolute;
+    right:0;
+    cursor:pointer;
+}
+.app-panel .info .box-emergenze .controls-emergenze{
+    position:absolute;
+    right:0;
+    cursor:pointer;
+    display: none;
+    width:40px;
+    margin-top: -6px;
+}
+.app-panel .info .box-emergenze.active .controls-emergenze{
+    display:table;
+}
+.app-panel .info .box-emergenze.active .controls-emergenze > div{
+    display:table-cell;
+}
+.app-panel .info .box-emergenze.active .controls-emergenze a{
+    text-decoration: none;
+    color:#fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/**************************************************/
+
+.app-panel .info .emergenze .eactive, .app-panel .info .info-emergenze .eactive{
+    color:#fff;
+    padding:10px 10px;
+}
+.app-panel .info .emergenze .box-eactive, .app-panel .info .info-emergenze .box-eactive{
+    color:#666666;
+    padding:0;
+}
+.app-panel .info .emergenze .box-eactive > div, .app-panel .info .info-emergenze .box-eactive > div{
+    border-top:1px solid #f5f5f5;
+    padding:5px 10px;
+}
+.app-panel .info .emergenze .box-eactive > div:first-child,.app-panel .info .info-emergenze .box-eactive > div:first-child{
+    border-top:0px;
+}
+.app-panel .info .emergenze .box-eactive > div >span, .app-panel .info .info-emergenze .box-eactive > div >span{
+    display: block;
+}
+.app-panel .info .emergenze .box-eactive > div >span.number, .app-panel .info .info-emergenze .box-eactive > div >span.number{
+    font-weight: bold;
+    padding:1px 0;
+    font-size: 1.1em;
+}
+.app-panel .info .emergenze .eactive{
+    background: #ff6000;
+}
+.app-panel .info .info-emergenze .eactive{
+    background: #ff6000;
+}
+.app-panel .info .emergenze .box-eactive > div >span.number{
+    color: #ff6000;
+}
+.app-panel .info .info-emergenze .box-eactive > div >span.number{
+    color: #ff6000;
+}
+.app-panel .info .box-e-info{
+    margin-top:0;
+    font-size: 0.9em;
+}
+.app-panel .info .box-e-info > div{
+    padding:0;
+    margin-bottom:1px;
+}
+.app-panel .info .box-e-info > div > span{
+    display:block;
+    color:#333;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.app-panel .info .box-e-info > div > span.number{
+    font-weight: bold;
+    color: #ff6000;
+}
+
+#right-panel #right-addons{
+    display: none;
+}
+
+
+
+@media (max-width: 1282px) {
+
+}
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+    #right-panel{
+        display: none;
+    }
+
+}

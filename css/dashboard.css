@@ -1,0 +1,304 @@
+@import url("bootstrap-select.min.css");
+
+body{
+    background:url('../img/bg-dashboard.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h3.panel-title {
+    font-weight:bold;
+}
+.dashboard .navigation-bar{
+    padding:15px 15px 0 15px;
+
+}
+.dashboard .navbar-default{
+    background: none;
+}
+.dashboard header > .navbar > .container-fluid{
+    padding:0;
+}
+.dashboard header > .navbar{
+    margin-bottom: 0;
+    border:none;
+}
+
+.dashboard .navbar-header{
+    margin:0;
+}
+
+.dash-title{
+text-align: center;
+padding: 10px;
+font-size: 16px;
+font-weight: bold;
+}
+
+#dash-menu{
+    background: #5f91b8;
+    color:#c1d9e6;
+    margin:0 15px;
+    padding:0;
+}
+#dash-menu .navbar-nav > li > a {
+    background: none;
+    color:#c1d9e6;
+    font-weight: bold;
+    padding:10px 15px;
+}
+#dash-menu .navbar-nav > li > a.selected {
+    background: #c1d9e6;
+    color:#5f91b8;
+    font-weight: bold;
+    padding:10px 15px;
+    pointer-events: none;
+}
+
+#dash-menu .navbar-nav > .active > a,
+#dash-menu .navbar-nav > .active > a:focus,
+#dash-menu .navbar-nav > li > a:focus,
+#dash-menu .navbar-nav > li > a:hover,
+#dash-menu .navbar-nav > .active > a:hover{
+    background: none;
+    color:#fff;
+}
+
+.filter-bar{
+    background: #94bddc;
+    margin:0 15px;
+
+}
+.filter-bar.formato{
+    background:#C1D9E6;
+}
+.filter-bar .container-fluid{padding:0;}
+.filter-nav{
+    display: block;
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.filter-nav > *{
+    display: block;
+    float:left;
+   /* padding:10px 15px;*/
+    color:#456f8f;
+}
+
+.filter-nav li span,
+.filter-nav li label{
+    color:#456f8f;
+    font-weight: 600;
+    margin-bottom: -1px;
+}
+.filter-nav li label{
+    padding:10px 5px 10px 15px;
+}
+.filter-nav li a{
+    padding:10px 8px;
+}
+
+.filter-nav .btn-group.bootstrap-select{
+    width: auto !important;
+}
+.filter-nav .selectpicker{
+    background: none;
+    border:none;
+    width: auto;
+    padding:0 20px 2px 0;
+    color:#456f8f;
+}
+.filter-nav span.active,
+.filter-nav .selectpicker span{
+    color:#456f8f;
+}
+.filter-nav a{
+    text-decoration:none;
+    color:#456f8f;
+}
+.filter-nav a:hover{
+    color:#5f91b8;
+}
+.filter-nav a.active{
+    color:#94BDDC;
+    background:#456f8f;
+    pointer-events: none;
+}
+
+.filter-bar.formato .filter-nav a.active{
+    background: none repeat scroll 0 0 #5f91b8;
+    color: #fff;
+}
+
+.dashboard main{
+    overflow: hidden;
+    height: auto;
+}
+
+
+.dashboard .panel{
+    color:#456f8f;
+    border:none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.dashboard .panel-default > .panel-heading{
+    background: #fff;
+    color:#456f8f;
+    padding:15px;
+}
+
+.dashboard .box-standings{
+    padding:30px 40px;
+}
+.dashboard .box-standings .progress{
+    background: #C1D9E6;/* #aaa;*/
+    box-shadow: none;
+    margin-bottom: 7px;
+    height: 16px;
+    margin-top: 1px;
+}
+
+.dashboard .box-standings h2{
+    font-size: 1.3em;
+    font-weight: 600;
+    color:#456f8f;
+    text-align: center;
+}
+
+.dashboard .band{
+    margin:15px 0;
+    padding:20px 0;
+    background: #ffffff;
+}
+.dashboard .progress-value{
+    text-align: right;
+}
+.dashboard .progress-value span{
+    font-size: 0.8em;
+}
+.dashboard .progress-bar{
+    background:#456f8f ;
+    color: #fff;
+    text-align: left;
+    font-weight:bold;
+    padding-left: 5px;
+    line-height: 15px;
+}
+
+.dashlabel {
+    text-align: right;
+    padding-right: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboard #nbItem{
+    max-width: 15%;
+}
+
+.dashboard .results .results-container{
+/*    width:100%;
+    max-width: 1200px !important;*/
+    padding:10px 30px;
+    margin:0 auto;
+}
+
+.selected-ambito{
+    display: none;
+}
+@media (max-width:992px){
+    #dash-menu .navbar-nav > li > a{
+    font-size: 0.9em;
+        padding:10px 6px !important;
+    }
+}
+@media (max-width: 768px) {
+    body{
+        height: auto;
+    }
+    .dashboard .navigation-bar{
+        padding:0;
+    }
+
+/*
+    .dashlabel {
+        text-align: left;
+    } 
+*/
+    .dashboard .navbar-header{
+        background: #5F91B8;
+    }
+
+    .dashboard .selected-ambito{
+        display: block;
+        float:left;
+        width:100%;
+        padding:10px;
+        color:#c1d9e6;
+        text-align: center;
+    }
+    .dashboard .navbar-toggle{
+        background: none;
+        color:#c1d9e6;
+        border: none;
+        margin-top: 4px;
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .dashboard .navbar-toggle:hover{
+        background: none;
+        color: #fff;
+        border: none;
+    }
+    .dashboard .navbar-toggle .icon-bar{
+        background:#c1d9e6 ;
+    }
+    .dashboard .navbar-toggle:hover .icon-bar{
+        background:#fff ;
+    }
+
+    .filter-bar{
+        margin:0;
+    }
+    /*.filter-nav > *{
+        padding:5px;
+    }*/
+    .dashboard #dash-menu {
+        margin:0;
+        border:none;
+        text-align: center;
+    }
+    #dash-menu .navbar-nav{
+        margin:0 !important;
+    }
+    #dash-menu .navbar-nav > li > a{
+        padding:5px;
+        font-weight: normal;
+    }
+    #dash-menu .navbar-nav > li > a:hover{
+        color:#fff;
+    }
+
+    .filter-nav li a,
+    .filter-nav li label {
+        padding: 8px 4px 8px 4px;
+    }
+    .filter-nav li span, .filter-nav li label {
+        font-size: 0.8em;
+    }
+    .dashboard .box-standings{
+        padding:10px;
+    }
+
+
+    }
+
+

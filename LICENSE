@@ -1,0 +1,41 @@
+ mappa.italiasicura.gov.it
+ ==========================
+
+ [ENG]
+ The application and data promote and improve citizen understanding of the Italian territory
+ fragility and the government spending to recover from hydrogeological upheavals 
+ and prevent further damages  
+
+ [ITA]
+ L'applicazione e i dati sulla mappa promuovono e migliorano l’accesso e la
+ comprensione dei cittadini sui dati relativi alla fragilita' del territorio
+ italiano e la spesa della pubblica amministrazione per la prevenzione e la
+ riparazione dei danni provocati da eventi legati al dissesto idrogeologico 
+ This content is released under the GNU Affero General Public License v.3
+
+ Copyright (c) 2015, by SciamLab s.r.l., Tommaso Biondo, Fabrizio Verrocchi and Giovanni Menduni
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as
+ published by the Free Software Foundation, either version 3 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ ----------------------------------------------------------------------------
+ Can you explain briefly what the GNU Affero GPL is? We offer the
+ source code of our websites to our users. The GNU Affero GPL has the
+ requirement that anyone else using that code for their own websites
+ also does the courtesy of offering the source code to their users.
+ 
+ Why not use the GPL? The GPL guarantees that anyone who gets a binary
+ version of the software also gets the source code so they can modify
+ it. Since users of websites never get the binary, just HTML pages, it
+ is no better a license than a BSD style license would be for them.
+ For this reason, we use the GNU Affero GPL.
+

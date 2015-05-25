@@ -1,0 +1,93 @@
+<div class="col-sm-12 info">
+    <div class="small-info">
+        <span>
+            <b>Estensione:</b> {{mouseMoveEntity.superfice| number:2}} km
+            <sup>2</sup> <foo ng-show="mouseMoveEntity.superficepc!=100">({{mouseMoveEntity.superficepc| number:2}}% di {{mouseMoveEntity.parent}})</foo>
+        </span>
+        <span>
+            <b>Popolazione:</b> {{mouseMoveEntity.popolazione | number}} <foo ng-show="mouseMoveEntity.superficepc!=100">({{mouseMoveEntity.popolazionepc |number:2}}% di {{mouseMoveEntity.parent}})</foo>
+        </span>
+    </div>
+    <div class="interventi">
+        <div class="itotal" ng-show="mouseMoveEntity.popolazione!=59433744">
+           <div class="col-sm-6 col-xs-12">
+            <h4>{{mouseMoveEntity.itot}} cantieri totali</h4>
+           </div>
+           <div class="col-sm-6 col-xs-12 pullright">
+            <span>Lavori per: {{mouseMoveEntity.itotimp | currency}}</span>
+           </div>
+        </div>
+        <div class="itotal" ng-show="mouseMoveEntity.popolazione!=59433744">
+            <div class="col-sm-6 col-xs-12">
+               <h4>{{mouseMoveEntity.iactive}} cantieri in corso</h4>
+           </div>
+           <div class="col-sm-6 col-xs-12 pullright">
+               <span>Lavori per: {{mouseMoveEntity.iactiveimp | currency}}</span>
+           </div>
+        </div>
+        <div class="itotal" ng-show="mouseMoveEntity.popolazione!=59433744">
+            <div class="col-sm-6 col-xs-12">
+               <h4>{{mouseMoveEntity.iclosed}} cantieri conclusi</h4>
+           </div>
+           <div class="col-sm-6 col-xs-12 pullright">
+               <span>Lavori per: {{mouseMoveEntity.iclosedimp | currency }}</span>
+           </div>
+        </div>
+        <div class="itotal" ng-show="mouseMoveEntity.popolazione!=59433744">
+            <div class="col-sm-6 col-xs-12">
+               <h4>{{mouseMoveEntity.iother}} altri interventi</h4>
+           </div>
+           <div class="col-sm-6 col-xs-12 pullright">
+               <span>Finanziati: {{mouseMoveEntity.iotherimp | currency }}</span>
+           </div>
+        </div>
+    </div>
+    <div class="pericolosita">
+        <h4>Alcuni indicatori <i class="fa fa-exclamation-triangle" tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate con metodologie e modelli che possono in parte differire. La perimetrazione delle aree a pericolosità è oggetto di aggiornamento" ></i></h4>
+        <div class="legenda">
+            <span>nelle aree a </span>
+            <span class="square low"></span>
+            <span>Scarsa</span>
+            <span class="square medium"></span>
+            <span>Media</span>
+            <span class="square hight"></span>
+            <span>Elevata</span>
+            <span>probabilit&agrave; di alluvione</span>
+        </div>
+        <div class="table-responsive">
+            <table id="parea" class="table table-condensed">
+                <thead>
+                <tr>
+			    <td>Popolazione <i class="fa fa-exclamation-triangle" tooltip="Ove è riportato un valore = 0 di Popolazione, Scuole o Beni culturali esposti ad alluvioni, il rischio potrebbe non essere nullo, in quanto l’elemento esposto potrebbe trovarsi in una zona del reticolo idrografico minore che non è stata oggetto di mappatura" ></i></td>
+                    <td>Territorio (km<sup>2</sup>)</td>
+                    <td>Scuole</td>
+                    <td>Beni Culturali</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{mouseMoveEntity.poptscarsatot}} ({{mouseMoveEntity.poptscarsapc}}%)</td>
+                    <td>{{mouseMoveEntity.areatscarsatot}} ({{mouseMoveEntity.areatscarsapc}}%)
+                    </td>
+                    <td>{{mouseMoveEntity.scuolescarsatot}} ({{mouseMoveEntity.scuolescarsapc}}%)</td>
+                    <td>{{mouseMoveEntity.beniscarsatot}} ({{mouseMoveEntity.beniscarsapc}}%)</td>
+                </tr>
+                <tr>
+                    <td>{{mouseMoveEntity.poptmediatot}} ({{mouseMoveEntity.poptmediapc}}%)</td>
+                    <td>{{mouseMoveEntity.areatmediatot}} ({{mouseMoveEntity.areatmediapc}}%)
+                    </td>
+                    <td>{{mouseMoveEntity.scuolemediatot}} ({{mouseMoveEntity.scuolemediapc}}%)</td>
+                    <td>{{mouseMoveEntity.benimediatot}} ({{mouseMoveEntity.benimediapc}}%)</td>
+                </tr>
+                <tr>
+                    <td>{{mouseMoveEntity.poptelevatatot}} ({{mouseMoveEntity.poptelevatapc}}%)</td>
+                    <td>{{mouseMoveEntity.areatelevatatot}}  ({{mouseMoveEntity.areatelevatapc}}%)
+                    </td>
+                    <td>{{mouseMoveEntity.scuoleelevatatot}} ({{mouseMoveEntity.scuoleelevatapc}}%)</td>
+                    <td>{{mouseMoveEntity.benielevatatot}} ({{mouseMoveEntity.benielevatapc}}%)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

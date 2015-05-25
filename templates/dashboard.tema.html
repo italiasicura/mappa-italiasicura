@@ -1,0 +1,17 @@
+<div class="filter-bar">
+    <div class="container-fluid">
+        <ul class="filter-nav">
+            <li>
+                <label>{{tema_label}} <!--i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" 
+tooltip="La pericolosità è un dato in continuo aggiornamento, stimato con metodologie diverse a seconda del territorio. 
+Non tutti i territori sono ad oggi coperti dalla mappatura. 
+I dati possono talvolta risultare parziali o disomogenei."  tooltip-placement="bottom"></i--> :</label>
+                <span ng-repeat="tema in temi">
+                    <a ng-class="{active: current_tema.name==tema.name}" tooltip-placement="bottom"
+			href="#/sintesi/{{current_ambito.name}}/{{tema.name}}" tooltip="{{tema.tip}}">{{tema.label}}</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div ui-view></div>

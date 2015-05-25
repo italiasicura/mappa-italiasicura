@@ -1,0 +1,291 @@
+@media (min-width: 768px) {
+	.fa-chevron-right-sm, .fa-chevron-right-sm:before{
+		content: "\f054";
+	}
+	.fa-chevron-left-sm, .fa-chevron-left-sm:before{
+		content: "\f053";
+	}
+}
+@media (max-width: 767px) {
+        .fa-chevron-down-xs, .fa-chevron-down-xs:before{
+                content: "\f078";
+        }
+        .fa-chevron-up-xs, .fa-chevron-up-xs:before{
+                content: "\f077";
+        }
+}
+
+/* Panel Design */
+.app-panel .info .small-info span{
+    color:#999;
+    font-size: 0.8em;
+    display: block;
+}
+.app-panel .info .small-info span b{
+    color:#666;
+    font-weight: 600;
+}
+.app-panel .info > div{
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    padding:10px 12px 0 12px;
+}
+.app-panel .info > div:first-child{
+    margin-top: 0;
+}
+.app-panel .info .interventi{
+    color:#fff;
+    padding-top: 0;
+    padding-left:0;
+    padding-right:0;
+    font-size: 0.9em;
+}
+.app-panel .info .interventi > div{
+    /*padding:5px 10px;*/
+    padding:5px 10px 20px 0;
+    margin-bottom:2px;
+}
+.app-panel .pullright {
+    text-align:right;
+}
+.app-panel .info .interventi h4{
+    text-transform: uppercase;
+    font-size:1em;
+    margin:0;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.app-panel .info .interventi .iactive{
+    background: #66b42a;
+}
+.app-panel .info .interventi .iclosed{
+    background: #85c355;
+}
+.app-panel .info .interventi .iother{
+    background: #b2d994;
+}
+.app-panel .info .interventi .itotal{
+    background: #f5f5f5;
+    color:#666666;
+    /*border-right: 10px solid #66b42a;*/
+}
+.app-panel .info .pericolosita{
+    margin-top: 0;
+    padding:10px 0 0 0;
+}
+
+.app-panel .info .pericolosita h4{
+    color:#666;
+    font-size:0.9em;
+    font-weight: 700;
+    margin:0 0 3px 0;
+    padding-left: 12px;
+}
+
+.app-panel .info .pericolosita .legenda{
+    font-size: 0.9em;
+    padding-left: 12px;
+}
+.app-panel .info .pericolosita .square{
+    display: inline-block;
+    height: 0.8em;
+    width:0.8em;
+    margin:0 0.25em 0 0;
+}
+.app-panel .info .pericolosita .square.low{background: #bce4e3 /*#82b1f4*/}
+.app-panel .info .pericolosita .square.medium{background: #85e0ef /*5490f8*/}
+.app-panel .info .pericolosita .square.hight{background: #3d99ff /*3a63f8*/}
+
+.app-panel .info .pericolosita #parea{
+    font-size: 0.75em;
+    margin-bottom: 2px;
+    color:#fff;
+}
+.app-panel .info .pericolosita #parea td,
+.app-panel .info .pericolosita #parea th{
+    width:25%;
+    text-align: center;
+}
+.app-panel .info .pericolosita #parea thead{
+    color:#666;
+
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(1){
+    color:#333;
+    background: #bce4e3;
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(2){
+    color:#333;
+    background: #85e0ef;
+}
+.app-panel .info .pericolosita #parea tbody tr:nth-child(3){
+    color:#333;
+    background: #3d99ff;
+}
+
+
+.app-panel .link-rendis{
+    background: #f5f5f5;
+    color:#666666;
+    padding:10px 10px;
+}
+.app-panel .info .box-int-info > div{
+    padding:0;
+    margin-bottom:1px;
+}
+
+.app-panel .info .box-int-info > div > span{
+    display:block;
+    color:#333;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.app-panel .info .box-int-info > div > span.number{
+    font-weight: normal;
+}
+
+
+/* Emergenze / info INTERVENTI*/
+
+.app-panel .info .emergenze, .app-panel .info .info-interventi {
+    color:#fff;
+    padding-top: 0;
+    padding-left:0;
+    padding-right:0;
+    font-size: 0.9em;
+/*    min-height: 444px;*/
+}
+.app-panel .info .emergenze > div, .app-panel .info .info-interventi > div{
+    padding:5px 10px;
+    margin-bottom:2px;
+}
+.app-panel .info .emergenze h4, .app-panel .info .info-interventi h4{
+    text-transform: uppercase;
+    font-size:1em;
+    margin:0;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.app-panel .info .emergenze .etotal, .app-panel .info .info-interventi .etotal{
+    background: #f5f5f5;
+    color:#666666;
+    padding:10px 10px;
+}
+
+.app-panel .info .emergenze .eactive, .app-panel .info .info-interventi .eactive{
+    color:#fff;
+    padding:10px 10px;
+}
+.app-panel .info .emergenze .box-eactive, .app-panel .info .info-interventi .box-eactive{
+    color:#666666;
+    padding:0;
+}
+.app-panel .info .emergenze .box-eactive > div, .app-panel .info .info-interventi .box-eactive > div{
+    border-top:1px solid #f5f5f5;
+    padding:5px 10px;
+}
+.app-panel .info .emergenze .box-eactive > div:first-child,.app-panel .info .info-interventi .box-eactive > div:first-child{
+    border-top:0px;
+}
+.app-panel .info .emergenze .box-eactive > div >span, .app-panel .info .info-interventi .box-eactive > div >span{
+    display: block;
+}
+.app-panel .info .emergenze .box-eactive > div >span.number, .app-panel .info .info-interventi .box-eactive > div >span.number{
+    font-weight: bold;
+    padding:1px 0;
+    font-size: 1.1em;
+}
+.app-panel .info .info-interventi .eactive{
+    background: #66b42a;
+}
+.app-panel .info .info-interventi span.number{
+    color: #477e1d; /*#66b42a;*/
+}
+.app-panel .info .info-interventi.pn .eactive{
+    background: #d3d243;
+}
+.app-panel .info .info-interventi.pn span.number{
+    color: #94932f; /*#d3d243;*/
+}
+.app-panel .info .info-interventi .box-lotti{
+    padding:0;
+}
+.app-panel .info .info-interventi .title-lotti,
+.app-panel .info .info-interventi .box-lotti .title-lotti{
+    background: #66b42a;
+    text-align: center;
+    padding:7px 0;
+}
+.app-panel .info .info-interventi.pn .title-lotti{
+    background: #d3d243;
+    text-align: center;
+    color:#fff !important;
+    padding:7px 0;
+}
+.app-panel .info .info-interventi .box-lotti .title-lotti h4{
+    padding:0;
+}
+
+.app-panel .info .info-interventi .box-lotti .sliderLotti{
+    padding:0;
+}
+
+.app-panel .info .box-lotti .sliderLotti .overview-lotto > div{
+    padding:0 10px;
+}
+.app-panel .info .box-lotti .sliderLotti .overview-lotto > div.link-rendis{
+    padding: 5px 10px;
+}
+.app-panel .info .box-lotti .sliderLotti span{
+    display:block;
+    color:#333;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1.35em;
+}
+
+.app-panel .info .box-lotti .sliderLotti span.number{
+    font-weight: normal;
+    color: #477e1d; /*#66b42a;*/
+}
+.app-panel .info .box-lotti .controls-lotti{
+    position:absolute;
+    right:0;
+    cursor:pointer;
+}
+.app-panel .info .box-lotti .controls-lotti{
+    position:absolute;
+    right:0;
+    cursor:pointer;
+    display: none;
+    width:40px;
+    margin-top: -8px;
+}
+.app-panel .info .box-lotti.active .controls-lotti{
+    display:table;
+}
+.app-panel .info .box-lotti.active .controls-lotti > div{
+    display:table-cell;
+}
+.app-panel .info .box-lotti.active .controls-lotti a{
+    text-decoration: none;
+    color:#fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+.app-panel .info .box-lotti.active .controls-lotti a.disabled{
+    color:#ddd;
+    opacity: 0.6;
+}
+
+.overview-lotto{
+    padding-bottom: 10px;
+}
+
+.app-panel .bar {
+    border:none !important
+}
+
+
+

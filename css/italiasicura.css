@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'italiasicura';
+  src: url('../fonts/italiasicura.eot?86109672');
+  src: url('../fonts/italiasicura.eot?86109672#iefix') format('embedded-opentype'),
+       url('../fonts/italiasicura.woff?86109672') format('woff'),
+       url('../fonts/italiasicura.ttf?86109672') format('truetype'),
+       url('../fonts/italiasicura.svg?86109672#italiasicura') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'italiasicura';
+    src: url('../font/italiasicura.svg?86109672#italiasicura') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "italiasicura";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-icon-search:before { content: '\e800'; } /* '' */
+.icon-icon-circle:before { content: '\e801'; } /* '' */
+.icon-icon-geo:before { content: '\e802'; } /* '' */
+.icon-icon-zoomin:before { content: '\e803'; } /* '' */
+.icon-icon-zoomout:before { content: '\e804'; } /* '' */
+.icon-icon-bar:before { content: '\e805'; } /* '' */
+.icon-icon-info:before { content: '\e806'; } /* '' */
+.icon-icon-interventi:before { content: '\e807'; } /* '' */
+.icon-icon-emergenze:before { content: '\e808'; } /* '' */
+.icon-icon-export:before { content: '\e809'; } /* '' */
+.icon-icon-share:before { content: '\e80a'; } /* '' */
+.icon-icon-copy:before { content: '\e80b'; } /* '' */
+.icon-icon-print:before { content: '\e80c'; } /* '' */
+.icon-icon-close:before { content: '\e80d'; } /* '' */
+.icon-icon-arrow-right:before { content: '\e80e'; } /* '' */
+.icon-icon-arrow-left:before { content: '\e80f'; } /* '' */
+.icon-alluvione:before { content: '\e810'; } /* '' */
+.icon-incendio:before { content: '\e811'; } /* '' */
+.icon-frana:before { content: '\e812'; } /* '' */
+.icon-valanga:before { content: '\e813'; } /* '' */
+.icon-costiero:before { content: '\e814'; } /* '' */
+.icon-misto:before { content: '\e815'; } /* '' */
+.icon-indefinito:before { content: '\e816'; } /* '' */

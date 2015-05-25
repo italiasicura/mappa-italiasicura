@@ -1,0 +1,28 @@
+<div class="col-sm-12 info" ng-show="mouseMoveEntity">
+    <div class="emergenze">
+        <div class="etotal">
+            <h4>{{mouseMoveEntity.emergenzetot}} stati di emergenza dal 1.5.2013 - {{mouseMoveEntity.emergenzeatt}} aperti</h4>
+        </div>
+        <div class="eactive">
+            <h4></h4>
+        </div>
+    </div>
+    <div class="box-e-info">
+        <div>
+            <span>Importo totale segnalato dalla Regione per richiesta stato di emergenza</span>
+            <span class="number">{{mouseMoveEntity.importoreg | currency}}</span>
+        </div>
+        <div>
+            <span>Importo totale stanziato dal Consiglio dei Ministri</span>
+            <span class="number">{{mouseMoveEntity.importocm | currency}}</span>
+        </div>
+        <div>
+            <span>Importo totale erogato</span>
+            <span class="number">{{mouseMoveEntity.importoerog | currency}}</span>
+        </div>
+        <div>
+            <span>Stima complessiva dei fabbisogni per il ripristino</span>
+            <span class="number">{{mouseMoveEntity.importostim | currency}}</span>
+        </div>
+    </div>
+</div>

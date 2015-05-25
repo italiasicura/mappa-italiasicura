@@ -1,0 +1,184 @@
+<div class="filter-bar formato">
+    <div class="container-fluid">
+
+        <ul class="filter-nav">
+            <li>
+                <label>{{formato_label}} :</label>
+        <span ng-repeat="formato in formati">
+            <a ng-class="{active: current_formato.name==formato.name}" 
+		href="#/sintesi/{{current_ambito.name}}/{{current_tema.name}}/{{formato.name}}"
+		tooltip="{{formato.tip}}" tooltip-placement="bottom">{{formato.label}}</a>
+        </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<aside id="right-panel">
+    <div class="visible-block">
+        <nav class="navigation-addons">
+            <ul class="nav" role="tablist">
+                <li role="presentation">
+                    <a href="#box-export" role="tab" data-toggle="tab">
+                        <i class="icon-icon-export"></i>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#box-share" role="tab" data-toggle="tab">
+                        <i class="icon-icon-share"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="tab-content action-block">
+        <div role="tabpanel" class="tab-pane active" id="box-export">
+            <h4>Esporta</h4>
+            <p>Seleziona il formato che preferisci per l'esportazione</p>
+            <div class="export-bar">
+                <ul>
+                    <li>
+                        <a href="/italiasicura/sintesi/{{current_ambito.name}}/{{current_tema.name}}/{{current_formato.name}}/xls" target="_blank">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-file-o fa-stack-2x"></i>
+                          <i class="fa file-text fa-stack-1x">xls</i>
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/italiasicura/sintesi/{{current_ambito.name}}/{{current_tema.name}}/{{current_formato.name}}/csv" target="_blank">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-file-o fa-stack-2x"></i>
+                          <i class="fa file-text fa-stack-1x">csv</i>
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/italiasicura/sintesi/{{current_ambito.name}}/{{current_tema.name}}/{{current_formato.name}}/json" target="_blank">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-file-o fa-stack-2x"></i>
+                          <i class="fa file-text fa-stack-1x">json</i>
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="box-share">
+            <h4>Condividi</h4>
+            <p>Condividi il contenuto visualizzato nel social che preferisci</p>
+            <div class="social-share-bar">
+                <ul>
+                    <li>
+                        <div share-links="Twitter" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Facebook" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Google-Plus" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Whatsapp" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Envelope" share-title="#italiasicura"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</aside>
+<div class="box-standings">
+    <div class="container-fluid">
+	<div class="standing-item panel panel-default dash-title">
+<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" 
+tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non
+ sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate
+ con metodologie e modelli che possono in parte differire. 
+La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
+{{current_ambito.tip}}
+<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" 
+tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non
+ sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate
+ con metodologie e modelli che possono in parte differire. 
+La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
+<br />{{current_tema.tip}} - {{current_formato.tip}}
+</div>
+        <div class="row">
+            <div class="col-sm-12" ng-class="{'col-md-4': num_dash==3, 'col-md-6': num_dash==2,'col-md-6 col-md-offset-3' : num_dash==1}">
+                <div class="standing-item panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Regioni</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row" ng-repeat="regione in regioni">
+                            <div class="col-sm-4 col-xs-4 dashlabel" tooltip="{{regione.nome}}">
+                                {{regione.nome}}
+                            </div>
+                            <div class="col-sm-8 col-xs-8 progress-value">
+<progressbar value="regione.valore*100/regioni_highest">
+<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
+ | iif
+ : (current_formato.name=='kmq' | iif : (regione.valore|number:2) : (regione.valore|number))
+ : (regione.valore|currency:undefined:0) }}</b>
+</progressbar>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12" ng-if="province">
+                <div class="standing-item panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Province o Aree Metropolitane</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row" ng-repeat="provincia in province">
+                            <div class="col-sm-4 col-xs-4 dashlabel" tooltip="{{provincia.nome}} ({{provincia.parent}})">
+                                {{provincia.nome}}
+                            </div>
+                            <div class="col-sm-8 col-xs-8 progress-value">
+<progressbar value="provincia.valore*100/province_highest">
+<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq') 
+ | iif  
+ : (current_formato.name=='kmq' | iif : (provincia.valore|number:2) : (provincia.valore|number))
+ : (provincia.valore|currency:undefined:0) }}</b>
+</progressbar>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12" ng-if="comuni">
+                <div class="standing-item panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Comuni</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row" ng-repeat="comune in comuni">
+                            <div class="col-sm-4 col-xs-4 dashlabel" tooltip="{{comune.nome}} ({{comune.parent}})">
+                                {{comune.nome}} ({{comune.parent}})
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+<progressbar value="comune.valore*100/comuni_highest">
+<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
+ | iif
+ : (current_formato.name=='kmq' | iif : (comune.valore|number:2) : (comune.valore|number))
+ : (comune.valore|currency:undefined:0) }}</b>
+</progressbar>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!--close box-standing -->

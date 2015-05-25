@@ -1,0 +1,58 @@
+h3.panel-title {
+   font-weight: bold;
+}
+#feedback_form .control-group{
+    margin-top: 8px;
+}
+#feedback_form .control-group label{
+    margin-bottom:3px;
+}
+#feedback_form input{
+    padding:5px;
+}
+#feedback_form #result,
+#feedback_form input,
+#feedback_form textarea{
+ border:1px solid #afc8dc;
+    width: 100%;
+    max-width: 60%;
+    min-width: 305px;
+}
+#feedback_form textarea{
+    resize:none;
+}
+
+#feedback_form .submit_btn {
+    margin-top:10px;
+	border: 1px solid #456f8f;
+	padding: 5px 10px;
+	color: #fff;
+	border-radius: 3px;
+	background: #456f8f;
+}
+#feedback_form .submit_btn:hover{
+    border: 1px solid #66b42a;
+    background: #66b42a;
+    color:#fff;
+}
+
+#feedback_form .error{
+    color:red;
+}
+#feedback_form #result{
+    display:none;
+    padding:10px;
+    color:#456f8f;
+}
+#feedback_form #result.success{
+    background: rgba(102,180,42,0.7);
+}
+#feedback_form #result.error{
+    background: rgba(255,96,0,0.7);
+}
+
+#feedback_form input.ng-valid,
+#feedback_form textarea.ng-valid{
+    border:1px solid #66b42a;
+}
+

@@ -1,0 +1,46 @@
+<div class="col-sm-12 info" ng-show="mouseMoveEntity">
+    <div class="emergenze">
+        <div class="etotal">
+            <h4>{{mouseMoveEntity.emergenzetot}} stati di emergenza dal 1.5.2013 - {{mouseMoveEntity.emergenzeatt}} aperti</h4>
+        </div>
+        <div class="box-e-info">
+            <div>
+                <span>Importo totale segnalato dalla Regione per richiesta stato di emergenza</span>
+                <span class="number">{{mouseMoveEntity.importoreg | currency}}</span>
+            </div>
+            <div>
+                <span>Importo stanziato con delibere del Consiglio dei Ministri</span>
+                <span class="number">{{mouseMoveEntity.importocm | currency}}</span>
+            </div>
+            <div>
+                <span>Importo trasferito ai Commissari delegati</span>
+                <span class="number">{{mouseMoveEntity.importoerog | currency}}</span>
+            </div>
+            <div>
+                <span>Danni accertati dai Commissari delegati</span>
+                <span class="number">{{mouseMoveEntity.importostim | currency}}</span>
+            </div>
+<!--
+            <div>
+                <span>Ricognizione fabbisogni del Commissario delegato sul patrimonio pubblico</span>
+                <span class="number">{{mouseMoveEntity.importostim_a | currency}}</span>
+            </div>
+            <div>
+                <span>Ricognizione fabbisogni del Commissario delegato sul patrimonio privato</span>
+                <span class="number">{{mouseMoveEntity.importostim_b | currency}}</span>
+            </div>
+            <div>
+                <span>Ricognizione fabbisogni del Commissario delegato su attività produttive</span>
+                <span class="number">{{mouseMoveEntity.importostim_c | currency}}</span>
+            </div>
+-->
+        </div>
+        <div class="box-emergenze" ng-show="!selected">
+            <div class="eactive">
+                <h4></h4>
+            </div>
+        </div>
+        <ng-include ng-if="selected" src="'templates/emergenze.regione.emergenze.html'"></ng-include>
+        
+    </div>
+</div>

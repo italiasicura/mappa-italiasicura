@@ -1,0 +1,238 @@
+<main>
+<div class="navigation-bar">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="header-panel">
+                <div class="row">
+                    <div class="col-sm-8 brand">
+                        <a class="logo" href="/#/home">
+                            <img src="img/logo.png" class="img-responsive"/>
+                        </a>
+                        <span class="payoff">Il Governo a lavoro contro frane ed alluvioni</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <nav class="navigation-block">
+                <ul class="nav nav-pills nav-justified">
+                    <li role="presentation" >
+                        <a href="#/interventi">
+                            <i class="icon-icon-interventi"></i><span>Interventi</span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#/emergenze">
+                            <i class="icon-icon-emergenze"></i><span>Emergenze</span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#/sintesi">
+                            <i class="icon-icon-bar"></i><span>Sintesi</span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#/guida">
+                            <i class="icon-icon-info"></i><span>Guida</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+    <section id="wrap-map" ng-cloak>
+        <map-object></map-object>
+    </section>
+<aside class="app-panel emergenze" ng-cloack>
+    <div class="header-panel">
+
+        <div class="row addons" ng-show="selection">
+            <div class="social-share-bar visible-xs">
+                <ul>
+                    <li>
+                        <div share-links="Twitter" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Facebook" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Google-Plus" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Whatsapp" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Envelope" share-title="#italiasicura"></div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav">
+                <li class="text-right">
+                    <a ng-click="resetSelection()">
+                        Esci<i class="icon-icon-close"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="row coord" >
+            <div class="col-xs-6">
+                <div class="bread-crumb" >
+                    <span ng-show="mouseMoveEntity">
+                        {{mouseMoveEntity.parent}}
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6" id="mouse-position">
+                <span class="coordinates">{{mousePosition.coordinatesHDMS}}</span>
+            </div>
+        </div>
+        <div class="row entity-name">
+            <div class="col-xs-12" id="entity-name" ng-show="mouseMoveEntity">
+                {{ mouseMoveEntity.name }}
+            </div>
+        </div>
+
+        <div class="row" >
+
+            <ng-include src="'templates/emergenze.regione.html'"></ng-include>
+
+        </div>
+
+<!--
+        <div class="row addons" ng-show="selection">
+            <div class="social-share-bar visible-xs">
+                <ul>
+                    <li>
+                        <div share-links="Twitter" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Facebook" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Google-Plus" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Whatsapp" share-title="#italiasicura"></div>
+                    </li>
+                    <li>
+                        <div share-links="Envelope" share-title="#italiasicura"></div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav">
+                <li class="text-right">
+                    <a ng-click="resetSelection()">
+                        Esci<i class="icon-icon-close"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+-->
+
+    </div>
+</aside>
+<aside id="right-panel">
+    <div class="visible-block">
+        <div id="right-addons">
+
+        </div>
+        <nav class="navigation-addons">
+            <ul class="nav">
+                <li>
+                    <a href="">
+                        <i class="icon-icon-share"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="action-block">
+        <h4>Condividi</h4>
+        <p>Condividi la tua selezione nel social che preferisci</p>
+        <div class="social-share-bar">
+            <ul>
+                <li>
+                    <div share-links="Twitter" share-title="#italiasicura"></div>
+                </li>
+                <li>
+                    <div share-links="Facebook" share-title="#italiasicura"></div>
+                </li>
+                <li>
+                    <div share-links="Google-Plus" share-title="#italiasicura"></div>
+                </li>
+                <li>
+                    <div share-links="Whatsapp" share-title="#italiasicura"></div>
+                </li>
+                <li>
+                    <div share-links="Envelope" share-title="#italiasicura"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</aside>
+
+<div class="bottom-box">
+    <div class="social-bar" ng-show="selection && false" >
+        <div class="row">
+            <div class="col-sm-4 twitter-block">
+                <div tweets hashtag="hashtag" hash="false" button="false" count="5" refresh="300"></div>
+            </div>
+            <div class="col-sm-8 flickr-block">
+                <div class="flickr-info container-fluid">
+                    <span class="title">flickr</span> #italiasicura
+                    <span class="pull-right">Selfie dai Cantieri · La galleria di #italiasicura contro il dissesto</span>
+                </div>
+                <div photoflickr ></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid info-bar" ng-hide="selection && false">
+        <div class="box-item">
+            <span class="number">{{infoEmergenze.etot}}</span>
+            <span class="text">gli stati di emergenza dichiarati da maggio 2013</span>
+        </div>
+        <div class="box-item">
+            <span class="number">{{infoEmergenze.eatt}}</span>
+            <span class="text">gli stati di emergenza aperti</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="È un importo globale, stimato nella immediatezza dell'evento dalle Regioni colpite per la richiesta dello stato di emergenza. Include spese di soccorso e assistenza alla popolazione; ripristino di servizi e reti; interventi per la riduzione del rischio e una prima stima dei danni. Le cifra effettiva sarà poi precisata nel corso delle attività dal Commissario. " tooltip-animation="false">{{infoEmergenze.eiseg | currency:undefined:0 }}</span>
+            <span class="text">totale segnalato dalle Regioni per richieste stato di emergenza</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="Lo stanziamento ha l'obiettivo di coprire i costi relativi ai primi interventi urgenti: soccorso e assistenza alla popolazione, ripristino della funzionalità dei servizi e delle reti e, in parte, interventi di riduzione del rischio" tooltip-animation="false">{{infoEmergenze.eistanz | currency:undefined:0 }}</span>
+            <span class="text">stanziati con delibere del Consiglio dei Ministri</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="Sono le cifre già effettivamente accreditate sulle contabilità speciali" tooltip-animation="false">{{infoEmergenze.eierog | currency:undefined:0 }}</span>
+            <span class="text">già trasferiti ai Commissari delegati</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="E' la quantificazione dei danni subiti dal patrimonio pubblico e privato e dalle attività economiche e produttive" tooltip-animation="false">{{infoEmergenze.eistim | currency:undefined:0 }}</span>
+            <span class="text">danni accertati dai Commissari delegati che hanno completato la ricognizione</span>
+        </div>
+<!--
+        <div class="box-item">
+            <span class="number" tooltip="testo" tooltip-animation="false">{{infoEmergenze.eistim_a | currency:undefined:0 }}</span>
+            <span class="text">i danni complessivi dal maggio 2013 sul patrimonio pubblico censiti dai Commissari</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="testo" tooltip-animation="false">{{infoEmergenze.eistim_b | currency:undefined:0 }}</span>
+            <span class="text">i danni complessivi dal maggio 2013 sul patrimonio privato censiti dai Commissari</span>
+        </div>
+        <div class="box-item">
+            <span class="number" tooltip="testo" tooltip-animation="false">{{infoEmergenze.eistim_c | currency:undefined:0 }}</span>
+            <span class="text">i danni complessivi dal maggio 2013 su attività produttive censiti dai Commissari</span>
+        </div>
+-->
+
+    </div>
+</div>
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>
