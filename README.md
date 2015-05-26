@@ -46,5 +46,5 @@ you are welcome to contribute adding comments, suggestions or issues or followin
 License
 ------------
 The source code is released under the GNU Affero General Public License v.3
-for further information please read the [LICENSE](https://raw.githubusercontent.com/italiasicura/LICENSE) file
-for 3rd party libraries and licenses please read the [LICENSES-3RD-PARTIES](http://raw.githubusercontent.com/italiasicura/licenses/LICENSES-3RD-PARTIES)
+for further information please read the [LICENSE](https://raw.githubusercontent.com/italiasicura/mappa-italiasicura/master/LICENSE) file
+for 3rd party libraries and licenses please read the [LICENSES-3RD-PARTIES](https://raw.githubusercontent.com/italiasicura/mappa-italiasicura/master/licenses/LICENSES-3RD-PARTIES)
