@@ -421,6 +421,10 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  */
                  var pnStyle = new ol.style.Style({
                     image: new ol.style.Icon( ({
+                            anchor: [0.5, 0.85],
+                            anchorXUnits: 'fraction',
+                            anchorYUnits: 'fraction',
+                            opacity: 1,
                        src: 'img/marker-intervento-pn.png'
                     }))
                  });
@@ -467,7 +471,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     return new ol.style.Style({
                         geometry: feature.getGeometry(),
                         image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-                            anchor: [0.5, 1],
+                            anchor: [0.5, 0.85],
                             anchorXUnits: 'fraction',
                             anchorYUnits: 'fraction',
                             opacity: 1,
