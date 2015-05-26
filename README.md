@@ -2,6 +2,9 @@
 ==================
 The application mappa.italiasicura.gov.it and the presented data give a complete framework for understanding flood prone areas of Italy, and proposes a number of risk indicators across the national territory. The government spending in public works for flood prevention, emergencies and damages is also presented. The application, aiming to increase social engagement and consciousness on natural disasters, is itself an instrument to improve community resiliency 
 
+![#italiasicura screenshoot](http://mappa.italiasicura.gov.it/img/italiasicura_scr01.png)
+
+
 Technology
 ------------
 The application is written using different technologies and has been composed thanks to several different tools and pre-existing libraries
