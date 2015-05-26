@@ -10,29 +10,30 @@ here below an extract of the core compnents used in both the backend:
 * Backend & tools
   * GNU/Linux [Ubuntu Server](http://www.ubuntu.com/server)
   * [PostgreSQL](http://www.postgresql.org/)  Open Source Database / [PostGIS](http://postgis.net/)  GeoSpatial database
-  * [Boundless GeoServer](http://boundlessgeo.com/solutions/solutions-software/geoserver/)  Server Geografico che serve all'applicazione Mappe, Tiles e Features Vettoriali
-  * [WEKA 3](http://www.cs.waikato.ac.nz/~ml/weka/index.html)  libreria Java e tool per l'analisi dati
-  * [QGIS](http://www.qgis.org/en/site/)  tool per la gestione ed il processamento di file e formati dati geospaziali
-  * [Apache Jena](https://jena.apache.org/)  libreria Java per gestire serializzazione in formato RDF e processore SPARQL
-  * [OpenRefine](http://openrefine.org/)  tool per l'esplorazione ed il processamento di dati tabulari complessi
-  * [Apache Tomcat](http://tomcat.apache.org/)  application server container per java web-application
-  * [Jersey](http://jersey.java.net/)  Libreria Java per gestire Web Services RESTful
-  * [Apache HTTPD Server](http://httpd.apache.org/)  server HTTP
+  * [Boundless GeoServer](http://boundlessgeo.com/solutions/solutions-software/geoserver/)  Spatial Geoserver that provide map tiles and vectorial features to the application
+  * [WEKA 3](http://www.cs.waikato.ac.nz/~ml/weka/index.html)  Java data analysis and data mining library 
+  * [QGIS](http://www.qgis.org/en/site/)  GeoSpatial data management desktop tool
+  * [Apache Jena](https://jena.apache.org/)  Java library for RDF serialization and SPARQL processors
+  * [OpenRefine](http://openrefine.org/)  Desktop tool to manage complex and messy tabular data
+  * [Apache Tomcat](http://tomcat.apache.org/)  The Apache Java web-application Container
+  * [Jersey](http://jersey.java.net/)  Java library for the management of RESTful services
+  * [Apache HTTPD Server](http://httpd.apache.org/) Apache HTTP Server
   * [PHP](http://php.net/)  PHP scripting language
-  * [Twitter-API-PHP](https://github.com/J7mbo/twitter-api-php)  PHP wrapper della API Twitter
-  * [OpenStreetMap](http://openstreetmap.it) tiles ed elementi della mappa di base
+  * [Twitter-API-PHP](https://github.com/J7mbo/twitter-api-php)  PHP wrapper for Twitter API
+  * [OpenStreetMap](http://openstreetmap.it) providing comunity based tiles and base map elements
 
 * Frontend & Software Libraries
-  * [AngularJS](https://angularjs.org/)  framework javascript per la creazione di web application dinamiche
-  * [OpenLayers 3](http://openlayers.org/)  libreria per la gestione della mappa
-  * [Twitter Bootstrap](http://getbootstrap.com/)  framework e componenti HTLM/CSS per web-applications responsive
-  * [jQuery](https://jquery.com/) Libreria Javascript
-  * [UI Boostrap](https://angular-ui.github.io/bootstrap/)  componenti bootstrap per AngularJS
-  * [ng-twitter](http://darul75.github.io/ng-twitter/)  direttiva Angular per la visualizzazione di messaggi Twitter
-  * [bxSlider](http://bxslider.com/)  componente jQuery per la creazione di slider responsive
-  * [Numeral.js](http://adamwdraper.github.io/Numeral-js/)  libreria Javascript per la formattazione e manipolazione di dati numerici
-  * [Chart.js](http://www.chartjs.org/)  libreria Javascript per la gestione di grafici HTML5
-  * [FontAwesome](http://fortawesome.github.io/Font-Awesome/)  libreria di icone per HTML5
+  * [AngularJS](https://angularjs.org/)  Modern Javascript web-application MVC framework
+  * [OpenLayers 3](http://openlayers.org/)  high-end Javascript Mapping library
+  * [Twitter Bootstrap](http://getbootstrap.com/)  Twitter HTLM/CSS template library for responsive web-applications
+  * [jQuery](https://jquery.com/) Javascript library
+  * [UI Boostrap](https://angular-ui.github.io/bootstrap/)  AngularJS Bootstrap components
+  * [ng-twitter](http://darul75.github.io/ng-twitter/)  AngularJS directive for rendering Twitter messages
+  * [bxSlider](http://bxslider.com/)  jQuery components to create responsive sliders
+  * [Numeral.js](http://adamwdraper.github.io/Numeral-js/) Javascript library to manage numerical values
+  * [Chart.js](http://www.chartjs.org/)  Javascript HTML5 chart library 
+  * [FontAwesome](http://fortawesome.github.io/Font-Awesome/)  HTML5 Icon library
+
 
 Get involved
 --------------
