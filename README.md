@@ -20,6 +20,7 @@ here below an extract of the core compnents used in both the backend:
   * [Apache HTTPD Server](http://httpd.apache.org/)  server HTTP
   * [PHP](http://php.net/)  PHP scripting language
   * [Twitter-API-PHP](https://github.com/J7mbo/twitter-api-php)  PHP wrapper della API Twitter
+  * [OpenStreetMap](http://openstreetmap.it) tiles ed elementi della mappa di base
 
 * Frontend & Software Libraries
   * [AngularJS](https://angularjs.org/)  framework javascript per la creazione di web application dinamiche
