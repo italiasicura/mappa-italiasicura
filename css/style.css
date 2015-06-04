@@ -538,7 +538,7 @@ font-size: 0.7em;}
     margin:0 auto;
 }
 .bottom-box .container-fluid.info-bar{
-    padding:5px 15px;
+ /*    padding:5px 15px;  REMOVED TO HIDE INTERVENTI TOTALS BOTTOM WHITE BAND*/
      display: table;
  }
 .bottom-box .container-fluid.info-bar > div{
