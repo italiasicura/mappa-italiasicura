@@ -75,6 +75,11 @@ angular.module('ItaliasicuraApp.controllers', [])
             type:'home'
 
         });
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
+
 
     }).controller("interventiController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location,$stateParams) {
         angular.extend($scope, {
@@ -104,6 +109,11 @@ angular.module('ItaliasicuraApp.controllers', [])
             datagraph:{},
             graphlabel:{}
         });
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
+
 
         var cc = $scope.center;
         if($location.search().zoom)
@@ -589,6 +599,11 @@ $.extend({},options,{customTooltips: function(tooltip) {
             sliderflickr:false,
             sliderEm:false
         });
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
+
 
         if($location.search().name){
             $scope.selection=true;
@@ -763,8 +778,11 @@ $.extend({},options,{customTooltips: function(tooltip) {
         angular.extend($scope, {
             type:'dashboard'
         });
-//        console.log('controller root');
-//        console.log($stateParams);
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
+
 
         $scope.ambiti_promise = isGEOservice.getAmbiti();
 
@@ -777,8 +795,6 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerAmbito", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
-//        console.log('controller ambito');
-//        console.log($stateParams);
 
         $scope.current_ambito_promise = $scope.ambiti_promise.then(function(result) {
             var deferred = $q.defer();
@@ -811,8 +827,6 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerTema", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
-//        console.log('controller tema');
-//        console.log($stateParams);
 
         $scope.current_tema_promise = $scope.temi_promise.then(function(result) {
             var deferred = $q.defer();
@@ -844,8 +858,6 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerFormato", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
-//        console.log('controller formato');
-//        console.log($stateParams);
 
         $scope.current_formato_promise = $scope.formati_promise.then(function(result) {
             $scope.formati = result.data.values;
@@ -907,8 +919,12 @@ $.extend({},options,{customTooltips: function(tooltip) {
 
         });
 
-    }).controller("pageController", function($scope, $http, isGEOservice, $routeParams,$rootScope) {
-        console.log('controller generic page');
+    }).controller("pageController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
+
         $scope.statusfaq1 = true;
 
         angular.extend($scope, {

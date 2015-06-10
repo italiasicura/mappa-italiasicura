@@ -116,5 +116,4 @@ angular.module('ItaliasicuraApp', [
             controller: "dashboardControllerFormato",
             css:"css/dashboard.css"})
     ;
-
 }]);

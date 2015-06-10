@@ -60,6 +60,24 @@ footer a:hover{
 }
 aside {position:relative;z-index:99;}
 
+/* Cookie Bar */
+#cookie-bar {background:rgba(17,17,17,0.8); height:auto; min-height:24px; line-height:24px; color:#eeeeee; text-align:left; padding:3px 0; z-index:1000; }
+#cookie-bar.fixed {position:fixed; top:0; left:0; width:100%;}
+#cookie-bar.fixed.bottom {bottom:0; top:auto;}
+#cookie-bar p {margin:0; padding: 25px 130px 25px 130px;}
+@media (max-width: 768px) {
+  #cookie-bar p {margin:0; padding-left:70px;padding-right:70px;}
+}
+#cookie-bar a {color:#ffffff; display:inline-block; border-radius:3px; text-decoration:none; padding:0 6px; margin-left:8px;}
+#cookie-bar .cb-enable {background:#007700;}
+#cookie-bar .cb-enable:hover {background:#009900;}
+#cookie-bar .cb-disable {background:#990000;}
+#cookie-bar .cb-disable:hover {background:#bb0000;}
+#cookie-bar .cb-policy {margin:0; padding:0;}
+#cookie-bar .cb-policy:hover {text-decoration:underline;}
+
+
+
 /* Header Panel */
 
 .navigation-bar{

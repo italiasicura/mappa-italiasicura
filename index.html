@@ -114,6 +114,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-38033959-4', 'auto');
+  ga('set', 'anonymizeIp', true);
   ga('send', 'pageview');
 </script>
 
@@ -142,5 +143,14 @@
     <script src="js/controllers.js"></script>
     <script src="js/app.js"></script>
     <script src="js/lib/Chart.min.js"></script>
+    <script src="js/lib/cbar.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.cookieBar({
+        });
+    });
+</script>
+
