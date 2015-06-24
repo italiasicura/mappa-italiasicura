@@ -40,7 +40,7 @@ here below an extract of the core compnents used in both the backend:
 
 Get involved
 --------------
-you are welcome to contribute adding comments, suggestions or issues or following the traditional GitHub flow to sumbit changes
+you are welcome to contribute adding [comments, suggestions or issues](https://github.com/italiasicura/mappa-italiasicura/issues) or following the traditional GitHub flow to [sumbit changes](https://github.com/italiasicura/mappa-italiasicura/pulls)
 
 
 License
