@@ -1,3 +1,3 @@
-er-Agent: *
+User-Agent: *
 Disallow:
 
