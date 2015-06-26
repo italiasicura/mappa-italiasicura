@@ -553,7 +553,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     var c= geolocate.getPosition();
                     $scope.center.lat=c[1];
                     $scope.center.lon=c[0];
-                    $scope.center.zoom=12;
+                    $scope.center.zoom=17;
                     $scope.center.bbox=null;
                 });
 
