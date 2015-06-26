@@ -465,7 +465,11 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     console.log('Best match for ['+$scope.location+']: '+response[0].display_name+' [lon:'+response[0].lon+', lat:'+response[0].lat+']');
                         $scope.center.lat=parseFloat(response[0].lat);
                         $scope.center.lon=parseFloat(response[0].lon);
-                        $scope.center.zoom=12;
+                        if ( $scope.location.toLowerCase().includes("via") || $scope.location.toLowerCase().includes("piazza") ) {
+                           $scope.center.zoom=17;
+                        } else {
+                           $scope.center.zoom=12;
+                        }
                         $scope.center.bbox=response[0].boundingbox;
                 }else{
                     console.log('No result found for ['+$scope.location+']');
