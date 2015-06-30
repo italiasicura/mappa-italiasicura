@@ -535,7 +535,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                         }
                     }
                     return style;
-                }
+                 }
 
 
 
@@ -544,18 +544,47 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  * (8) GEOLOCATION & LOADER
                  * ============================================
                  */
+                var geolocVectorSource = new ol.source.Vector({
+                   projection: 'EPSG:3857'
+                });
+
+                var geolocStyle = new ol.style.Style({
+                   image: new ol.style.Icon( ({
+                           anchor: [0.5, 0.85],
+                           anchorXUnits: 'fraction',
+                           anchorYUnits: 'fraction',
+                           opacity: 1,
+                        src: 'img/marker-geoloc.png'
+                   }))
+                });
+
+                var geolocVectorLayer = new ol.layer.Vector({
+                  source: geolocVectorSource,
+                  style: geolocStyle
+                });
 
                 var geolocate = new ol.Geolocation({
                     projection: ol.proj.get($scope.projection)
                 });
 
                 geolocate.once('change', function(event) {
-                    var c= geolocate.getPosition();
+                    var c=geolocate.getPosition();
+
                     $scope.center.lat=c[1];
                     $scope.center.lon=c[0];
                     $scope.center.zoom=17;
                     $scope.center.bbox=null;
+		    $scope.addLocationMarker($scope.center.lat, $scope.center.lon);
                 });
+		
+		$scope.addLocationMarker = function(lat, lon){
+                    var iconGeoLoc = new ol.Feature({
+                         geometry: new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'))  
+                    });
+                    iconGeoLoc.setStyle(geolocStyle);
+                    geolocVectorSource.clear();
+                    geolocVectorSource.addFeature(iconGeoLoc);
+		}
 
                 GeolocationControl = function($scope) {
 
@@ -609,7 +638,8 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                             regioniLayer,
                             provinceLayer,
                             comuniVectorLayer,
-                            localitaVectorLayer
+                            localitaVectorLayer,
+                            geolocVectorLayer
                         ],
                         view: new ol.View({
                             center: [$scope.center.lat,$scope.center.lon],

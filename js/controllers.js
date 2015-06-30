@@ -465,6 +465,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     console.log('Best match for ['+$scope.location+']: '+response[0].display_name+' [lon:'+response[0].lon+', lat:'+response[0].lat+']');
                         $scope.center.lat=parseFloat(response[0].lat);
                         $scope.center.lon=parseFloat(response[0].lon);
+			$scope.addLocationMarker($scope.center.lat, $scope.center.lon);
                         if ( $scope.location.toLowerCase().includes("via") || $scope.location.toLowerCase().includes("piazza") ) {
                            $scope.center.zoom=17;
                         } else {
