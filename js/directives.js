@@ -574,12 +574,15 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     $scope.center.lon=c[0];
                     $scope.center.zoom=17;
                     $scope.center.bbox=null;
-		    $scope.addLocationMarker($scope.center.lat, $scope.center.lon);
+		    $scope.addLocationMarker($scope.center.lat, $scope.center.lon,"La mia posizione","Lon:"+$scope.center.lon+ ", Lat: "+$scope.center.lat);
                 });
 		
-		$scope.addLocationMarker = function(lat, lon){
+		$scope.addLocationMarker = function(lat, lon, title, name){
                     var iconGeoLoc = new ol.Feature({
-                         geometry: new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'))  
+                         geometry: new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857')),
+                         t: "geoloc",
+                         title: title,
+                         addr: name  
                     });
                     iconGeoLoc.setStyle(geolocStyle);
                     geolocVectorSource.clear();
@@ -780,7 +783,14 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                                    .attr('data-content', '<strong>Codice istruttoria: </strong><span class="istruttoria">'+feature.get('Codice')+'</span><br><strong>Descrizione: </strong>'+feature.get('Titolo')+'<br><strong>Area di riferimento: </strong>'+feature.get('citta')+'<br><strong>Livello progettazione: </strong>'+feature.get('prog')+'<br><strong>Importo totale: </strong>'+feature.get('imptot'))
                                    .popover('fixTitle')
                                    .popover('toggle');*/
-                            }else{
+                            } else if (type === 'geoloc') {
+                                t = 'geoloc';
+                                info.popover('hide')
+                                    .attr('data-original-title','<strong>'+feature.get('title')+'</strong>')
+                                    .attr('data-content',feature.get('addr'))
+                                    .popover('fixTitle')
+                                    .popover('toggle');          
+                            } else{
                                 info.popover('hide');
                                 t=false;
                             }

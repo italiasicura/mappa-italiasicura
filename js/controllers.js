@@ -465,7 +465,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     console.log('Best match for ['+$scope.location+']: '+response[0].display_name+' [lon:'+response[0].lon+', lat:'+response[0].lat+']');
                         $scope.center.lat=parseFloat(response[0].lat);
                         $scope.center.lon=parseFloat(response[0].lon);
-			$scope.addLocationMarker($scope.center.lat, $scope.center.lon);
+			$scope.addLocationMarker($scope.center.lat, $scope.center.lon,"Geolocalizzazione Indirizzo","Il miglior risultato per l'indirizzo richiesto:<br><strong>"+$scope.location+"</strong><br><br>risulta essere:<br><strong> "+response[0].display_name+"</strong><br><br> [lon: "+response[0].lon+", lat:"+response[0].lat+"]");
                         if ( $scope.location.toLowerCase().includes("via") || $scope.location.toLowerCase().includes("piazza") ) {
                            $scope.center.zoom=17;
                         } else {
