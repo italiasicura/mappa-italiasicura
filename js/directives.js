@@ -424,8 +424,8 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                             anchor: [0.5, 0.85],
                             anchorXUnits: 'fraction',
                             anchorYUnits: 'fraction',
-                            opacity: 1,
-                       src: 'img/marker-intervento-pn.png'
+                            opacity: 0.8,
+                       src: 'img/marker-intervento-pn-small.png'
                     }))
                  });
                  var lottiPianoNazionaleSource = new ol.source.GeoJSON({
