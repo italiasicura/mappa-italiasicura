@@ -1086,7 +1086,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                 // Extended Graph
                 $scope.graphlabel.tipologia=['alluvione','incendio','valanga','frana','costiero','misto','non definito'];
 
-                $scope.graphlabel.fase=['definanziati o sostitutivi','concluso','in progettazione','in esecuzione','da avviare','dati non comunicati'];
+                $scope.graphlabel.fase=['definanziati o sostitutivi','concluso','in esecuzione','in progettazione','da avviare','dati non comunicati'];
                 $scope.graphlabel.ente=['comune','città metropolitana o provincia','regione','altro'];
                 $scope.graphlabel.costi=['+25 Mln','5 Mln','1 Mln','500 mila','200 mila'];
                 $scope.graphlabel.anno=['2015','2010','2005','2000'];
