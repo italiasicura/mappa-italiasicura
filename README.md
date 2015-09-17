@@ -8,7 +8,7 @@ The application mappa.italiasicura.gov.it and the presented data give a complete
 Technology
 ------------
 The application is written using different technologies and has been composed thanks to several different tools and pre-existing libraries
-here below an extract of the core compnents used in both the backend:
+here below an extract of the core components used in both the backend:
 
 * Backend & tools
   * GNU/Linux [Ubuntu Server](http://www.ubuntu.com/server)
