@@ -36,6 +36,14 @@ here below an extract of the core compnents used in both the backend:
   * [Numeral.js](http://adamwdraper.github.io/Numeral-js/) Javascript library to manage numerical values
   * [Chart.js](http://www.chartjs.org/)  Javascript HTML5 chart library 
   * [FontAwesome](http://fortawesome.github.io/Font-Awesome/)  HTML5 Icon library
+  * [jQuery.NiceScroll](https://github.com/inuyaksa/jquery.nicescroll) jQury plugin to beutify the default browser scrollbars
+
+
+Releases
+--------------
+Current development version is 3.0
+
+Release versions history is available on [Releases](https://github.com/italiasicura/mappa-italiasicura/releases)
 
 
 Get involved
