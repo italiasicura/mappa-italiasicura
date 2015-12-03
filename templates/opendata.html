@@ -1,313 +1,336 @@
 <ng-include src="'templates/navbar.html'"></ng-include>
 <main>
-    <!-- h2>Guida page</h2 -->
-<div class="box-standings">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div ui-view class="page">
+	<!-- h2>Guida page</h2 -->
+	<div class="box-standings">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div ui-view class="page">
 
-					<div class="row"><div class="col-md-10 col-md-offset-1">
+						<div class="row"><div class="col-md-10 col-md-offset-1">
 
-					<div class="standing-item panelmain panel panel-default">
-						<div class="panel-heading panelmain">
-							<h4>Open Data</h4>
-						</div>
-						<div class="panel-body"> 
+							<div class="standing-item panelmain panel panel-default">
+								<div class="panel-heading panelmain">
+									<h4>Open Data</h4>
+								</div>
+								<div class="panel-body"> 
 
-						  <h4>Dataset Open Data utilizzati per creare #italiasicura</h4>
-							<p>In questa sezione sono elencate le fonti dei principali dataset impiegati per la costruzione ed il funzionamento dell'applicazione #italiasicura. Dove disponibili sono anche documentati i formati e i relativi metadati. </p>
-							<ul class="list-unstyled">
-							<li>
-							   <h3><i class="fa fa-cubes fa-gl"></i> Dataset ISPRA</h3>
-							   <blockquote class="underblock"> 
-								 <div class="row" style="border-left: 5px solid #5cb85c;">
-								   <div class="col-md-3">
-									  <h4>Dataset</h4>
-									  <h4><span class="label label-success">Interventi/Cantieri</span></h4>
-									  <strong>Licenza: </strong> <a rel="license" href="http://www.dati.gov.it/iodl/2.0/"><img alt="IODL" style="border-width:0;height:32px;" src="/img/iodl_logo.png"></a><br>
-									  <strong>Formato: </strong><a href="http://goo.gl/3I29a9" target="_blank">XLS <i class="fa fa-download"></i></a><br>
-									  <strong>Metadati: </strong><a href="http://goo.gl/dsRScQ" target="_blank">TXT <i class="fa fa-download"></i></a>
-								   </div>
-								   <div class="col-md-9">
-									  <h4>Descrizione</h4>
-										 <p>Il servizio fornisce il dato in tempo reale da quanto disponibile sulla base dati ReNDiS. Il tracciato prevede i seguenti campi:</p>
-										 <div class="panel panel-default">
-										   <table class="table table-condensed table-bordered" style="font-size:16px;">
-											 <thead><tr>
-												<th>Pr</th><th>Nome Campo</th><th>Descrizione</th>
-											 </tr></thead>
-											 <tbody>
-											   <tr>
-												 <td>1</td><td>Intervento</td>
-												 <td>Codice identificativo dell'intervento di cui fa parte il lotto</td>
-											   </tr><tr>
-												  <td>2</td><td>Lotto</td>
-												  <td>Numero del lotto (numerazione progressiva nell'ambito di ciascun singolo intervento)</td>
-											   </tr><tr>
-												  <td>3</td><td>Gruppo_di_riferimento</td>
-												  <td>Macro gruppo di riferimento all'interno del sistema ReNDiS</td>
-											   </tr><tr>
-												  <td>4</td><td>Decreto</td>
-												  <td>Decreto o atto di finanziamento dell'intervento</td>
-											   </tr><tr>
-												  <td>5</td><td>titolo_int</td>
-												  <td>Titolo dell'intervento</td>
-											   </tr><tr>
-												  <td>6</td><td>lotti_totali</td>
-												  <td>Numero totale di lotti che costituiscono il singolo intervento<br>
-													  N.B.  il numero è comprensivo degli eventuali lotti "virtuali"
-													  (relativi alle richieste di utilizzo economie) che non sono però presenti in questo elenco.
-												  </td>
-											   </tr><tr>
-												  <td>7</td><td>denom_lotto</td>
-												  <td>
-													 Denominazione del lotto
-												  </td>
-											   </tr><tr>
-												  <td>8</td><td>ente_proponente</td>
-												  <td>
-													 Ente beneficiario delle risorse assegnate con il decreto o atto di finanziamento
-												  </td>
-											   </tr><tr>
-												  <td>9</td><td>Tipo_dissesto</td>
-												  <td>
-													Categoria del dissesto come indicata o desumibile nell'atto di finanziamento
-												  </td>
-											   </tr><tr>
-												  <td>10</td><td>Ente attuatore</td>
-												  <td>
-													Ente titolare dell'attuazione del lotto (è il responsabile della trasmissione delle informazioni relative al lotto)
-												  </td>
-											   </tr><tr>
-												  <td>11</td><td>Comune Primario</td>
-												  <td>
-													Comune di ubicazione dell'intervento (se più di uno, quello indicato come prevalente = "primario")
-												  </td>
-											   </tr><tr>
-												  <td>12</td><td>Posizione</td>
-												  <td>
-													Tipologia di ubicazione disponibile: Georiferito se è stata indicata la effettiva posizione su mappa; Centroide dove la posizione non è stata fornita  (il punto è convezionalmente ubicato in corrispondenza del baricentro geometrico del territorio comunale).
-												  </td>
-											   </tr><tr>
-												  <td>13</td><td>geometria</td>
-												  <td>
-													Geometria associata a ciascun lotto: aggrega gli eventuali più punti che sono stati associati alle singole opere (WGS 84)
-												  </td>
-											   </tr><tr>
-												  <td>14</td><td>pos_json</td>
-												  <td>
-												   Posizioni associate al lotto espressi come Geometry Javascript Object Notation (GeoJSON) element 
-												  </td>
-											   </tr><tr>
-												  <td>15</td><td>Tipo Multipunto</td>
-												  <td>
-												   aggrega gli eventuali più punti che sono stati associati alle singole opere
-												  </td>
-											   </tr><tr>
-									  <td>16</td><td>finanziamento intervento</td>
-										  <td>
-												   Importo totale del finanziamento assegnato all'intervento: ATTENZIONE, nel caso di lotti multipli NON è l'importo relativo al singolo lotto ed il valore  si ripete per ciascun lotto dell'intervento
-												  </td>
-											   </tr><tr>
-												  <td>17</td><td>Importo lotto</td>
-												  <td>
-													Importo totale del quadro economico di progetto del lotto
-					(dato acquisito da comunicazione "quadro economico")
-												  </td>
-											   </tr><tr>
-												  <td>18</td><td>stima_valore_lotto</td>
-												  <td>
-												   Valore del lotto: corrisponde al quadro economico di progetto dove disponibile; se il dato è mancante viene riportato il totale del finanziamento intervento nei soli casi di lotto unico ; in tutti gli altri casi il valore è "lasciato" a zero.
-												  </td>
-											   </tr><tr>
-												  <td>19</td><td>fase_lotto</td>
-												  <td>
-												   Fase di attuazione del lotto
-												  </td>
-											   </tr><tr>
-												  <td>20</td><td>fase_aggregata</td>
-												  <td>
-												   Fase di attuazione globale dell'intervento (indicativa della situazione 'aggregata' di tutti i lotti che costituiscono l'intervento
-												  </td>
-											   </tr><tr>
-												  <td>21</td><td>Imp univoco finanziamento</td>
-												  <td>
-													 mporto del fiananziamento indicato univocamente solo per il primo lotto dell'intervento. Il campo può essere utilizzato per ottenere il totale dei finanziamenti censiti nel ReNDiS in quanto non contiene ripetizioni su più record per lo stesso finanziamento
-												  </td>
-											   </tr><tr>
-												  <td>22</td><td>sommatoria_qe</td>
-												  <td>
-												   Sommatoria dei quadri economici di progetto di tutti i lotti dell'intervento. <br> ATTENZIONE: il dato non è significativo se i dati comunicati sono carenti
-												  </td>
-											   </tr><tr>
-												  <td>23</td><td>perc_qe</td>
-												  <td>
-													Indica il rapporto tra il valore del Q.E. di progetto del lotto e la sommatoria dei Q.E. di tutti i lotti dell'intervento. <br>N.B. il dato non è significativo in presenza di informazioni fornite in modo carente, parziale o disomogeneo tra diversi lotti
-												  </td>
-											   </tr><tr>
-												  <td>24</td><td>finanz_ripart</td>
-												  <td>
-													Valore indicativo della quota di finanziamento ripartita su ciascun lotto. il dato è calcolato in base al rapporto tra il valore del Q.E. di progetto del lotto e la sommatoria dei Q.E. di tutti i lotti dell'intervento. <br>N.B. il dato non è significativo in presenza di informazioni fornite in modo carente, parziale o disomogeneo tra diversi lotti.<br>ATTENZIONE se l'intervento è realizzato in cofinanziamento con risorse di altre fonti, il valore può essere sensibilmente inferiore al quadro economico.
-												  </td>
-											   </tr><tr>
-												  <td>25</td><td>id_regione</td>
-												  <td>
-													Codice Istat della Regione di appartenenza dell'ente beneficiario
-												  </td>
-										   </tr>
-									</tbody>
-									</table>
-							 </div>
-						 </div>
-						 </div> <!-- end row -->
-						 <hr />
-						 <div class="row" style="border-left: 5px solid #5cb85c;">
-						   <div class="col-md-3">
-						  <h4>Dataset</h4>
-						  <h4><span class="label label-success">CUP/CIG Cantieri</span></h4>
-						  <strong>Licenza:</strong> <a rel="license" href="http://www.dati.gov.it/iodl/2.0/"><img alt="IODL" style="border-width:0;height:32px;" src="/img/iodl_logo.png"></a><br>
-							  <strong>Formato: </strong><a href="http://goo.gl/WG4IbA" target="_blank">XLS <i class="fa fa-download"></i></a><br>
-							  <strong>Metadati: </strong><a href="http://goo.gl/SQl7UU" target="_blank">TXT <i class="fa fa-download"></i></a>
-						   </div>
-						   <div class="col-md-9">
-						  <h4>Descrizione</h4>
-							 <p>Il servizio fornisce il dato in tempo reale da quanto disponibile sulla base dati ReNDiS. Il tracciato prevede i seguenti campi:</p>
-							 <div class="panel panel-default">
-							   <table class="table table-condensed table-bordered" style="font-size:16px;">
-							 <thead><tr>
-								<th>Pr</th><th>Nome Campo</th><th>Descrizione</th>
-							 </tr></thead>
-							 <tbody>
-							   <tr>
-								 <td>1</td><td>Intervento</td>
-								 <td>Codice identificativo dell'intervento di cui fa parte il lotto</td>
-							   </tr><tr>
-												  <td>2</td><td>id_intervento</td>
-												  <td>Codice ReNDiS dell'intervento</td>
-											   </tr><tr>
-												  <td>3</td><td>id_lotto</td>
-												  <td>progressivo lotto</td>
-											   </tr><tr>
-												  <td>4</td><td>cig</td>
-												  <td>codice CIG (nel caso di più CIG forniti per un singolo lotto sono presenti più record)</td>
-											   </tr><tr>
-												  <td>5</td><td>smart</td>
-												  <td>nel caso di CIG del tipo "smart" il valore del campo è TRUE</td>
-											   </tr><tr>
-												  <td>6</td><td>cod_cup</td>
-												  <td>codice CUP associato al lotto
-												  </td>
-											   </tr><tr>
-												  <td>7</td><td>ente_attuatore</td>
-												  <td>Denominazione dell'Ente titolare dell'attuazione dell'intervento (nei casi di avvalimento l'ente esecutore può essere diverso)
-												  </td>
-											   </tr>
+									<h4>Dataset Open Data utilizzati per creare #italiasicura</h4>
+									<p>In questa sezione sono elencate le fonti dei principali dataset impiegati per la costruzione ed il funzionamento dell'applicazione #italiasicura. Dove disponibili sono anche documentati i formati e i relativi metadati. </p>
+									<ul class="list-unstyled">
+										<li>
+											<h3><i class="fa fa-cubes fa-gl"></i> Dataset ISPRA</h3>
+											<blockquote class="underblock"> 
+												<div class="row" style="border-left: 5px solid #5cb85c;">
+													<div class="col-md-3">
+														<h4>Dataset</h4>
+														<h4><span class="label label-success">Interventi/Cantieri</span></h4>
+														<strong>Licenza: </strong> <a rel="license" href="http://www.dati.gov.it/iodl/2.0/"><img alt="IODL" style="border-width:0;height:32px;" src="/img/iodl_logo.png"></a><br>
+														<strong>Formato: </strong><a href="http://goo.gl/3I29a9" target="_blank">XLS <i class="fa fa-download"></i></a><br>
+														<strong>Metadati: </strong><a href="http://goo.gl/dsRScQ" target="_blank">TXT <i class="fa fa-download"></i></a>
+													</div>
+													<div class="col-md-9">
+														<h4>Descrizione</h4>
+														<p>Il servizio fornisce il dato in tempo reale da quanto disponibile sulla base dati ReNDiS. Il tracciato prevede i seguenti campi:</p>
+														<div class="panel panel-default">
+															<table class="table table-condensed table-bordered" style="font-size:16px;">
+																<thead><tr>
+																	<th>Pr</th><th>Nome Campo</th><th>Descrizione</th>
+																</tr></thead>
+																<tbody>
+																	<tr>
+																		<td>1</td><td>Intervento</td>
+																		<td>Codice identificativo dell'intervento di cui fa parte il lotto</td>
+																	</tr><tr>
+																	<td>2</td><td>Lotto</td>
+																	<td>Numero del lotto (numerazione progressiva nell'ambito di ciascun singolo intervento)</td>
+																</tr><tr>
+																<td>3</td><td>Gruppo_di_riferimento</td>
+																<td>Macro gruppo di riferimento all'interno del sistema ReNDiS</td>
+															</tr><tr>
+															<td>4</td><td>Decreto</td>
+															<td>Decreto o atto di finanziamento dell'intervento</td>
+														</tr><tr>
+														<td>5</td><td>titolo_int</td>
+														<td>Titolo dell'intervento</td>
+													</tr><tr>
+													<td>6</td><td>lotti_totali</td>
+													<td>Numero totale di lotti che costituiscono il singolo intervento<br>
+														N.B.  il numero è comprensivo degli eventuali lotti "virtuali"
+														(relativi alle richieste di utilizzo economie) che non sono però presenti in questo elenco.
+													</td>
+												</tr><tr>
+												<td>7</td><td>denom_lotto</td>
+												<td>
+													Denominazione del lotto
+												</td>
+											</tr><tr>
+											<td>8</td><td>ente_proponente</td>
+											<td>
+												Ente beneficiario delle risorse assegnate con il decreto o atto di finanziamento
+											</td>
+										</tr><tr>
+										<td>9</td><td>Tipo_dissesto</td>
+										<td>
+											Categoria del dissesto come indicata o desumibile nell'atto di finanziamento
+										</td>
+									</tr><tr>
+									<td>10</td><td>Ente attuatore</td>
+									<td>
+										Ente titolare dell'attuazione del lotto (è il responsabile della trasmissione delle informazioni relative al lotto)
+									</td>
+								</tr><tr>
+								<td>11</td><td>Comune Primario</td>
+								<td>
+									Comune di ubicazione dell'intervento (se più di uno, quello indicato come prevalente = "primario")
+								</td>
+							</tr><tr>
+							<td>12</td><td>Posizione</td>
+							<td>
+								Tipologia di ubicazione disponibile: Georiferito se è stata indicata la effettiva posizione su mappa; Centroide dove la posizione non è stata fornita  (il punto è convezionalmente ubicato in corrispondenza del baricentro geometrico del territorio comunale).
+							</td>
+						</tr><tr>
+						<td>13</td><td>geometria</td>
+						<td>
+							Geometria associata a ciascun lotto: aggrega gli eventuali più punti che sono stati associati alle singole opere (WGS 84)
+						</td>
+					</tr><tr>
+					<td>14</td><td>pos_json</td>
+					<td>
+						Posizioni associate al lotto espressi come Geometry Javascript Object Notation (GeoJSON) element 
+					</td>
+				</tr><tr>
+				<td>15</td><td>Tipo Multipunto</td>
+				<td>
+					aggrega gli eventuali più punti che sono stati associati alle singole opere
+				</td>
+			</tr><tr>
+			<td>16</td><td>finanziamento intervento</td>
+			<td>
+				Importo totale del finanziamento assegnato all'intervento: ATTENZIONE, nel caso di lotti multipli NON è l'importo relativo al singolo lotto ed il valore  si ripete per ciascun lotto dell'intervento
+			</td>
+		</tr><tr>
+		<td>17</td><td>Importo lotto</td>
+		<td>
+			Importo totale del quadro economico di progetto del lotto
+			(dato acquisito da comunicazione "quadro economico")
+		</td>
+	</tr><tr>
+	<td>18</td><td>stima_valore_lotto</td>
+	<td>
+		Valore del lotto: corrisponde al quadro economico di progetto dove disponibile; se il dato è mancante viene riportato il totale del finanziamento intervento nei soli casi di lotto unico ; in tutti gli altri casi il valore è "lasciato" a zero.
+	</td>
+</tr><tr>
+<td>19</td><td>fase_lotto</td>
+<td>
+	Fase di attuazione del lotto
+</td>
+</tr><tr>
+<td>20</td><td>fase_aggregata</td>
+<td>
+	Fase di attuazione globale dell'intervento (indicativa della situazione 'aggregata' di tutti i lotti che costituiscono l'intervento
+</td>
+</tr><tr>
+<td>21</td><td>Imp univoco finanziamento</td>
+<td>
+	mporto del fiananziamento indicato univocamente solo per il primo lotto dell'intervento. Il campo può essere utilizzato per ottenere il totale dei finanziamenti censiti nel ReNDiS in quanto non contiene ripetizioni su più record per lo stesso finanziamento
+</td>
+</tr><tr>
+<td>22</td><td>sommatoria_qe</td>
+<td>
+	Sommatoria dei quadri economici di progetto di tutti i lotti dell'intervento. <br> ATTENZIONE: il dato non è significativo se i dati comunicati sono carenti
+</td>
+</tr><tr>
+<td>23</td><td>perc_qe</td>
+<td>
+	Indica il rapporto tra il valore del Q.E. di progetto del lotto e la sommatoria dei Q.E. di tutti i lotti dell'intervento. <br>N.B. il dato non è significativo in presenza di informazioni fornite in modo carente, parziale o disomogeneo tra diversi lotti
+</td>
+</tr><tr>
+<td>24</td><td>finanz_ripart</td>
+<td>
+	Valore indicativo della quota di finanziamento ripartita su ciascun lotto. il dato è calcolato in base al rapporto tra il valore del Q.E. di progetto del lotto e la sommatoria dei Q.E. di tutti i lotti dell'intervento. <br>N.B. il dato non è significativo in presenza di informazioni fornite in modo carente, parziale o disomogeneo tra diversi lotti.<br>ATTENZIONE se l'intervento è realizzato in cofinanziamento con risorse di altre fonti, il valore può essere sensibilmente inferiore al quadro economico.
+</td>
+</tr><tr>
+<td>25</td><td>id_regione</td>
+<td>
+	Codice Istat della Regione di appartenenza dell'ente beneficiario
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div> <!-- end row -->
+<hr />
+<div class="row" style="border-left: 5px solid #5cb85c;">
+	<div class="col-md-3">
+		<h4>Dataset</h4>
+		<h4><span class="label label-success">CUP/CIG Cantieri</span></h4>
+		<strong>Licenza:</strong> <a rel="license" href="http://www.dati.gov.it/iodl/2.0/"><img alt="IODL" style="border-width:0;height:32px;" src="/img/iodl_logo.png"></a><br>
+		<strong>Formato: </strong><a href="http://goo.gl/WG4IbA" target="_blank">XLS <i class="fa fa-download"></i></a><br>
+		<strong>Metadati: </strong><a href="http://goo.gl/SQl7UU" target="_blank">TXT <i class="fa fa-download"></i></a>
+	</div>
+	<div class="col-md-9">
+		<h4>Descrizione</h4>
+		<p>Il servizio fornisce il dato in tempo reale da quanto disponibile sulla base dati ReNDiS. Il tracciato prevede i seguenti campi:</p>
+		<div class="panel panel-default">
+			<table class="table table-condensed table-bordered" style="font-size:16px;">
+				<thead><tr>
+					<th>Pr</th><th>Nome Campo</th><th>Descrizione</th>
+				</tr></thead>
+				<tbody>
+					<tr>
+						<td>1</td><td>Intervento</td>
+						<td>Codice identificativo dell'intervento di cui fa parte il lotto</td>
+					</tr><tr>
+					<td>2</td><td>id_intervento</td>
+					<td>Codice ReNDiS dell'intervento</td>
+				</tr><tr>
+				<td>3</td><td>id_lotto</td>
+				<td>progressivo lotto</td>
+			</tr><tr>
+			<td>4</td><td>cig</td>
+			<td>codice CIG (nel caso di più CIG forniti per un singolo lotto sono presenti più record)</td>
+		</tr><tr>
+		<td>5</td><td>smart</td>
+		<td>nel caso di CIG del tipo "smart" il valore del campo è TRUE</td>
+	</tr><tr>
+	<td>6</td><td>cod_cup</td>
+	<td>codice CUP associato al lotto
+	</td>
+</tr><tr>
+<td>7</td><td>ente_attuatore</td>
+<td>Denominazione dell'Ente titolare dell'attuazione dell'intervento (nei casi di avvalimento l'ente esecutore può essere diverso)
+</td>
+</tr>
 
-											 </tbody>
-										   </table>
-										 </div>
-									 </div>
-								 </div> <!-- end row -->
-								 <hr />
-								 <div class="row" style="border-left: 5px solid #5bc0de;">
-								   <div class="col-md-3">
-									  <h4>Dataset</h4>
-									  <h4><span class="label label-info">Pericolosit&agrave Idraulica</span></h4>
-									  <strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/it"><img alt="Creative Commons CC-BY SA 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/it/80x15.png" /></a><br>
-									  <strong>Formato:</strong><br>
-									  <a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WmsServer" target="_blank">WMS (Raster) <i class="fa fa-download"></i></a><br>
-									  <a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WmsServer?SERVICE=WMS&REQUEST=getcapabilities&version=1.1.1" target="_blank">WMS Capabilities <i class="fa fa-file-code-o"></i></a><br>
+</tbody>
+</table>
+</div>
+</div>
+</div> <!-- end row -->
+<hr />
 
-									  <strong>Formato:</strong><br>
-									  <a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WFSServer" target="_blank">WFS (Vettoriale) <i class="fa fa-download"></i></a><br>
-									  <a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WFSServer?SERVICE=WFS&REQUEST=getcapabilities" target="_blank">WMS Capabilities <i class="fa fa-file-code-o"></i></a><br>
-								   </div>
-								   <div class="col-md-9">
-									  <h4>Descrizione</h4>
-										 <p>Il dataset viene acquisito direttamente attraverso i servizi di interoperabilit&agrave; WMS o WFS.
-										 <a href="http://www.opengeospatial.org/standards/wms" target="_blank">OpenGIS® Web Map Service (WMS) <i class="icon-ico_scheda_cantiere"></i></a> e <a href="http://www.opengeospatial.org/standards/wfs" target="_blank">OpenGIS® Web Features Service (WFS) <i class="icon-ico_scheda_cantiere"></i></a>
-										 sono parte delle specifiche tecniche definita dall'<a href="http://www.opengeospatial.org/" target="_blank">OGC <i class="icon-ico_scheda_cantiere"></i></a>:<br>
-										 Un OGC WMS produce dinamicamente mappe di dati spazialmente riferiti a partire da informazioni geografiche. Questo standard internazionale definisce una "mappa" come rappresentazione di informazioni geografiche restituendo un'immagine (es. jpg,png) mentre un OGC WFS produce dinamicamente informazioni geografiche di tipo vettoriale.</p>
-										 <p>L'utilizzo di questi servizi prevede l'impiego di opportuni software di gestione dei dati geografici, come ad esempio il software open source <a href="http://www.qgis.org/it/site/">QGIS <i class="icon-ico_scheda_cantiere"></i></a>.</p>
-					<p>ISPRA (2015) Mosaicatura delle aree a pericolosità idraulica elevata (P3) con tempo di ritorno fra 20 e 50 anni (alluvioni frequenti), a pericolosità media (P2) con tempi di ritorno fra 100 e 200 anni (alluvioni poco frequenti) e a pericolosità P1 (scarsa probabilità di alluvioni o scenari di eventi estremi), redatte dalle Autorità di Bacino, Regioni e Province Autonome ai sensi del D. Lgs. 49/2010 (recepimento della Direttiva Alluvioni 2007/60/CE).<br>
-					Elaborazione (v. 2.0) – 23/03/2015 - <a href="http://www.geoviewer.isprambiente.it" target="_blank">http://www.geoviewer.isprambiente.it <i class="icon-ico_scheda_cantiere"></i></a>
-					</p>
-									 </div>
-								 </div> <!-- end row -->
-								 <hr />
-								 <div class="row" style="border-left: 5px solid #5bc0de;">
-								   <div class="col-md-3">
-									  <h4>Dataset</h4>
-									  <h4><span class="label label-info">Indicatori di Rischio</span></h4>
-									  <strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/it"><img alt="Creative Commons CC-BY SA 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/it/80x15.png" /></a><br>
-									  <strong>Formato: </strong><a href="http://mappa.italiasicura.gov.it/data/DATI_RISCHIO_IDR.zip" target="_blank">DBF (ZIP) <i class="fa fa-download"></i></a>
-								   </div>
-								   <div class="col-md-9">
-									  <h4>Descrizione</h4>
-										 <p>Il servizio fornisce gli indicatori di rischio idraulico relativi a popolazione, attività produttive, beni culturali, scuole e la superficie di territorio a pericolosità idraulica (D.Lgs. 49/2010) su 4 livelli territoriali (comune, provincia o città metropolitana, regione, Italia).</p>
-					<p> ISPRA (2015) Indicatori di rischio relativi a popolazione, attività produttive, beni culturali, scuole esposti ad alluvioni e superficie di territorio a pericolosità idraulica.<br>
-					Elaborazione (v. 3.0) – 30/06/2015 sulla base della Mosaicatura ISPRA delle aree a pericolosità idraulica (D.Lgs. 49/2010) redatte dalle Autorità di Bacino, Regioni e Province Autonome; della popolazione residente (<a href="http://www.istat.it/it/censimento-popolazione/censimento-popolazione-2011" target="_blank">15° censimento ISTAT 2011 <i class="icon-ico_scheda_cantiere"></i></a>); delle industrie e servizi (9° Censimento ISTAT 2011); dei beni architettonici, monumentali e archeologici della <a href="http://vincoliinrete.beniculturali.it/" target="_blank">banca dati Vincoli In Rete (VIR) <i class="icon-ico_scheda_cantiere"></i></a> - <a href="http://www.icr.beniculturali.it/" target="_blank">Istituto Superiore per la Conservazione ed il Restauro (ISCR) <i class="icon-ico_scheda_cantiere"></i></a> e dell’<a href="http://archivio.pubblica.istruzione.it/scuola_in_chiaro/open_data/index.html" target="_blank">anagrafe delle strutture scolastiche <i class="icon-ico_scheda_cantiere"></i></a> del <a href="http://www.istruzione.it/" target="_blank">Ministero dell'Istruzione, dell'Università e della Ricerca (MIUR) <i class="icon-ico_scheda_cantiere"></i></a>
-					</p>
-									 </div>
-								 </div> <!-- end row -->
-							</li> <!-- end block ISPRA -->
+<div class="row" style="border-left: 5px solid #5bc0de;">
+	<div class="col-md-3">
+		<h4>Dataset</h4>
+		<h4><span class="label label-info">Pericolosit&agrave Idraulica</span></h4>
+		<strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/it"><img alt="Creative Commons CC-BY SA 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/it/80x15.png" /></a><br>
+		<strong>Formato:</strong><br>
+		<a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WmsServer" target="_blank">WMS (Raster) <i class="fa fa-download"></i></a><br>
+		<a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WmsServer?SERVICE=WMS&REQUEST=getcapabilities&version=1.1.1" target="_blank">WMS Capabilities <i class="fa fa-file-code-o"></i></a><br>
 
-							<li>
-							   <h3><i class="fa fa-cubes fa-gl"></i> Dataset Dipartimento Protezione Civile</h3>
-							   <blockquote class="underblock">
+		<strong>Formato:</strong><br>
+		<a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WFSServer" target="_blank">WFS (Vettoriale) <i class="fa fa-download"></i></a><br>
+		<a href="http://www.geoservices.isprambiente.it/arcgis/services/Alluvioni/Aree_pericolosita_idraulica/MapServer/WFSServer?SERVICE=WFS&REQUEST=getcapabilities" target="_blank">WMS Capabilities <i class="fa fa-file-code-o"></i></a><br>
+	</div>
+	<div class="col-md-9">
+		<h4>Descrizione</h4>
+		<p>Il dataset viene acquisito direttamente attraverso i servizi di interoperabilit&agrave; WMS o WFS.
+			<a href="http://www.opengeospatial.org/standards/wms" target="_blank">OpenGIS® Web Map Service (WMS) <i class="icon-ico_scheda_cantiere"></i></a> e <a href="http://www.opengeospatial.org/standards/wfs" target="_blank">OpenGIS® Web Features Service (WFS) <i class="icon-ico_scheda_cantiere"></i></a>
+			sono parte delle specifiche tecniche definita dall'<a href="http://www.opengeospatial.org/" target="_blank">OGC <i class="icon-ico_scheda_cantiere"></i></a>:<br>
+			Un OGC WMS produce dinamicamente mappe di dati spazialmente riferiti a partire da informazioni geografiche. Questo standard internazionale definisce una "mappa" come rappresentazione di informazioni geografiche restituendo un'immagine (es. jpg,png) mentre un OGC WFS produce dinamicamente informazioni geografiche di tipo vettoriale.</p>
+			<p>L'utilizzo di questi servizi prevede l'impiego di opportuni software di gestione dei dati geografici, come ad esempio il software open source <a href="http://www.qgis.org/it/site/">QGIS <i class="icon-ico_scheda_cantiere"></i></a>.</p>
+			<p>ISPRA (2015) Mosaicatura delle aree a pericolosità idraulica elevata (P3) con tempo di ritorno fra 20 e 50 anni (alluvioni frequenti), a pericolosità media (P2) con tempi di ritorno fra 100 e 200 anni (alluvioni poco frequenti) e a pericolosità P1 (scarsa probabilità di alluvioni o scenari di eventi estremi), redatte dalle Autorità di Bacino, Regioni e Province Autonome ai sensi del D. Lgs. 49/2010 (recepimento della Direttiva Alluvioni 2007/60/CE).<br>
+				Elaborazione (v. 2.0) – 23/03/2015 - <a href="http://www.geoviewer.isprambiente.it" target="_blank">http://www.geoviewer.isprambiente.it <i class="icon-ico_scheda_cantiere"></i></a>
+			</p>
+		</div>
+	</div> <!-- end row -->
+	<hr />
+	<div class="row" style="border-left: 5px solid #5bc0de;">
+		<div class="col-md-3">
+			<h4>Dataset</h4>
+			<h4><span class="label label-info">Indicatori di Rischio - Alluvioni</span></h4>
+			<strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/it"><img alt="Creative Commons CC-BY SA 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/it/80x15.png" /></a><br>
+			<strong>Formato: </strong><a href="http://mappa.italiasicura.gov.it/data/Indicatori_Rischio_Alluvioni_Piattaforma_Italia_Sicura_2015_ISPRA.zip" target="_blank">DBF (ZIP) <i class="fa fa-download"></i></a>
+		</div>
+		<div class="col-md-9">
+			<h4>Descrizione</h4>
+			<p>Il servizio fornisce gli indicatori di rischio idraulico relativi a popolazione, attività 	produttive, beni culturali, scuole e la superficie di territorio a pericolosità idraulica (D.Lgs. 49/2010) su 4 livelli territoriali (comune, provincia o città metropolitana, regione, Italia).
+			</p>
+			<p>ISPRA (2015) Indicatori di rischio relativi a popolazione, attività produttive, beni culturali, scuole esposti ad alluvioni e superficie di territorio a pericolosità idraulica.<br>
+				Elaborazione (v. 3.0) – 30/06/2015 sulla base della Mosaicatura ISPRA delle aree a pericolosità idraulica (D.Lgs. 49/2010) redatte dalle Autorità di Bacino, Regioni e Province Autonome; della popolazione residente (<a href="http://www.istat.it/it/censimento-popolazione/censimento-popolazione-2011" target="_blank">15° censimento ISTAT 2011 <i class="icon-ico_scheda_cantiere"></i></a>); delle industrie e servizi (9° Censimento ISTAT 2011); dei beni architettonici, monumentali e archeologici della <a href="http://vincoliinrete.beniculturali.it/" target="_blank">banca dati Vincoli In Rete (VIR) <i class="icon-ico_scheda_cantiere"></i></a> - <a href="http://www.icr.beniculturali.it/" target="_blank">Istituto Superiore per la Conservazione ed il Restauro (ISCR) <i class="icon-ico_scheda_cantiere"></i></a> e dell’<a href="http://archivio.pubblica.istruzione.it/scuola_in_chiaro/open_data/index.html" target="_blank">anagrafe delle strutture scolastiche <i class="icon-ico_scheda_cantiere"></i></a> del <a href="http://www.istruzione.it/" target="_blank">Ministero dell'Istruzione, dell'Università e della Ricerca (MIUR) <i class="icon-ico_scheda_cantiere"></i></a>
+			</p>
+		</div>
+	</div> <!-- end row -->
 
-								 <div class="row" style="border-left: 5px solid #f0ad4e;">
-								   <div class="col-md-3">
-									  <h4>Dataset</h4>
-									  <h4><span class="label label-warning">Stati di Emergenza</span></h4>
-									  <strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it"><img alt="Creative Commons CC-BY 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/it/80x15.png" /></a><br>
-									  <strong>Formato: </strong><a href="http://www.protezionecivile.gov.it/httpdocs/cms/attach_extra/italiasicura/tabella_italiasicura_stati_emergenza.xlsx" target="_blank">XLSX <i class="fa fa-download"></i></a>
-								   </div>
-								   <div class="col-md-9">
-									  <h4>Descrizione</h4>
-										 <p>Il servizio fornisce il dato in formato XLSX con i dettagli delle emergenze dal 1 maggio 2013</p>
-									 </div>
-								 </div> <!-- end row -->
-							   </blockquote>
-							</li>
-
-							<li>
-							   <h3><i class="fa fa-cubes fa-gl"></i> Dataset ISTAT</h3>
-							   <blockquote class="underblock">
-
-								 <div class="row" style="border-left: 5px solid #d9534f;">
-								   <div class="col-md-3">
-									  <h4>Dataset</h4>
-									  <h4><span class="label label-danger">Basi Territoriali</span></h4>
-									  <strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it"><img alt="Creative Commons CC-BY 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/it/80x15.png" /></a><br>
-									  <strong>Formato: </strong><a href="http://www.istat.it/it/archivio/104317#Basiterritoriali-0" target="_blank">XLS, SHP (ZIP) <i class="fa fa-download"></i></a><br>
-									  <strong>Formato: </strong><a href="http://datiopen.istat.it/sparql" target="_blank">SPARQL Endpoint <i class="fa fa-download"></i></a>
-									  
-								   </div>
-								   <div class="col-md-9">
-									  <h4>Descrizione</h4>
-										<p>Il servizio consente l'accesso alla pagina ISTAT dove sono disponibili per il download le basi territoriali, in vari formati e proiezioni. Dalla stessa pagina &egrave; resa disponible anche la documentazione dei vari dataset<br>E' inoltre indicato lo SPARQL Endpoint della piattaforma sperimentale per il LOD dell'Istituto Nazionale di Statistica</p>
-									 </div>
-								 </div> <!-- end row -->
-
-							   </blockquote>
-							  </li>
-
-							</ul>
-							<p></p>
-
-						</div>
-					</div>
-
-					</div></div>
+	<hr />
+	<div class="row" style="border-left: 5px solid #5bc0de;">
+		<div class="col-md-3">
+			<h4>Dataset</h4>
+			<h4><span class="label label-info">Indicatori di Rischio - Frane</span></h4>
+			<strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/it"><img alt="Creative Commons CC-BY SA 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/2.5/it/80x15.png" /></a><br>
+			<strong>Formato: </strong><a href="http://mappa.italiasicura.gov.it/data/Indicatori_Rischio_Frana_PAI_Piattaforma_Italia_Sicura_2015_ISPRA.zip" target="_blank">DBF (ZIP) <i class="fa fa-download"></i></a>
+		</div>
+		<div class="col-md-9">
+			<h4>Descrizione</h4>
+			<p>Il servizio fornisce gli indicatori di rischio da frana relativi a popolazione, attività produttive, beni culturali e la superficie di territorio a pericolosità da frana PAI (Piani di Assetto Idrogeologico) su 4 livelli territoriali (comune, provincia o città metropolitana, regione, Italia).
+			</p>
+			<p> ISPRA (2015) Indicatori di rischio relativi a popolazione, attività produttive e beni culturali esposti a frane e superficie di territorio a pericolosità da frana PAI. <a href="http://www.geoviewer.isprambiente.it" target="_blank">http://www.geoviewer.isprambiente.it</a><br></p>
+			<p>
+			Elaborazione (v. 1.0) – 15/10/2015 sulla base della Mosaicatura ISPRA delle aree a pericolosità da frana dei PAI (Piani di Assetto Idrogeologico) redatti dalle Autorità di Bacino, Regioni e Province Autonome; della popolazione residente (<a href="http://www.istat.it/it/censimento-popolazione/censimento-popolazione-2011" target="_blank">15° censimento ISTAT 2011 <i class="icon-ico_scheda_cantiere"></i></a>); delle industrie e servizi (9° Censimento ISTAT 2011); dei beni architettonici, monumentali e archeologici della <a href="http://vincoliinrete.beniculturali.it/" target="_blank">banca dati Vincoli In Rete (VIR) <i class="icon-ico_scheda_cantiere"></i></a> - <a href="http://www.icr.beniculturali.it/" target="_blank">Istituto Superiore per la Conservazione ed il Restauro (ISCR) <i class="icon-ico_scheda_cantiere"></i></a>.
+			</p>
+		</div>
+	</div> <!-- end row -->
+</li> <!-- end block ISPRA -->
 
 
 
-				</div>
-            </div>
-        </div>
-    </div>
+<li>
+	<h3><i class="fa fa-cubes fa-gl"></i> Dataset Dipartimento Protezione Civile</h3>
+	<blockquote class="underblock">
+
+		<div class="row" style="border-left: 5px solid #f0ad4e;">
+			<div class="col-md-3">
+				<h4>Dataset</h4>
+				<h4><span class="label label-warning">Stati di Emergenza</span></h4>
+				<strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it"><img alt="Creative Commons CC-BY 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/it/80x15.png" /></a><br>
+				<strong>Formato: </strong><a href="http://www.protezionecivile.gov.it/httpdocs/cms/attach_extra/italiasicura/tabella_italiasicura_stati_emergenza.xlsx" target="_blank">XLSX <i class="fa fa-download"></i></a>
+			</div>
+			<div class="col-md-9">
+				<h4>Descrizione</h4>
+				<p>Il servizio fornisce il dato in formato XLSX con i dettagli delle emergenze dal 1 maggio 2013</p>
+			</div>
+		</div> <!-- end row -->
+	</blockquote>
+</li>
+
+<li>
+	<h3><i class="fa fa-cubes fa-gl"></i> Dataset ISTAT</h3>
+	<blockquote class="underblock">
+
+		<div class="row" style="border-left: 5px solid #d9534f;">
+			<div class="col-md-3">
+				<h4>Dataset</h4>
+				<h4><span class="label label-danger">Basi Territoriali</span></h4>
+				<strong>Licenza:</strong> <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it"><img alt="Creative Commons CC-BY 3.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/it/80x15.png" /></a><br>
+				<strong>Formato: </strong><a href="http://www.istat.it/it/archivio/104317#Basiterritoriali-0" target="_blank">XLS, SHP (ZIP) <i class="fa fa-download"></i></a><br>
+				<strong>Formato: </strong><a href="http://datiopen.istat.it/sparql" target="_blank">SPARQL Endpoint <i class="fa fa-download"></i></a>
+
+			</div>
+			<div class="col-md-9">
+				<h4>Descrizione</h4>
+				<p>Il servizio consente l'accesso alla pagina ISTAT dove sono disponibili per il download le basi territoriali, in vari formati e proiezioni. Dalla stessa pagina &egrave; resa disponible anche la documentazione dei vari dataset<br>E' inoltre indicato lo SPARQL Endpoint della piattaforma sperimentale per il LOD dell'Istituto Nazionale di Statistica</p>
+			</div>
+		</div> <!-- end row -->
+
+	</blockquote>
+</li>
+
+</ul>
+<p></p>
+
+</div>
+</div>
+
+</div></div>
+
+
+
+</div>
+</div>
+</div>
+</div>
 </div> <!--close box-standing -->
 </main>
 <ng-include src="'templates/footer.html'"></ng-include>
