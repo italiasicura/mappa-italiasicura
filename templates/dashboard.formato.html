@@ -1,3 +1,4 @@
+<!-- --> 
 <div class="filter-bar formato">
     <div class="container-fluid">
 
@@ -6,13 +7,15 @@
                 <label>{{formato_label}} :</label>
         <span ng-repeat="formato in formati">
             <a ng-class="{active: current_formato.name==formato.name}" 
-		href="#/sintesi/{{current_ambito.name}}/{{current_tema.name}}/{{formato.name}}"
+		ui-sref="sintesi.ambito.tema.formato({ ambito: current_ambito.name, tema: current_tema.name, formato: formato.name })"
 		tooltip="{{formato.tip}}" tooltip-placement="bottom">{{formato.label}}</a>
         </span>
             </li>
         </ul>
     </div>
 </div>
+
+<!-- right panel -->
 <aside id="right-panel">
     <div class="visible-block">
         <nav class="navigation-addons">
@@ -89,22 +92,19 @@
     </div>
     <div class="clearfix"></div>
 </aside>
+
+
 <div class="box-standings">
     <div class="container-fluid">
-	<div class="standing-item panel panel-default dash-title">
-<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" 
-tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non
- sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate
- con metodologie e modelli che possono in parte differire. 
-La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
-{{current_ambito.tip}}
-<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" 
-tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non
- sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate
- con metodologie e modelli che possono in parte differire. 
-La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
-<br />{{current_tema.tip}} - {{current_formato.tip}}
-</div>
+		
+		<div class="standing-item panel panel-default dash-title" style="background: none;box-shadow: none;">
+			<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate  con metodologie e modelli che possono in parte differire. La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
+			<h3>{{current_ambito.tip}}</h3>
+			<i class="fa fa-exclamation-triangle fa-lg" ng-show="warning" tooltip="I dati potrebbero risultare parziali o disomogenei, in quanto le aree a pericolosità da alluvione non sono disponibili in alcune zone del territorio nazionale per tutti gli scenari e sono state determinate con metodologie e modelli che possono in parte differire. La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tooltip-placement="bottom"></i>
+			<!--<br />{{current_tema.tip}} - {{current_formato.tip}} -->
+		</div>
+		
+		
         <div class="row">
             <div class="col-sm-12" ng-class="{'col-md-4': num_dash==3, 'col-md-6': num_dash==2,'col-md-6 col-md-offset-3' : num_dash==1}">
                 <div class="standing-item panel panel-default">
@@ -118,18 +118,19 @@ La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tool
                                 {{regione.nome}}
                             </div>
                             <div class="col-sm-8 col-xs-8 progress-value">
-<progressbar value="regione.valore*100/regioni_highest">
-<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
- | iif
- : (current_formato.name=='kmq' | iif : (regione.valore|number:2) : (regione.valore|number))
- : (regione.valore|currency:undefined:0) }}</b>
-</progressbar>
+								<progressbar value="regione.valore*100/regioni_highest">
+								<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
+								 | iif
+								 : (current_formato.name=='kmq' | iif : (regione.valore|number:2) : (regione.valore|number))
+								 : (regione.valore|currency:undefined:0) }}</b>
+								</progressbar>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+			
             <div class="col-md-4 col-sm-12" ng-if="province">
                 <div class="standing-item panel panel-default">
                     <div class="panel-heading">
@@ -142,12 +143,12 @@ La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tool
                                 {{provincia.nome}}
                             </div>
                             <div class="col-sm-8 col-xs-8 progress-value">
-<progressbar value="provincia.valore*100/province_highest">
-<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq') 
- | iif  
- : (current_formato.name=='kmq' | iif : (provincia.valore|number:2) : (provincia.valore|number))
- : (provincia.valore|currency:undefined:0) }}</b>
-</progressbar>
+								<progressbar value="provincia.valore*100/province_highest">
+								<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq') 
+								 | iif  
+								 : (current_formato.name=='kmq' | iif : (provincia.valore|number:2) : (provincia.valore|number))
+								 : (provincia.valore|currency:undefined:0) }}</b>
+								</progressbar>
                             </div>
 
                         </div>
@@ -155,6 +156,7 @@ La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tool
                     </div>
                 </div>
             </div>
+			
             <div class="col-md-4 col-sm-12" ng-if="comuni">
                 <div class="standing-item panel panel-default">
                     <div class="panel-heading">
@@ -167,18 +169,20 @@ La perimetrazione delle aree a pericolosità è oggetto di aggiornamento."  tool
                                 {{comune.nome}} ({{comune.parent}})
                             </div>
                             <div class="col-sm-8 col-xs-8">
-<progressbar value="comune.valore*100/comuni_highest">
-<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
- | iif
- : (current_formato.name=='kmq' | iif : (comune.valore|number:2) : (comune.valore|number))
- : (comune.valore|currency:undefined:0) }}</b>
-</progressbar>
+								<progressbar value="comune.valore*100/comuni_highest">
+								<b>{{ (current_formato.name=='numero' || current_formato.name=='kmq')
+								 | iif
+								 : (current_formato.name=='kmq' | iif : (comune.valore|number:2) : (comune.valore|number))
+								 : (comune.valore|currency:undefined:0) }}</b>
+								</progressbar>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+			
+			 
         </div>
     </div>
 </div> <!--close box-standing -->

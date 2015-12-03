@@ -1,89 +1,55 @@
-<div class="row"><div class="col-md-10 col-md-offset-1">
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main>
+    <!-- h2>Guida page</h2 -->
+<div class="box-standings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div ui-view class="page">
 
-<div class="standing-item panel panel-default">
-    <div class="panel-heading">
-        <h4 class="panel-title">Note Legali</h4>
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+
+						<div class="standing-item panelmain panel panel-default">
+							<div class="panel-heading panelmain">
+								<h4>Note Legali</h4>
+							</div>
+							<div class="panel-body">
+							<p><strong>#italiasicura</strong> un servizio di visualizzazione della mappa sempre aggiornata degli interventi messi in campo dal <strong>Governo</strong> per la mitigazione del rischio idrogeologico fornito dall’<a href="http://www.agid.gov.it" target="_blank" title="Agenzia per l'Italia Digitale">Agenzia per l’Italia Digitale <i class="icon-ico_scheda_cantiere"></i></a>.</p>
+
+							 <h5><strong>COPYRIGHT</strong></h5>
+							 <p>La titolarità dei dati visualizzati sul sito <a href="http://mappa.italiasicura.gov.it">http://mappa.italiasicura.gov.it</a> è di ISPRA con riferimento agli interventi e del Dipartimento della Protezione Civile per le emergenze.<br>
+						Le elaborazioni e le rappresentazioni grafiche pubblicate sul sito <a href="http://mappa.italiasicura.gov.it">http://mappa.italiasicura.gov.it</a> sono a cura dell’Agenzia per l’Italia Digitale.<br>
+						Salvo ove diversamente indicato, i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 3.0, il cui testo integrale è disponibile al seguente indirizzo: <a href="http://creativecommons.org/licenses/by/3.0/it/legalcode" target="_blank">http://creativecommons.org/licenses/by/3.0/it/legalcode <i class="icon-ico_scheda_cantiere"></i></a></p>
+							 <p>Questo significa che, ove non diversamente specificato, i contenuti di questo sito sono liberamente distribuibili e riutilizzabili, a patto che sia sempre citata la fonte.<br>
+						La mappa è realizzata con OpenStreetMap, iniziativa aperta e volta alla creazione di dati geografici ed alla loro fornitura gratuita a chiunque li desideri. La cartografia contenuta nelle tavole di OpenStreetmap, e la relativa documentazione, sono rilasciate sotto licenza Creative Commons Attribuzione - Condividi allo stesso modo 2.0 (CC-BY-SA).</p>
+
+							 <h5><strong>COOKIES</strong></h5>
+							 <p>Il Sito utilizza cookies di sessione per migliorare la sicurezza e l’efficienza della navigazione; l’utilizzo dei cookies di sessione non è strumentale alla raccolta di dati personali identificativi dell’Utente, essendo limitato alla sola trasmissione di dati identificativi di sessione nella forma di numeri generati automaticamente dal server.<br>
+						I cookies di sessione non sono memorizzati in modo persistente sul dispositivo dell’Utente e vengono cancellati automaticamente alla chiusura del browser.</p>
+
+							 <h5><strong>PLUG-IN SOCIAL</strong></h5>
+							 <p>Sul Sito sono presenti i plug-in di alcuni tra i principali social network (Facebook, Twitter, Google +).<br>
+						Ogni volta che l’Utente decide di interagire con i plug-in ovvero accede al Sito dopo essersi “loggato” attraverso il proprio account Facebook, Twitter o Google Plus, alcune informazioni personali potrebbero essere acquisite dai gestori delle piattaforme di social network (per esempio, la visita dell’Utente al Sito).<br>
+						AGID non ha accesso a tali dati che sono raccolti e trattati in piena autonomia dai gestori delle piattaforme di social network. Per maggiori informazioni sulle logiche e le modalità di trattamento dei dati raccolti dai social network, gli utenti sono invitati a leggere le note informative sulla privacy fornite dai soggetti che forniscono i servizi in questione:</p>
+							 <ul>
+							  <li><i class="fa fa-facebook-official"></i> FACEBOOK <a href="http://www.facebook.com/policy.php" target="_blank">http://www.facebook.com/policy.php <i class="icon-ico_scheda_cantiere"></i></a></li>
+							  <li><i class="fa fa-twitter"></i> TWITTER <a href="http://twitter.com/privacy" target="_blank">http://twitter.com/privacy</a> <i class="icon-ico_scheda_cantiere"></i></li>
+							  <li><i class="fa fa-google-plus"></i> GOOGLE PLUS <a href="http://www.google.com/intl/it/policies/privacy/" target="_blank">http://www.google.com/intl/it/policies/privacy/ <i class="icon-ico_scheda_cantiere"></i></a></li>
+							 </ul>
+
+							</div>
+						</div>
+
+						</div>
+					</div>
+
+					
+					
+				</div>
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-    <p><strong>#italiasicura</strong> un servizio di visualizzazione della mappa sempre aggiornata degli interventi messi in campo dal <strong>Governo</strong> per la mitigazione del rischio idrogeologico fornito dall’<a href="http://www.agid.gov.it" target="_blank" title="Agenzia per l'Italia Digitale">Agenzia per l’Italia Digitale</a>.</p>
-
-     <h5><strong>COPYRIGHT</strong></h5>
-     <p>La titolarità dei dati visualizzati sul sito <a href="http://mappa.italiasicura.gov.it">http://mappa.italiasicura.gov.it</a> è di ISPRA con riferimento agli interventi e del Dipartimento della Protezione Civile per le emergenze.<br>
-Le elaborazioni e le rappresentazioni grafiche pubblicate sul sito <a href="http://mappa.italiasicura.gov.it">http://mappa.italiasicura.gov.it</a> sono a cura dell’Agenzia per l’Italia Digitale.<br>
-Salvo ove diversamente indicato, i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 3.0, il cui testo integrale è disponibile al seguente indirizzo: <a href="http://creativecommons.org/licenses/by/3.0/it/legalcode">http://creativecommons.org/licenses/by/3.0/it/legalcode</a></p>
-     <p>Questo significa che, ove non diversamente specificato, i contenuti di questo sito sono liberamente distribuibili e riutilizzabili, a patto che sia sempre citata la fonte.<br>
-La mappa è realizzata con OpenStreetMap, iniziativa aperta e volta alla creazione di dati geografici ed alla loro fornitura gratuita a chiunque li desideri. La cartografia contenuta nelle tavole di OpenStreetmap, e la relativa documentazione, sono rilasciate sotto licenza Creative Commons Attribuzione - Condividi allo stesso modo 2.0 (CC-BY-SA).</p>
-
-   <h5><strong>PRIVACY</strong></h5>
-   <p>La presente informativa è resa ai sensi dell'art. 13 del d.lgs. n. 196/2003 - Codice in materia di protezione dei dati personali.
-Il conferimento dei dati è obbligatorio, necessario per rispondere alle richieste inviate nonché per ricontattare il mittente per ottenere precisazioni in ordine a quanto segnalato. I dati personali forniti dagli utenti sono utilizzati ai fini della spedizione e per l'elaborazione di studi e ricerche statistiche, anche nell’ambito delle valutazioni delle segnalazioni in tema di revisione della spesa. I dati personali non saranno comunicati a soggetti estranei al processo di spedizione. I dati raccolti potranno essere divulgati in forma anonima e potranno essere utilizzati per report e statistiche. I dati raccolti sono trattati con strumenti informatici. I dati saranno conservati conservati in una forma che consenta l’identificazione dell’interessato per un periodo di tempo non superiore al completamento dell’istuttoria e delle valutazioni oggetto della comunicazione stessa. Idonee misure di sicurezza sono osservate per prevenire la perdita dei dati, usi illeciti o non corretti ed accessi non autorizzati.</p>
-
-   <p>Il titolare del trattamento dei dati raccolti è:</p>
-
-   <address style="color: #456f8f; padding-left:15px;">
-   <strong>Presidenza del Consiglio dei Ministri</strong><br>
-   Palazzo Chigi<br>
-   Piazza Colonna 370<br>
-   00187 Roma - Italia<br>
-   Tel. 06 67791
-   </address>
-
-   <p>I trattamenti di dati connessi al modulo di richiesta informazioni hanno luogo presso la sede dell’Ufficio Stampa e del Portavoce della Presidenza del Consiglio dei Ministri e sono curati da personale in servizio presso l’ufficio incaricato del trattamento.</p>
-
-   <p>Diritti degli interessati:<br>
-   I soggetti cui si riferiscono i dati personali hanno il diritto in qualunque momento di ottenere la conferma dell'esistenza o meno dei medesimi dati e di conoscerne il contenuto e l'origine, verificarne l'esattezza o chiederne l'integrazione o l'aggiornamento, oppure la rettificazione (art. 7 del d.lg. n. 196/2003). Ai sensi del medesimo articolo si ha il diritto di chiedere la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge, nonché di opporsi in ogni caso, per motivi legittimi, al loro trattamento. Le richieste vanno rivolte al titolare del trattamento dei dati personali.</p>
-
-     <h5><strong>COOKIES</strong></h5>
-     <p>Il Sito non utilizza cookies tecnici di sessione. I cookie che l'applicazione genera e che possono essere salvati sul dispositivo dell'utente sono:</p>
-     <div class="table-responsive">
-     <table class="table table-condensed" style="font-size:10px">
-     <thead>
-       <tr>
-          <th>dominio</th><th>nome</th><th>tipo</th><th>durata</th><th>fonte</th><th>note</th>
-       </tr>
-     </thead>
-     <tbody>
-       <tr>
-          <td>mappa.italiasicuta.gov.it</td>
-          <td>cb-enabled</td>
-          <td>tecnico (essenziale)</td>
-          <td>1 anno</td>
-          <td>mappa.italiasicura.gov.it</td>
-          <td>il cookie viene impiegato per salvare le preferenze dell'utente in merito all'accettazione dell'avviso sulle cookie in modo che una volta accettato, non venga visualizzato nelle successive visite</td>
-       </tr>
-       <tr>
-          <td>.italiasicura.gov.it</td>
-          <td>_ga</td>
-          <td>terze parti</td>
-          <td>permanente</td>
-          <td>google analytics</td>
-          <td>Questi cookie raccolgono, in forma anonima,  informazioni sulle modalità di utilizzo del sito Web, quali il numero di visitatori e le pagine visitate. Raccogliamo e conserviamo questo tipo di informazioni per generare report e monitorare il nostro sito Web, con l'obiettivo di migliorarne l'aspetto e la usability.</td>
-       </tr>
-       <tr>
-          <td>.italiasicura.gov.it</td>
-          <td>_gat</td>
-          <td>terze parti</td>
-          <td>permanente</td>
-          <td>google analytics</td>
-          <td>Cliccate <a href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies#HowGAUsesCookies" target="_blank">qui</a> per maggiori informazioni su come Google Analytics utilizza i cookie.
-Cliccate <a href="http://www.google.com/intl/en/policies/privacy/" target="_blank">qui</a> per visualizzare la normativa sulla privacy di Google.
-Per evitare che Google Analytics registri i vostri passaggi sui siti Web, visitate questo sito <a href="http://tools.google.com/dlpage/gaoptout" target="_blank">http://tools.google.com/dlpage/gaoptout</a>.</td>
-       </tr>
-     </tbody>
-     </table>
-     </div>
-
-     <h5><strong>PLUG-IN SOCIAL</strong></h5>
-     <p>Sul Sito sono presenti i plug-in di alcuni tra i principali social network (Facebook, Twitter, Google +).<br>
-Ogni volta che l’Utente decide di interagire con i plug-in ovvero accede al Sito dopo essersi “loggato” attraverso il proprio account Facebook, Twitter o Google Plus, alcune informazioni personali potrebbero essere acquisite dai gestori delle piattaforme di social network (per esempio, la visita dell’Utente al Sito).<br>
-AGID non ha accesso a tali dati che sono raccolti e trattati in piena autonomia dai gestori delle piattaforme di social network. Per maggiori informazioni sulle logiche e le modalità di trattamento dei dati raccolti dai social network, gli utenti sono invitati a leggere le note informative sulla privacy fornite dai soggetti che forniscono i servizi in questione:</p>
-     <ul>
-      <li><i class="fa fa-facebook-official"></i> FACEBOOK <a href="http://www.facebook.com/policy.php">http://www.facebook.com/policy.php</a></li>
-      <li><i class="fa fa-twitter"></i> TWITTER <a href="http://twitter.com/privacy">http://twitter.com/privacy</a></li>
-      <li><i class="fa fa-google-plus"></i> GOOGLE PLUS <a href="http://www.google.com/intl/it/policies/privacy/">http://www.google.com/intl/it/policies/privacy/</a></li>
-     </ul>
-
-    </div>
-</div>
-
-</div></div>
+</div> <!--close box-standing -->
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>					

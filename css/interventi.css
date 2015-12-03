@@ -18,7 +18,8 @@
 /* Panel Design */
 .app-panel .info .small-info span{
     color:#999;
-    font-size: 0.8em;
+    font-size: 14px;
+    line-height: 130%;
     display: block;
 }
 .app-panel .info .small-info span b{
@@ -26,9 +27,8 @@
     font-weight: 600;
 }
 .app-panel .info > div{
-    border-top: 1px solid #efefef;
     margin-top: 10px;
-    padding:10px 12px 0 12px;
+    padding:10px 15px 0 15px;
 }
 .app-panel .info > div:first-child{
     margin-top: 0;
@@ -38,11 +38,11 @@
     padding-top: 0;
     padding-left:0;
     padding-right:0;
-    font-size: 0.9em;
+    font-size: 16px;
 }
 .app-panel .info .interventi > div{
     /*padding:5px 10px;*/
-    padding:5px 10px 20px 0;
+    padding:10px 0;
     margin-bottom:2px;
 }
 .app-panel .pullright {
@@ -50,10 +50,10 @@
 }
 .app-panel .info .interventi h4{
     text-transform: uppercase;
-    font-size:1em;
-    margin:0;
-    font-weight: 600;
-    padding-bottom: 3px;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    padding-bottom: 0;
 }
 .app-panel .info .interventi .iactive{
     background: #66b42a;
@@ -65,13 +65,12 @@
     background: #b2d994;
 }
 .app-panel .info .interventi .itotal{
-    background: #f5f5f5;
+    background: #f4f4f4;
     color:#666666;
-    /*border-right: 10px solid #66b42a;*/
+    border:0;
 }
 .app-panel .info .pericolosita{
     margin-top: 0;
-    padding:10px 0 0 0;
 }
 
 .app-panel .info .pericolosita h4{
@@ -94,40 +93,63 @@
 }
 .app-panel .info .pericolosita .square.low{background: #bce4e3 /*#82b1f4*/}
 .app-panel .info .pericolosita .square.medium{background: #85e0ef /*5490f8*/}
-.app-panel .info .pericolosita .square.hight{background: #3d99ff /*3a63f8*/}
+.app-panel .info .pericolosita .square.high{background: #3d99ff /*3a63f8*/}
 
-.app-panel .info .pericolosita #parea{
+.app-panel .info .pericolosita #parea, 
+.app-panel .info .pericolosita #farea{
     font-size: 0.75em;
     margin-bottom: 2px;
     color:#fff;
 }
 .app-panel .info .pericolosita #parea td,
-.app-panel .info .pericolosita #parea th{
+.app-panel .info .pericolosita #parea th,
+.app-panel .info .pericolosita #farea td,
+.app-panel .info .pericolosita #farea th{
     width:25%;
+	font-size:12px;
     text-align: center;
 }
-.app-panel .info .pericolosita #parea thead{
-    color:#666;
+.app-panel .info .pericolosita #parea thead,
+.app-panel .info .pericolosita #farea thead {
+    color:#333;
 
 }
+.app-panel .info .pericolosita #parea tbody tr,
+.app-panel .info .pericolosita #farea tbody tr {
+	color: #000;
+    border: 2px solid white;
+    border-style: solid none none none;
+}
 .app-panel .info .pericolosita #parea tbody tr:nth-child(1){
-    color:#333;
-    background: #bce4e3;
+    background: #d5ebf7;
 }
 .app-panel .info .pericolosita #parea tbody tr:nth-child(2){
-    color:#333;
-    background: #85e0ef;
+    background: #c1daef;
 }
 .app-panel .info .pericolosita #parea tbody tr:nth-child(3){
-    color:#333;
-    background: #3d99ff;
+    background: #acc7e0;
+}
+
+.app-panel .info .pericolosita #farea tbody tr:nth-child(1){
+    background: #fae693;
+}
+.app-panel .info .pericolosita #farea tbody tr:nth-child(2){
+    background: #fbd171;
+}
+.app-panel .info .pericolosita #farea tbody tr:nth-child(3){
+    background: #fabc72;
+}
+.app-panel .info .pericolosita #farea tbody tr:nth-child(4){
+    background: #faa072;
+}
+.app-panel .info .pericolosita #farea tbody tr:nth-child(5){
+    background: #ef828a;
 }
 
 
 .app-panel .link-rendis{
-    background: #f5f5f5;
     color:#666666;
-    padding:10px 10px;
+    padding:10px 0; 
 }
 .app-panel .info .box-int-info > div{
     padding:0;
@@ -137,7 +159,7 @@
 .app-panel .info .box-int-info > div > span{
     display:block;
     color:#333;
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -145,6 +167,15 @@
     font-weight: normal;
 }
 
+
+.bda-titolo { 
+	font-size: 16px!important;
+    background: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 10px;	
+	color: #0066cc!important;
+    font-weight: 700!important;
+}
 
 /* Emergenze / info INTERVENTI*/
 
@@ -157,15 +188,17 @@
 /*    min-height: 444px;*/
 }
 .app-panel .info .emergenze > div, .app-panel .info .info-interventi > div{
-    padding:5px 10px;
+    padding:10px 0;
     margin-bottom:2px;
+	font-size:14px;
+	line-height:130%;
 }
 .app-panel .info .emergenze h4, .app-panel .info .info-interventi h4{
     text-transform: uppercase;
-    font-size:1em;
+    font-size:14px;
     margin:0;
     font-weight: 600;
-    padding-bottom: 3px;
+    padding-bottom: 0;
 }
 .app-panel .info .emergenze .etotal, .app-panel .info .info-interventi .etotal{
     background: #f5f5f5;
@@ -200,29 +233,62 @@
     background: #66b42a;
 }
 .app-panel .info .info-interventi span.number{
-    color: #477e1d; /*#66b42a;*/
-}
-.app-panel .info .info-interventi.pn .eactive{
-    background: #d3d243;
-}
-.app-panel .info .info-interventi.pn span.number{
-    color: #94932f; /*#d3d243;*/
+    /*color: #477e1d; /*#66b42a;*/
 }
 .app-panel .info .info-interventi .box-lotti{
     padding:0;
 }
 .app-panel .info .info-interventi .title-lotti,
 .app-panel .info .info-interventi .box-lotti .title-lotti{
+    background: #5a6777;
+    text-align: center;
+    padding:10px 0;
+}
+
+/* INTERVENTO */
+#info-main .title-intervento {
     background: #66b42a;
     text-align: center;
-    padding:7px 0;
+    color: #fff !important;
+    padding: 10px 0;
+}
+#info-main .title-intervento h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+    padding-bottom: 0;
+}
+/* PN */
+.app-panel .info .info-interventi.pn .eactive{
+    background: #fcaa06;
+}
+.app-panel .info .info-interventi.pn span.number{
+    /*color: #94932f; /*#fcaa06;*/
 }
 .app-panel .info .info-interventi.pn .title-lotti{
-    background: #d3d243;
+    background: #fcaa06;
     text-align: center;
     color:#fff !important;
-    padding:7px 0;
+    padding:10px 0;
 }
+.app-panel .info .info-interventi.pn .title-lotti * {
+	color:white;
+}
+/* BDA */ 
+.app-panel .info .info-interventi.bda .eactive{
+    background: #0066cc;
+}
+.app-panel .info .info-interventi.bda span.number{
+    /*color: #94932f; #fcaa06;*/
+}
+.app-panel .info .info-interventi.bda .title-lotti{
+    background: #0066cc;
+    text-align: center;
+    color:#fff !important;
+    padding:10px 0;
+}
+
 .app-panel .info .info-interventi .box-lotti .title-lotti h4{
     padding:0;
 }
@@ -231,23 +297,17 @@
     padding:0;
 }
 
-.app-panel .info .box-lotti .sliderLotti .overview-lotto > div{
-    padding:0 10px;
-}
-.app-panel .info .box-lotti .sliderLotti .overview-lotto > div.link-rendis{
-    padding: 5px 10px;
-}
 .app-panel .info .box-lotti .sliderLotti span{
     display:block;
     color:#333;
-    font-size: 0.85em;
+    font-size: 1em;
     font-weight: bold;
-    line-height: 1.35em;
+    line-height: 130%; 
 }
 
 .app-panel .info .box-lotti .sliderLotti span.number{
     font-weight: normal;
-    color: #477e1d; /*#66b42a;*/
+    /*color: #477e1d; #66b42a;*/
 }
 .app-panel .info .box-lotti .controls-lotti{
     position:absolute;
@@ -256,11 +316,11 @@
 }
 .app-panel .info .box-lotti .controls-lotti{
     position:absolute;
-    right:0;
+    right:4px;
     cursor:pointer;
     display: none;
     width:40px;
-    margin-top: -8px;
+    margin-top: -4px;
 }
 .app-panel .info .box-lotti.active .controls-lotti{
     display:table;
@@ -280,7 +340,8 @@
 }
 
 .overview-lotto{
-    padding-bottom: 10px;
+    padding: 10px 0;
+	font-size:14px;
 }
 
 .app-panel .bar {

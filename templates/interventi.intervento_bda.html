@@ -1,0 +1,32 @@
+<div class="col-sm-12 info">
+    <div class="info-interventi bda">
+		 <div class="title-lotti">
+            <h4><strong>Interventi con risorse UE</strong></h4>
+        </div>
+        <div class="box-int-info">
+            <div> 
+                <span class="number bda-titolo">{{mouseMoveInterventoBDA.titolo_progettoestratto}}</span>
+            </div>
+            <div>
+                <span>Programma</span>
+                <span class="number">{{mouseMoveInterventoBDA.programma}}</span>
+            </div>
+            <div>
+                <span>CUP / CIG</span>
+                <span class="number">({{mouseMoveInterventoBDA.cup}};{{mouseMoveInterventoBDA.codice_cig}})</span>
+            </div>
+            <div>
+                <span>Fase Attuale Macro</span>
+                <span class="number">{{mouseMoveInterventoBDA.fase_attuale_macro}}</span>
+            </div>
+            <div>
+                <span>Soggetto attuatore</span>
+                <span class="number">{{mouseMoveInterventoBDA.sogg_att}}</span>
+            </div>
+            <div>
+                <span>Valore</span>
+                <span class="number">{{mouseMoveInterventoBDA.valore | currency}}</span>
+            </div>
+        </div>
+    </div>
+</div>

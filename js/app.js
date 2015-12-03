@@ -77,7 +77,7 @@ angular.module('ItaliasicuraApp', [
     'door3.css',
     'ui.router',
     'ui.bootstrap'
-]).config(['$urlRouterProvider','$httpProvider','$stateProvider', function($urlRouterProvider,$httpProvider,$stateProvider,$stateHelperProvider) {
+]).config(['$locationProvider','$urlRouterProvider','$httpProvider','$stateProvider', function($locationProvider,$urlRouterProvider,$httpProvider,$stateProvider,$stateHelperProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $urlRouterProvider.otherwise('/home');
@@ -86,15 +86,14 @@ angular.module('ItaliasicuraApp', [
     .state('interventi',{url: "/interventi", templateUrl: "templates/interventi.html", controller: "interventiController", css:"css/interventi.css", reloadOnSearch: false})
     .state('interventiSelected',{url: "/interventi/:type/:name", templateUrl: "templates/interventi.html", controller: "interventiController", css:"css/interventi.css", reloadOnSearch: false})
     .state('emergenze',{url: "/emergenze", templateUrl: "templates/emergenze.html", controller: "emergenzeController",css:"css/emergenze.css"})
-    .state('page',{url: "/page", abstract: true, templateUrl: "templates/page.html", controller: "pageController"})
-    .state('page.guida',{url: "^/guida", templateUrl: "templates/guida.html",css:"css/page.css"})
-    .state('page.sviluppatori',{url: "^/sviluppatori", templateUrl: "templates/opendata.html",css:"css/page.css"})
-    .state('page.notelegali',{url: "^/notelegali", templateUrl: "templates/notelegali.html",css:"css/page.css"})
-    .state('page.progetto',{url: "^/progetto", templateUrl: "templates/progetto.html",css:"css/page.css"})
-    .state('page.crediti',{url: "^/crediti", templateUrl: "templates/crediti.html",css:"css/page.css"})
-    .state('page.opensource',{url: "^/opensource", templateUrl: "templates/opensource.html",css:"css/page.css"})
-    .state('page.opendata',{url: "^/opendata", templateUrl: "templates/opendata.html",css:"css/page.css"})
-    .state('page.feedback',{url: "^/feedback", templateUrl: "templates/feedback.html",css:["css/page.css","css/mail.css"]})
+    // PAGES
+	.state('guida',{url: "/guida", templateUrl: "templates/guida.html", controller:"guidaController", css:"css/page.css"})
+    .state('progetto',{url: "/progetto", templateUrl: "templates/progetto.html",css:"css/page.css", controller:"progettoController"})
+    .state('crediti',{url: "/crediti", templateUrl: "templates/crediti.html",css:"css/page.css", controller:"creditiController"})
+    .state('opensource',{url: "/opensource", templateUrl: "templates/opensource.html",css:"css/page.css", controller:"opensourceController"})
+    .state('opendata',{url: "/opendata", templateUrl: "templates/opendata.html",css:"css/page.css", controller:"opendataController"})
+    .state('feedback',{url: "/feedback", templateUrl: "templates/feedback.html",css:["css/page.css","css/mail.css"], controller:"feedbackController"})
+	.state('notelegali',{url: "/notelegali", templateUrl: "templates/notelegali.html",css:"css/page.css", controller:"notelegaliController"})
     .state('sintesi',
            {url: "/sintesi",
             templateUrl: "templates/dashboard.html",
@@ -115,5 +114,6 @@ angular.module('ItaliasicuraApp', [
             templateUrl: "templates/dashboard.formato.html",
             controller: "dashboardControllerFormato",
             css:"css/dashboard.css"})
-    ;
+	;
+    //$locationProvider.html5Mode(true);
 }]);

@@ -1,18 +1,18 @@
 @import url("bootstrap-select.min.css");
 
 body{
-    background:url('../img/bg-dashboard.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	background:#f5f5f0;
 }
 
+h3 {
+	font-weight: 700; 
+}
 h3.panel-title {
     font-weight:bold;
+	font-size:24px;
 }
 .dashboard .navigation-bar{
-    padding:15px 15px 0 15px;
+    padding:0;
 
 }
 .dashboard .navbar-default{
@@ -32,28 +32,32 @@ h3.panel-title {
 
 .dash-title{
 text-align: center;
-padding: 10px;
+padding:0;
 font-size: 16px;
 font-weight: bold;
 }
+.dash-title h3{
+	text-align: left;
+	margin-bottom:40px;
+}
 
 #dash-menu{
-    background: #5f91b8;
-    color:#c1d9e6;
-    margin:0 15px;
+    margin:0;
     padding:0;
+	background: #428fdb;
+	position:relative;
+}
+#dash-menu .navbar-nav > li {
+    text-transform: uppercase;
 }
 #dash-menu .navbar-nav > li > a {
     background: none;
-    color:#c1d9e6;
-    font-weight: bold;
-    padding:10px 15px;
+    padding:20px 36px;
+	color: #fff;
 }
 #dash-menu .navbar-nav > li > a.selected {
-    background: #c1d9e6;
-    color:#5f91b8;
-    font-weight: bold;
-    padding:10px 15px;
+    background: #003366;
+    color:white;
     pointer-events: none;
 }
 
@@ -62,43 +66,57 @@ font-weight: bold;
 #dash-menu .navbar-nav > li > a:focus,
 #dash-menu .navbar-nav > li > a:hover,
 #dash-menu .navbar-nav > .active > a:hover{
-    background: none;
-    color:#fff;
+    background: #003366;
+}
+#data-aggiornamento {
+	position: absolute;
+    bottom: 10px;
+    right: 15px;
+	color:white;
+	font-size:14px;
+}
+#filtri {
+	margin-bottom:20px;
 }
 
 .filter-bar{
-    background: #94bddc;
-    margin:0 15px;
-
+	margin-top: 20px;
 }
 .filter-bar.formato{
-    background:#C1D9E6;
+  margin-top:10px;
 }
 .filter-bar .container-fluid{padding:0;}
 .filter-nav{
     display: block;
     margin:0;
-    padding:0;
     list-style: none;
+	padding: 0;
+	padding-left: 15px;
 }
 .filter-nav > *{
     display: block;
     float:left;
    /* padding:10px 15px;*/
-    color:#456f8f;
+    color:#003366;
 }
 
 .filter-nav li span,
 .filter-nav li label{
-    color:#456f8f;
+    color:#003366;
     font-weight: 600;
     margin-bottom: -1px;
 }
 .filter-nav li label{
-    padding:10px 5px 10px 15px;
+    padding:10px 5px 10px 0;
+	clear: both;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
 }
 .filter-nav li a{
-    padding:10px 8px;
+    padding:10px 36px;
+	border: 1px solid #003366;
 }
 
 .filter-nav .btn-group.bootstrap-select{
@@ -109,29 +127,28 @@ font-weight: bold;
     border:none;
     width: auto;
     padding:0 20px 2px 0;
-    color:#456f8f;
+    color:#003366;
 }
 .filter-nav span.active,
 .filter-nav .selectpicker span{
-    color:#456f8f;
+    color:#003366;
 }
 .filter-nav a{
     text-decoration:none;
-    color:#456f8f;
+    color:#003366;
+	text-transform: uppercase;
+	font-weight:400;
 }
 .filter-nav a:hover{
-    color:#5f91b8;
+    color:white;
+	background:#003366;
 }
 .filter-nav a.active{
-    color:#94BDDC;
-    background:#456f8f;
+    color: white;
+    background: #003366;
     pointer-events: none;
 }
 
-.filter-bar.formato .filter-nav a.active{
-    background: none repeat scroll 0 0 #5f91b8;
-    color: #fff;
-}
 
 .dashboard main{
     overflow: hidden;
@@ -140,7 +157,7 @@ font-weight: bold;
 
 
 .dashboard .panel{
-    color:#456f8f;
+    color:#003366;
     border:none;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -148,25 +165,26 @@ font-weight: bold;
 }
 .dashboard .panel-default > .panel-heading{
     background: #fff;
-    color:#456f8f;
+    color:#003366;
     padding:15px;
 }
 
 .dashboard .box-standings{
-    padding:30px 40px;
+    margin-top:30px;
 }
 .dashboard .box-standings .progress{
-    background: #C1D9E6;/* #aaa;*/
+    background: #90d7f0;/* #aaa;*/
     box-shadow: none;
-    margin-bottom: 7px;
-    height: 16px;
+    margin-bottom: 20px;
+    height: 24px;
     margin-top: 1px;
+    border-radius: 0;
 }
 
 .dashboard .box-standings h2{
     font-size: 1.3em;
     font-weight: 600;
-    color:#456f8f;
+    color:#003366;
     text-align: center;
 }
 
@@ -182,16 +200,17 @@ font-weight: bold;
     font-size: 0.8em;
 }
 .dashboard .progress-bar{
-    background:#456f8f ;
+    background: #0066cc;
     color: #fff;
     text-align: left;
-    font-weight:bold;
     padding-left: 5px;
-    line-height: 15px;
+    line-height: 22px;
+    border-radius: 0;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .dashlabel {
-    text-align: right;
     padding-right: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -212,11 +231,11 @@ font-weight: bold;
 .selected-ambito{
     display: none;
 }
-@media (max-width:992px){
-    #dash-menu .navbar-nav > li > a{
-    font-size: 0.9em;
-        padding:10px 6px !important;
-    }
+
+@media (max-width: 1150px) {
+	#dash-menu {
+	    margin-top: 40px;
+	}
 }
 @media (max-width: 768px) {
     body{
@@ -225,6 +244,10 @@ font-weight: bold;
     .dashboard .navigation-bar{
         padding:0;
     }
+	.filter-nav li span {
+		margin-bottom: 40px;
+		display: inline-block;
+	}
 
 /*
     .dashlabel {
@@ -240,12 +263,12 @@ font-weight: bold;
         float:left;
         width:100%;
         padding:10px;
-        color:#c1d9e6;
+        color:#90d7f0;
         text-align: center;
     }
     .dashboard .navbar-toggle{
         background: none;
-        color:#c1d9e6;
+        color:#90d7f0;
         border: none;
         margin-top: 4px;
         margin-bottom: 0;
@@ -259,7 +282,7 @@ font-weight: bold;
         border: none;
     }
     .dashboard .navbar-toggle .icon-bar{
-        background:#c1d9e6 ;
+        background:#90d7f0 ;
     }
     .dashboard .navbar-toggle:hover .icon-bar{
         background:#fff ;
@@ -275,7 +298,18 @@ font-weight: bold;
         margin:0;
         border:none;
         text-align: center;
+		margin-bottom: 40px;
+		display:block;
+		visibility:visible;
+		top: -2px;
     }
+	.dashboard #dash-menu #data-aggiornamento {
+		right: 15px;
+		font-size: 14px;
+		bottom: -25px;
+		left: 15px;
+		color:#333;
+	}
     #dash-menu .navbar-nav{
         margin:0 !important;
     }
@@ -287,10 +321,6 @@ font-weight: bold;
         color:#fff;
     }
 
-    .filter-nav li a,
-    .filter-nav li label {
-        padding: 8px 4px 8px 4px;
-    }
     .filter-nav li span, .filter-nav li label {
         font-size: 0.8em;
     }

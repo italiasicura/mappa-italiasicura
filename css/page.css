@@ -1,22 +1,26 @@
 @import url("bootstrap-select.min.css");
 
 body{
-    background:url('../img/bg-page.jpg') no-repeat center center fixed;
+    /*background:url('../img/bg-page.jpg') no-repeat center center fixed;*/
+	background:#f5f5f0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+main {
+	overflow: visible;
+	font-size:1.125em;
+	line-height: 130%;
+}
+
 .page p{
-   color: #456f8f;
+   color: #456f8f; 
 }
 
 .page .panel-body p a {
     color: #0064FF;
-}
-.page .navigation-bar{
-    padding:15px 15px 0 15px;
 }
 .page .navbar-default{
     background: none;
@@ -98,7 +102,6 @@ body{
 }
 
 .page main{
-    overflow: hidden;
     height: auto;
 }
 
@@ -122,6 +125,12 @@ div.panel-heading span{
     -webkit-border-radius: 0;
     border-radius: 0;
     background: #fff;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+	border-bottom: 2px solid #428fdb;
+}
+.standing-item {
+	border: none!important;
 }
 .page .panel-default > .panel-heading{
 /*    background: #fff;*/

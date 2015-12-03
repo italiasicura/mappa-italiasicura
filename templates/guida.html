@@ -1,10 +1,19 @@
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main>
+    <!-- h2>Guida page</h2 -->
+<div class="box-standings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div ui-view class="page">
+                
 <div class="row"><div class="col-md-10 col-md-offset-1">
 
 <!-- DOMANDE -->
 
                 <div class="standing-item panelmain panel-default">
                     <div class="panel-heading panelmain">
-                       <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Domande generali su #italiasicura</h3>
+                       <h4>Domande generali su #italiasicura</h4>
                     </div>
                     <div class="panel-body">
 
@@ -21,7 +30,7 @@
        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq2, 'glyphicon-chevron-right': !statusfaq2}"></i>
        Come si legge la mappa degli interventi
       </accordion-heading>
-       Sulla carta d’Italia sono segnalati tutti gli interventi per la difesa del suolo e la mitigazione del rischio idrogeologico raccolti dal repertorio nazionale<a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="fa fa-external-link fa-1"></i></a> di <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a>.  Lo sfondo è costituito dal mosaico delle mappe delle aree a pericolosità da alluvione, mentre si sta lavorando per rendere disponibile la mappa delle aree con pericolosità da frane che sarà presto online. La cartografia offre 5 livelli successivi di interrogazione, Italia, regione, città metropolitane, comune e località. Nel box di testo è possibile consultare le informazioni di sintesi relative alla pericolosità e agli indici di rischio relativi all'entità territoriale considerata. Se invece si seleziona uno specifico intervento si accede a tutte le informazioni disponibili sull’opera selezionata: assegnazione lavori, tempi di realizzazione, costi e procedure amministrative espletate. 
+       Sulla carta d’Italia sono segnalati tutti gli interventi per la difesa del suolo e la mitigazione del rischio idrogeologico raccolti dal repertorio nazionale<a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="icon-ico_scheda_cantiere"></i></a> di <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a>.  Lo sfondo è costituito dal mosaico delle mappe delle aree a pericolosità da alluvione, mentre si sta lavorando per rendere disponibile la mappa delle aree con pericolosità da frane che sarà presto online. La cartografia offre 5 livelli successivi di interrogazione, Italia, regione, città metropolitane, comune e località. Nel box di testo è possibile consultare le informazioni di sintesi relative alla pericolosità e agli indici di rischio relativi all'entità territoriale considerata. Se invece si seleziona uno specifico intervento si accede a tutte le informazioni disponibili sull’opera selezionata: assegnazione lavori, tempi di realizzazione, costi e procedure amministrative espletate. 
     </accordion-group>
 
     <accordion-group is-open="statusfaq2a" is-disabled="false">
@@ -36,7 +45,7 @@
        <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq2b, 'glyphicon-chevron-right': !statusfaq2b}"></i>
        Il Piano nazionale prevede ulteriori interventi rispetto a quelli mostrati?
       </accordion-heading>
-       Certamente. Le icone "gialle" indicano soltanto gli interventi maggiori. Una visione complessiva è disponibile sul <a href="http://italiasicura.governo.it/site/home/news/articolo182.html" target="_blank">piano stralcio <i class="fa fa-external-link fa-1"></i></a>
+       Certamente. Le icone "gialle" indicano soltanto gli interventi maggiori. Una visione complessiva è disponibile sul <a href="http://italiasicura.governo.it/site/home/news/articolo182.html" target="_blank">piano stralcio <i class="icon-ico_scheda_cantiere"></i></a>
     </accordion-group>
     <accordion-group is-open="statusfaq2c" is-disabled="false">
       <accordion-heading>
@@ -88,7 +97,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq6, 'glyphicon-chevron-right': !statusfaq6}"></i>
             Da dove provengono i dati sugli interventi?
         </accordion-heading>
-            I dati sugli interventi per la mitigazione del rischio idrogeologico sono a cura del repertorio nazionale <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="fa fa-external-link fa-1"></i></a> prodotto da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a>. Un database mirato all'attività di monitoraggio svolto per conto del Ministero dell'Ambiente e della Tutela del Territorio e del Mare (MATTM) sull'attuazione di Piani e programmi di interventi per la mitigazione del rischio idrogeologico. A questi sono stati sommati le opere previste dal Piano Nazionale contro il dissesto idrogeologico.
+            I dati sugli interventi per la mitigazione del rischio idrogeologico sono a cura del repertorio nazionale <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="icon-ico_scheda_cantiere"></i></a> prodotto da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a>. Un database mirato all'attività di monitoraggio svolto per conto del Ministero dell'Ambiente e della Tutela del Territorio e del Mare (MATTM) sull'attuazione di Piani e programmi di interventi per la mitigazione del rischio idrogeologico. A questi sono stati sommati le opere previste dal Piano Nazionale contro il dissesto idrogeologico.
     </accordion-group>
 
     <accordion-group is-open="statusfaq7">
@@ -96,7 +105,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq7, 'glyphicon-chevron-right': !statusfaq7}"></i>
             Da dove provengono i dati sulle emergenze?
         </accordion-heading>
-            Direttamente dal <a href="http://www.protezionecivile.gov.it/" target="_blank">Dipartimento della Protezione civile <i class="fa fa-external-link fa-1"></i></a>.
+            Direttamente dal <a href="http://www.protezionecivile.gov.it/" target="_blank">Dipartimento della Protezione civile <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq8">
@@ -104,7 +113,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq8, 'glyphicon-chevron-right': !statusfaq8}"></i>
             Da dove provengono i dati sulla popolazione e i limiti amministrativi?
         </accordion-heading>
-            Dalle <a href="http://www.istat.it/it/archivio/104317" target="_blank">basi territoriali <i class="fa fa-external-link fa-1"></i></a> e dalle relative variabili censuarie esposte da <a href="http://www.istat.it/it/" target="_blank">ISTAT <i class="fa fa-external-link fa-1"></i></a>.
+            Dalle <a href="http://www.istat.it/it/archivio/104317" target="_blank">basi territoriali <i class="icon-ico_scheda_cantiere"></i></a> e dalle relative variabili censuarie esposte da <a href="http://www.istat.it/it/" target="_blank">ISTAT <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq9">
@@ -112,7 +121,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq9, 'glyphicon-chevron-right': !statusfaq9}"></i>
             Posso scaricare i dati e le mappe?
         </accordion-heading>
-            Certamente sì. I dati e le mappe sono disponibili per il download in accordo con le <a href="#/notelegali">note legali</a>.
+            Certamente sì. I dati e le mappe sono disponibili per il download in accordo con le <a ui-sref="notelegali">note legali</a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq10">
@@ -125,7 +134,7 @@
   </accordion>
 		</div>
                     <div class="panel-heading panelmain">
-                        <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Domande sulle mappe di pericolosità da alluvione</h3>
+                        <h4>Domande sulle mappe di pericolosità da alluvione</h4>
                     </div>
                     <div class="panel-body">
   <accordion>
@@ -164,7 +173,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq14, 'glyphicon-chevron-right': !statusfaq14}"></i>
             Chi redige le mappe di pericolosità e del rischio di alluvione ?
         </accordion-heading>
-            In base a quanto stabilito dalla Direttiva Alluvioni e dal Decreto Legislativo che ne è la trasposizione nella legislazione italiana, le Autorità Competenti che corrispondono alle Autorità di bacino Nazionali, Interregionali e Regionali, le Regioni e le Province Autonome, sono responsabili per il proprio territorio di competenza, denominato Unità di Gestione, della redazione delle mappe di pericolosità e del rishio di alluvione. Le mappe e le informazioni ad esse associate sono raccolte e messe a disposizione di #italiasicura da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a>.
+            In base a quanto stabilito dalla Direttiva Alluvioni e dal Decreto Legislativo che ne è la trasposizione nella legislazione italiana, le Autorità Competenti che corrispondono alle Autorità di bacino Nazionali, Interregionali e Regionali, le Regioni e le Province Autonome, sono responsabili per il proprio territorio di competenza, denominato Unità di Gestione, della redazione delle mappe di pericolosità e del rishio di alluvione. Le mappe e le informazioni ad esse associate sono raccolte e messe a disposizione di #italiasicura da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq15">
@@ -180,7 +189,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq16, 'glyphicon-chevron-right': !statusfaq16}"></i>
             Se la mia casa si trova in un’area pericolosa, significa che io e i miei cari siamo a rischio?
         </accordion-heading>
-            Non necessariamente. Dipende dal livello di pericolosità dell’area in cui ricade l’edificio e dalla vulnerabilità dell’edificio stesso, ossia dalla capacità dell’edificio di sopportare le sollecitazioni dovute alla presenza di acqua con una certa altezza e una certa velocità. In ogni caso è bene aver coscienza del grado di pericolosità dell’area in cui si vive e osservare alcuni  <a href="http://www.iononrischio.it/io-non-rischio-alluvione/sei-preparato-alluvione/" target="_blank">elementari comportamenti  <i class="fa fa-external-link fa-1"></i></a> di prudenza e buon senso prima, durante e dopo gli eventi. 
+            Non necessariamente. Dipende dal livello di pericolosità dell’area in cui ricade l’edificio e dalla vulnerabilità dell’edificio stesso, ossia dalla capacità dell’edificio di sopportare le sollecitazioni dovute alla presenza di acqua con una certa altezza e una certa velocità. In ogni caso è bene aver coscienza del grado di pericolosità dell’area in cui si vive e osservare alcuni  <a href="http://www.iononrischio.it/io-non-rischio-alluvione/sei-preparato-alluvione/" target="_blank">elementari comportamenti  <i class="icon-ico_scheda_cantiere"></i></a> di prudenza e buon senso prima, durante e dopo gli eventi. 
     </accordion-group>
 
     <accordion-group is-open="statusfaq17">
@@ -188,7 +197,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq17, 'glyphicon-chevron-right': !statusfaq17}"></i>
             Il territorio al di fuori delle aree a pericolosità da alluvione è comunque sicuro?
         </accordion-heading>
-            Non in generale. In primo luogo perché le mappe di pericolosità possono essere affette da incertezza, e in secondo luogo perché non tutto il territorio è stato analizzato rispetto alla pericolosità da alluvione. Gli studi e le elaborazioni per redigere le mappe sono onerosi e quindi si è partiti da quelle aree che, in base ai dati storici, sono state più spesso colpite da inondazioni con effetti significativi sugli elementi esposti (beni e persone). In alcuni casi possono verificarsi fenomeni non previsti dai modelli utilizzati per individuare le aree allagabili, ad esempio l’occlusione accidentale di un ponte o di un canale tombato a seguito del trascinamento in alveo di detriti, il crollo di un argine, il cattivo funzionamento del sistema di drenaggio urbano. Un atteggiamento <a href="http://www.iononrischio.it/io-non-rischio-alluvione/sei-preparato-alluvione/" target="_blank">prudente e informato <i class="fa fa-external-link fa-1"></i></a> costituisce un presupposto essenziale per mantenere un buon livello di sicurezza rispetto a questi eventi.
+            Non in generale. In primo luogo perché le mappe di pericolosità possono essere affette da incertezza, e in secondo luogo perché non tutto il territorio è stato analizzato rispetto alla pericolosità da alluvione. Gli studi e le elaborazioni per redigere le mappe sono onerosi e quindi si è partiti da quelle aree che, in base ai dati storici, sono state più spesso colpite da inondazioni con effetti significativi sugli elementi esposti (beni e persone). In alcuni casi possono verificarsi fenomeni non previsti dai modelli utilizzati per individuare le aree allagabili, ad esempio l’occlusione accidentale di un ponte o di un canale tombato a seguito del trascinamento in alveo di detriti, il crollo di un argine, il cattivo funzionamento del sistema di drenaggio urbano. Un atteggiamento <a href="http://www.iononrischio.it/io-non-rischio-alluvione/sei-preparato-alluvione/" target="_blank">prudente e informato <i class="icon-ico_scheda_cantiere"></i></a> costituisce un presupposto essenziale per mantenere un buon livello di sicurezza rispetto a questi eventi.
     </accordion-group>
 
     <accordion-group is-open="statusfaq18">
@@ -202,9 +211,9 @@
                 </div>
 
                     <div class="panel-heading panelmain">
-                        <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Domande sugli indicatori di rischio</h3>
+                        <h4>Domande sugli indicatori di rischio</h4>
                         <p>
-                           Gli indicatori sono stati elaborati da ISPRA nel 2015 e sono anche pubblicati nell'<a href="http://annuario.isprambiente.it/" target="_blank">Annuario dei Dati Ambientali <i class="fa fa-external-link fa-1"></i></a> di ISPRA.
+                           Gli indicatori sono stati elaborati da ISPRA nel 2015 e sono anche pubblicati nell'<a href="http://annuario.isprambiente.it/" target="_blank">Annuario dei Dati Ambientali <i class="icon-ico_scheda_cantiere"></i></a> di ISPRA.
                     </div>
                     <div class="panel-body">
   <accordion>
@@ -229,7 +238,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq21, 'glyphicon-chevron-right': !statusfaq21}"></i>
             Come è stata stimata la popolazione esposta ad alluvioni?
         </accordion-heading>
-            La stima è stata effettuata da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a> utilizzando la mosaicatura delle aree a pericolosità idraulica e le 402.121 sezioni censuarie del 15° <a href="http://censimentopopolazione.istat.it/" target="_blank">Censimento della popolazione <i class="fa fa-external-link fa-1"></i></a> ISTAT 2011. Il numero di persone esposte è stato ottenuto moltiplicando la percentuale di area a pericolosità idraulica all’interno di ciascuna sezione di censimento per la popolazione residente nella suddetta sezione. La vulnerabilità, che è compresa tra 0 e 1, è stata posta cautelativamente pari a 1, in quanto una sua valutazione richiederebbe la conoscenza su tutto il territorio nazionale dell’intensità dei fenomeni alluvionali (es. livello idrico, velocità della corrente) e la valutazione del comportamento delle categorie di popolazione (es. anziani, bambini molto piccoli, persone non autosufficienti).
+            La stima è stata effettuata da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a> utilizzando la mosaicatura delle aree a pericolosità idraulica e le 402.121 sezioni censuarie del 15° <a href="http://censimentopopolazione.istat.it/" target="_blank">Censimento della popolazione <i class="icon-ico_scheda_cantiere"></i></a> ISTAT 2011. Il numero di persone esposte è stato ottenuto moltiplicando la percentuale di area a pericolosità idraulica all’interno di ciascuna sezione di censimento per la popolazione residente nella suddetta sezione. La vulnerabilità, che è compresa tra 0 e 1, è stata posta cautelativamente pari a 1, in quanto una sua valutazione richiederebbe la conoscenza su tutto il territorio nazionale dell’intensità dei fenomeni alluvionali (es. livello idrico, velocità della corrente) e la valutazione del comportamento delle categorie di popolazione (es. anziani, bambini molto piccoli, persone non autosufficienti).
     </accordion-group>
 
     <accordion-group is-open="statusfaq22">
@@ -245,7 +254,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq23, 'glyphicon-chevron-right': !statusfaq23}"></i>
             Qual è la fonte dei dati sui beni culturali?
         </accordion-heading>
-            E’ la banca dati dei beni culturali <a href="http://vincoliinrete.beniculturali.it/" target="_blank">Vincoli in Rete (VIR) <i class="fa fa-external-link fa-1"></i></a> curata dall’<a href="http://www.icr.beniculturali.it/" target="_blank">Istituto Superiore Centrale per il Restauro (ISCR) <i class="fa fa-external-link fa-1"></i></a>.
+            E’ la banca dati dei beni culturali <a href="http://vincoliinrete.beniculturali.it/" target="_blank">Vincoli in Rete (VIR) <i class="icon-ico_scheda_cantiere"></i></a> curata dall’<a href="http://www.icr.beniculturali.it/" target="_blank">Istituto Superiore Centrale per il Restauro (ISCR) <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq24">
@@ -253,7 +262,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq24, 'glyphicon-chevron-right': !statusfaq24}"></i>
             Qual è la fonte dei dati sulle scuole?
         </accordion-heading>
-            E’ l'<a href="http://archivio.pubblica.istruzione.it/scuola_in_chiaro/open_data/index.html" target="_blank">Anagrafe delle strutture scolastiche <i class="fa fa-external-link fa-1"></i></a> del <a href="http://www.istruzione.it/" target="_blank">Ministero dell'Istruzione, dell'Università e della Ricerca (MIUR) <i class="fa fa-external-link fa-1"></i></a>.
+            E’ l'<a href="http://archivio.pubblica.istruzione.it/scuola_in_chiaro/open_data/index.html" target="_blank">Anagrafe delle strutture scolastiche <i class="icon-ico_scheda_cantiere"></i></a> del <a href="http://www.istruzione.it/" target="_blank">Ministero dell'Istruzione, dell'Università e della Ricerca (MIUR) <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
   <daccordion>
@@ -261,7 +270,7 @@
 
                     </div>
                     <div class="panel-heading panelmain">
-                        <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Domande sugli interventi</h3>
+                        <h4>Domande sugli interventi</h4>
                     </div>
                     <div class="panel-body">
   <accordion>
@@ -270,7 +279,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq25, 'glyphicon-chevron-right': !statusfaq25}"></i>
             Quali dati si trovano nella mappa degli interventi?
         </accordion-heading>
-            Si tratta delle informazioni disponibili nel <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">Repertorio Nazionale degli interventi per la Difesa del Suolo <i class="fa fa-external-link fa-1"></i></a> di <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a>. Riguardano tutti gli interventi finanziati dal <a href="http://www.minambiente.it" target="_blank">MATTM <i class="fa fa-external-link fa-1"></i></a> con i diversi Piani e programmi di interventi urgenti nelle aree a rischio idrogeologico a partire dal 1998 fino ad oggi. A questi si aggiungono anche i due programmi finanziati ai sensi della <a href="http://www.gazzettaufficiale.it/eli/id/2000/07/28/00A10398/sg" target="_blank">Ordinanza del Ministero dell'Ambiente 3073/2000 <i class="fa fa-external-link fa-1"></i></a> nel 2001, e gli interventi di tutela ambientale e difesa del suolo finanziati, nel 2008, con i fondi connessi alla realizzazione del Ponte sullo stretto.
+            Si tratta delle informazioni disponibili nel <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">Repertorio Nazionale degli interventi per la Difesa del Suolo <i class="icon-ico_scheda_cantiere"></i></a> di <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a>. Riguardano tutti gli interventi finanziati dal <a href="http://www.minambiente.it" target="_blank">MATTM <i class="icon-ico_scheda_cantiere"></i></a> con i diversi Piani e programmi di interventi urgenti nelle aree a rischio idrogeologico a partire dal 1998 fino ad oggi. A questi si aggiungono anche i due programmi finanziati ai sensi della <a href="http://www.gazzettaufficiale.it/eli/id/2000/07/28/00A10398/sg" target="_blank">Ordinanza del Ministero dell'Ambiente 3073/2000 <i class="icon-ico_scheda_cantiere"></i></a> nel 2001, e gli interventi di tutela ambientale e difesa del suolo finanziati, nel 2008, con i fondi connessi alla realizzazione del Ponte sullo stretto.
     </accordion-group>
 
     <accordion-group is-open="statusfaq26">
@@ -358,7 +367,7 @@
 
                 </div>
                     <div class="panel-heading panelmain">
-                        <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Domande sulle emergenze</h3>
+                        <h4>Domande sulle emergenze</h4>
                     </div>
                     <div class="panel-body">
   <accordion>
@@ -384,7 +393,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq35, 'glyphicon-chevron-right': !statusfaq35}"></i>
             Da quando inizia la rappresentazione delle emergenze in #italiasicura? 
         </accordion-heading>
-            Sono riportati tutti gli stati di emergenza dichiarati da maggio 2013. È a queste emergenze, infatti, che si applicano le novità introdotte dal Decreto Legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2013-08-14;93" target="_blank">93/2013 <i class="fa fa-external-link fa-1"></i></a>, convertito dalla legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2013-10-15;119" target="_blank">119/2013 <i class="fa fa-external-link fa-1"></i></a>, che modifica la legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1992-02-24;225!vig=" target="_blank">225/1992 <i class="fa fa-external-link fa-1"></i></a>: la durata dello stato di emergenza è stata portata a 180 giorni con possibilità di una sola proroga di ulteriori 180 giorni; l’istituzione del Fondo per le emergenze nazionali da cui vengono attinte più tempestivamente le risorse per fronteggiare gli eventi; la ridefinizione degli ambiti di intervento disciplinati con ordinanze di protezione civile; la ricognizione puntuale dei fabbisogni per le attività di ripristino e censimento dei danni da parte dei Commissari delegati. 
+            Sono riportati tutti gli stati di emergenza dichiarati da maggio 2013. È a queste emergenze, infatti, che si applicano le novità introdotte dal Decreto Legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2013-08-14;93" target="_blank">93/2013 <i class="icon-ico_scheda_cantiere"></i></a>, convertito dalla legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2013-10-15;119" target="_blank">119/2013 <i class="icon-ico_scheda_cantiere"></i></a>, che modifica la legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1992-02-24;225!vig=" target="_blank">225/1992 <i class="icon-ico_scheda_cantiere"></i></a>: la durata dello stato di emergenza è stata portata a 180 giorni con possibilità di una sola proroga di ulteriori 180 giorni; l’istituzione del Fondo per le emergenze nazionali da cui vengono attinte più tempestivamente le risorse per fronteggiare gli eventi; la ridefinizione degli ambiti di intervento disciplinati con ordinanze di protezione civile; la ricognizione puntuale dei fabbisogni per le attività di ripristino e censimento dei danni da parte dei Commissari delegati. 
     </accordion-group>
 
     <accordion-group is-open="statusfaq36">
@@ -400,7 +409,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq37, 'glyphicon-chevron-right': !statusfaq37}"></i>
             Chi dichiara lo stato di emergenza?
         </accordion-heading>
-            È il Consiglio dei Ministri, generalmente sulla base dell’istruttoria del Dipartimento della Protezione Civile ai sensi della <a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?facetNode_1=f4_4_2&prevPage=provvedimenti&catcode=f4_4_2&contentId=LEG37518" target="_blank">Direttiva <i class="fa fa-external-link fa-1"></i></a> del Presidente del Consiglio del 26 ottobre 2012, a valutare i presupposti e a stabilire lo stanziamento dei fondi, acquisita l’intesa della Regione interessata.
+            È il Consiglio dei Ministri, generalmente sulla base dell’istruttoria del Dipartimento della Protezione Civile ai sensi della <a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?facetNode_1=f4_4_2&prevPage=provvedimenti&catcode=f4_4_2&contentId=LEG37518" target="_blank">Direttiva <i class="icon-ico_scheda_cantiere"></i></a> del Presidente del Consiglio del 26 ottobre 2012, a valutare i presupposti e a stabilire lo stanziamento dei fondi, acquisita l’intesa della Regione interessata.
     </accordion-group>
 
     <accordion-group is-open="statusfaq38">
@@ -408,7 +417,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq38, 'glyphicon-chevron-right': !statusfaq38}"></i>
             Le emergenze sono solo di carattere idrogeologico?
         </accordion-heading>
-            Per quanto riguarda i dati contenuti in #italiasicura, sì. I dati riferiti ad altri stati di emergenza connessi ad altre tipologie di rischio sono disponibili sul  <a href="http://www.protezionecivile.gov.it/jcms/it/stati_di_emergenza.wp" target="_blank">sito del Dipartimenti della Protezione Civile <i class="fa fa-external-link fa-1"></i></a>.
+            Per quanto riguarda i dati contenuti in #italiasicura, sì. I dati riferiti ad altri stati di emergenza connessi ad altre tipologie di rischio sono disponibili sul  <a href="http://www.protezionecivile.gov.it/jcms/it/stati_di_emergenza.wp" target="_blank">sito del Dipartimenti della Protezione Civile <i class="icon-ico_scheda_cantiere"></i></a>.
     </accordion-group>
 
     <accordion-group is-open="statusfaq39">
@@ -448,7 +457,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq43, 'glyphicon-chevron-right': !statusfaq43}"></i>
             Cosa indicano le voci a), b), c) e d) degli importi segnalati dalla Regione?
         </accordion-heading>
-            Fanno riferimento all’articolo 5 comma 2 della legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1992-02-24;225!vig=" target="_blank">225/1992 <i class="fa fa-external-link fa-1"></i></a>. La voce a) si riferisce alle spese necessarie a organizzare e prestare  i servizi di soccorso e di assistenza alla popolazione interessata dall'evento; la voce b) comprende le spese per il ripristino della funzionalità dei servizi pubblici e delle infrastrutture di reti strategiche, entro i limiti delle risorse finanziarie disponibili; la voce c) si riferisce invece agli importi per la realizzazione di interventi, anche strutturali, per la riduzione del rischio residuo strettamente connesso all'evento, entro i limiti delle risorse finanziarie disponibili e comunque finalizzate prioritariamente alla tutela della pubblica e privata incolumità. Infine, nella voce d) viene riportata una prima stima dei fabbisogni per il ripristino delle strutture e delle infrastrutture, pubbliche e private, danneggiate, nonché dei danni subiti dalle attività economiche e produttive, dai beni culturali e dal patrimonio edilizio. 
+            Fanno riferimento all’articolo 5 comma 2 della legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1992-02-24;225!vig=" target="_blank">225/1992 <i class="icon-ico_scheda_cantiere"></i></a>. La voce a) si riferisce alle spese necessarie a organizzare e prestare  i servizi di soccorso e di assistenza alla popolazione interessata dall'evento; la voce b) comprende le spese per il ripristino della funzionalità dei servizi pubblici e delle infrastrutture di reti strategiche, entro i limiti delle risorse finanziarie disponibili; la voce c) si riferisce invece agli importi per la realizzazione di interventi, anche strutturali, per la riduzione del rischio residuo strettamente connesso all'evento, entro i limiti delle risorse finanziarie disponibili e comunque finalizzate prioritariamente alla tutela della pubblica e privata incolumità. Infine, nella voce d) viene riportata una prima stima dei fabbisogni per il ripristino delle strutture e delle infrastrutture, pubbliche e private, danneggiate, nonché dei danni subiti dalle attività economiche e produttive, dai beni culturali e dal patrimonio edilizio. 
     </accordion-group>
 
     <accordion-group is-open="statusfaq44">
@@ -464,7 +473,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq45, 'glyphicon-chevron-right': !statusfaq45}"></i>
             Come viene deciso l’importo assegnato nella delibera?
         </accordion-heading>
-            Il Dipartimento della Protezione Civile prende in considerazione l’importo richiesto dalla Regione per realizzare i primi interventi urgenti, importo che include anche una prima stima dei danni subiti. Avvia quindi un’attività istruttoria ai sensi della <a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?facetNode_1=f4_4_2&prevPage=provvedimenti&catcode=f4_4_2&contentId=LEG37518" target="_blank">Direttiva <i class="fa fa-external-link fa-1"></i></a> del Presidente del Consiglio del 26 ottobre 2012: organizza sopralluoghi per la verifica dei presupposti necessari alla richiesta dello stato di emergenza e definisce il quantitativo di risorse sufficiente a coprire le spese di prima emergenza. Per il ristoro dei danni si rimanda alla ricognizione puntuale dei fabbisogni affidata ai Commissari delegati. Questa procedura, a fronte di risorse disponibili limitate, si prefigge di garantire una ripartizione equa tra i territori interessati dalle emergenze nel corso dell’anno. L’importo così determinato viene proposto dal Dipartimento al Presidente del Consiglio dei Ministri. È poi il Consiglio dei Ministri a individuare le risorse finanziarie disponibili.
+            Il Dipartimento della Protezione Civile prende in considerazione l’importo richiesto dalla Regione per realizzare i primi interventi urgenti, importo che include anche una prima stima dei danni subiti. Avvia quindi un’attività istruttoria ai sensi della <a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?facetNode_1=f4_4_2&prevPage=provvedimenti&catcode=f4_4_2&contentId=LEG37518" target="_blank">Direttiva <i class="icon-ico_scheda_cantiere"></i></a> del Presidente del Consiglio del 26 ottobre 2012: organizza sopralluoghi per la verifica dei presupposti necessari alla richiesta dello stato di emergenza e definisce il quantitativo di risorse sufficiente a coprire le spese di prima emergenza. Per il ristoro dei danni si rimanda alla ricognizione puntuale dei fabbisogni affidata ai Commissari delegati. Questa procedura, a fronte di risorse disponibili limitate, si prefigge di garantire una ripartizione equa tra i territori interessati dalle emergenze nel corso dell’anno. L’importo così determinato viene proposto dal Dipartimento al Presidente del Consiglio dei Ministri. È poi il Consiglio dei Ministri a individuare le risorse finanziarie disponibili.
     </accordion-group>
 
     <accordion-group is-open="statusfaq46">
@@ -528,7 +537,7 @@
             <i class="glyphicon" ng-class="{'glyphicon-chevron-down': statusfaq53, 'glyphicon-chevron-right': !statusfaq53}"></i>
             Chi opera la ricognizione puntuale dei fabbisogni?
         </accordion-heading>
-            La ricognizione puntuale dei fabbisogni viene fatta dal Commissario delegato in una seconda fase rispetto all’emergenza, secondo quanto stabilito dal decreto-legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2013-08-14;93" target="_blank">93/2013 <i class="fa fa-external-link fa-1"></i></a>, convertito dalla legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2013-10-15;119" target="_blank">119/2013 <i class="fa fa-external-link fa-1"></i></a>
+            La ricognizione puntuale dei fabbisogni viene fatta dal Commissario delegato in una seconda fase rispetto all’emergenza, secondo quanto stabilito dal decreto-legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2013-08-14;93" target="_blank">93/2013 <i class="icon-ico_scheda_cantiere"></i></a>, convertito dalla legge n. <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2013-10-15;119" target="_blank">119/2013 <i class="icon-ico_scheda_cantiere"></i></a>
     </accordion-group>
 
     <accordion-group is-open="statusfaq54">
@@ -583,3 +592,16 @@
                     </div>
                 </div>
 </div></div>
+
+
+
+
+</div>
+            </div>
+        </div>
+    </div>
+</div> <!--close box-standing -->
+
+
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>

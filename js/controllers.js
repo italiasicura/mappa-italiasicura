@@ -65,11 +65,49 @@
 *
 */
 
+	
+	
+/*
+function setSidebarHeight(target, offset) {
+	var offset = offset
+	if (offset == undefined) { offset = 25 }
+	var top = $(target).parent('aside').css('top')
+	// console.log(top); 
+	if (top == undefined || top == 'auto' ) { top = 65 }
+	else { top = parseInt(top.replace("px", ""));  }
+	var bottom = $('.bottom-box').outerHeight();
+	console.log($(window).height(), offset, top, bottom); 
+	if (bottom == undefined) { bottom = 0 }
+	var h = $(window).height()  - offset - top - bottom; 
+	$(target).css( { 'max-height' : h + 'px' }); 
+	$(target).getNiceScroll().resize();
+}
+*/
+
 angular.module('ItaliasicuraApp.controllers', [])
     .run(function($rootScope, $http) {
         $http.get('data/lastUpdateDate.txt').success(function (response) {
             $rootScope.dataUpdateDate = response;
         });
+		$rootScope.setSidebarHeight = function(target, offset) {
+			setTimeout(function(){ 
+				var offset = offset
+				if (offset == undefined) { offset = 25 }
+				var top = $(target).parent('aside').css('top')
+				if (top == undefined || top == 'auto' ) { top = 65 }
+				else { top = parseInt(top.replace("px", ""));  }
+				var bottom = $('.bottom-box').outerHeight();
+				if (bottom == undefined) { bottom = 0 }
+				var h = $(window).height()  - offset - top - bottom; 
+				$(target).css( { 'height' : h + 'px' }); 
+				$(target).css( { 'max-height' : h + 'px' }); 
+				$(target).getNiceScroll().resize();
+			}, 100);
+		}
+
+$rootScope.sizeOf = function(obj) {
+    return Object.keys(obj).length;
+};
     }).controller("homeController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location,$stateParams) {
         angular.extend($scope, {
             type:'home'
@@ -79,7 +117,6 @@ angular.module('ItaliasicuraApp.controllers', [])
           ga('set','page', $location.path());
           ga('send', 'pageview');
         }
-
 
     }).controller("interventiController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location,$stateParams) {
         angular.extend($scope, {
@@ -93,6 +130,7 @@ angular.module('ItaliasicuraApp.controllers', [])
             mousePosition: {coordinatesHDMS:'-'},
             mouseMoveEntity:{},
             mouseMoveIntervento:{},
+            mouseMoveInterventoBDA:{},
             mouseMoveInterventoPN:{},
             projection: 'EPSG:4326',
             selection:false,
@@ -105,90 +143,64 @@ angular.module('ItaliasicuraApp.controllers', [])
             slidertweet:false,
             sliderflickr:false,
             sliderInt:false,
-	    expanded:false,
+			expanded:false,
             datagraph:{},
             graphlabel:{}
         });
-        if (getCookie("cb-enabled")=="accepted") {
+        if (getCookie("cb-enabled")=="accepted"){
           ga('set','page', $location.path());
           ga('send', 'pageview');
         }
-
-
-        var cc = $scope.center;
-        if($location.search().zoom)
-            cc.zoom = parseInt($location.search().zoom);
-        if($location.search().lat)
-            cc.lat = parseFloat($location.search().lat);
-        if($location.search().lon)
-            cc.lon = parseFloat($location.search().lon);
-        $scope.center = cc;
-        if($location.search().name && $location.search().type){
-            $scope.selection=true;
-            $scope.selected={name:$location.search().name,type:$location.search().type};
-        }
-    
-        isGEOservice.getInfoInterventi().success(function (response) {
-            //Digging into the response to get the relevant data
-            $scope.infoInterventi = response.features[0].properties;
-            /*console.log( $scope.infoInterventi.title);*/
-        });
-
-//	isGEOservice.getInfoInterventiDashboard().success(function (response) {
-            //Digging into the response to get the relevant data
-//            $scope.graphdata = response;
-//        });
-
-       $scope.createGraph=function(){
-numeral.language('it', {
-    delimiters: {
-        thousands: '.',
-        decimal: ','
-    },
-    abbreviations: {
-        thousand: 'k',
-        million: 'm',
-        billion: 'b',
-        trillion: 't'
-    },
-    currency: {
-        symbol: '€'
-    }
-});
-numeral.language('it');
-                    var options = {
-                        tooltipFontSize: 10,
-                        //tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-                        tooltipTemplate: "<%=label%>: <%= numeral(value).format('0,0') %> - <%= numeral(circumference / 6.283).format('(0[.]00%)') %>",
-                        percentageInnerCutout : 60
-                    };
-                    Chart.defaults.global.animation = true;
-                    Chart.defaults.global.tooltipFontSize = 10;
-                    isGEOservice.getInfoInterventiDashboard().success(function (response) {
-                            $scope.graphdata = response;
-
-var tipo_dis = new Chart(document.getElementById("tipo-dis").getContext("2d")).Doughnut($scope.graphdata.tipo_dissesto,
-$.extend({},options,{customTooltips: function(tooltip) {
-	var tooltipEl = $('#tt-tipo-dis');
-        if (!tooltip) { tooltipEl.css({opacity: 0}); return; }
-        tooltipEl.removeClass('above below');
-        tooltipEl.addClass(tooltip.yAlign);
-        tooltipEl.html(tooltip.text);
-        var top = (tooltip.yAlign == 'above') ? tooltip.y - tooltip.caretHeight - tooltip.caretPadding : tooltip.y + tooltip.caretHeight + tooltip.caretPadding;
-        tooltipEl.css({opacity: 1, left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px', top: tooltip.chart.canvas.offsetTop + top + 'px', fontFamily: tooltip.fontFamily, fontSize: tooltip.fontSize, fontStyle: tooltip.fontStyle  });
-    }
-}));
-var fase = new Chart(document.getElementById("fase").getContext("2d")).Doughnut($scope.graphdata.fase_attuazione,
-$.extend({},options,{customTooltips: function(tooltip) {
-	var tooltipEl = $('#tt-fase');
-        if (!tooltip) { tooltipEl.css({opacity: 0}); return; }
-        tooltipEl.removeClass('above below');
-        tooltipEl.addClass(tooltip.yAlign);
-        tooltipEl.html(tooltip.text);
-        var top = (tooltip.yAlign == 'above') ? tooltip.y - tooltip.caretHeight - tooltip.caretPadding : tooltip.y + tooltip.caretHeight + tooltip.caretPadding;
-        tooltipEl.css({opacity: 1, left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px', top: tooltip.chart.canvas.offsetTop + top + 'px', fontFamily: tooltip.fontFamily, fontSize: tooltip.fontSize, fontStyle: tooltip.fontStyle  });
-    }
-}));
+		
+		$scope.createGraph=function(){
+			numeral.language('it', {
+				delimiters: {
+					thousands: '.',
+					decimal: ','
+				},
+				abbreviations: {
+					thousand: 'k',
+					million: 'm',
+					billion: 'b',
+					trillion: 't'
+				},
+				currency: {
+					symbol: '€'
+				}
+		});
+		numeral.language('it');
+		var options = {
+			tooltipFontSize: 10,
+			//tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+			tooltipTemplate: "<%=label%>: <%= numeral(value).format('0,0') %> - <%= numeral(circumference / 6.283).format('(0[.]00%)') %>",
+			percentageInnerCutout : 60
+		};
+		Chart.defaults.global.animation = true;
+		Chart.defaults.global.tooltipFontSize = 10;
+		isGEOservice.getInfoInterventiDashboard().success(function (response) {
+				$scope.graphdata = response;
+		var tipo_dis = new Chart(document.getElementById("tipo-dis").getContext("2d")).Doughnut($scope.graphdata.tipo_dissesto,
+		$.extend({},options,{customTooltips: function(tooltip) {
+			var tooltipEl = $('#tt-tipo-dis');
+				if (!tooltip) { tooltipEl.css({opacity: 0}); return; }
+				tooltipEl.removeClass('above below');
+				tooltipEl.addClass(tooltip.yAlign);
+				tooltipEl.html(tooltip.text);
+				var top = (tooltip.yAlign == 'above') ? tooltip.y - tooltip.caretHeight - tooltip.caretPadding : tooltip.y + tooltip.caretHeight + tooltip.caretPadding;
+				tooltipEl.css({opacity: 1, left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px', top: tooltip.chart.canvas.offsetTop + top + 'px', fontFamily: tooltip.fontFamily, fontSize: tooltip.fontSize, fontStyle: tooltip.fontStyle  });
+			}
+		}));
+		var fase = new Chart(document.getElementById("fase").getContext("2d")).Doughnut($scope.graphdata.fase_attuazione,
+		$.extend({},options,{customTooltips: function(tooltip) {
+			var tooltipEl = $('#tt-fase');
+			if (!tooltip) { tooltipEl.css({opacity: 0}); return; }
+			tooltipEl.removeClass('above below');
+			tooltipEl.addClass(tooltip.yAlign);
+			tooltipEl.html(tooltip.text);
+			var top = (tooltip.yAlign == 'above') ? tooltip.y - tooltip.caretHeight - tooltip.caretPadding : tooltip.y + tooltip.caretHeight + tooltip.caretPadding;
+			tooltipEl.css({opacity: 1, left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px', top: tooltip.chart.canvas.offsetTop + top + 'px', fontFamily: tooltip.fontFamily, fontSize: tooltip.fontSize, fontStyle: tooltip.fontStyle  });
+		}
+	}));
 var importo_fi_num = new Chart(document.getElementById("importo-fi-num").getContext("2d")).Doughnut($scope.graphdata.importo_finanziato_num,
 $.extend({},options,{customTooltips: function(tooltip) {
 	var tooltipEl = $('#tt-importo-fi-num');
@@ -236,8 +248,89 @@ $.extend({},options,{customTooltips: function(tooltip) {
 
                     });
                 };
+				
+				// end create graph
+		
+		// nice and pretty scrollbar
+		$("#info-main").niceScroll({
+			// touchbehavior:true,
+			cursorcolor:"#ccc",
+			// cursoropacitymax:0.7,
+			// cursorwidth:8,
+			// background:"transparent",
+			// autohidemode:false,
+			horizrailenabled : false
+		});
+		
+		
+		
+
+        var cc = $scope.center;
+        if($location.search().zoom)
+            cc.zoom = parseInt($location.search().zoom);
+        if($location.search().lat)
+            cc.lat = parseFloat($location.search().lat);
+        if($location.search().lon)
+            cc.lon = parseFloat($location.search().lon);
+        $scope.center = cc;
+        if($location.search().name && $location.search().type){
+            $scope.selection=true;
+            $scope.selected={name:$location.search().name,type:$location.search().type};
+			// if ($location.search().exp) {
+				// var charts = $('#charts');
+					// var direction = (screen.width<768)?'up':'left';
+							// if (!$scope.expanded) {
+					// if(screen.width>=768){
+						// charts.css('min-height',$('#info-main').height());
+						// $('.info-interventi').css('min-height',charts.height()-24-23-28);
+					// }
+					// charts.show();
+					// charts.show('slide',{direction:direction},2);
+						// $location.search('exp',true);
+						// $scope.expanded=true;
+					// $scope.createGraph();
+							// } else {
+								// charts.hide();
+								// charts.hide('slide',{direction:direction},2, function(){
+									// $scope.expanded=false;
+								// });
+								// $location.search('exp',null);
+							// }
+			// }
+        }
+
+        isGEOservice.getInfoInterventi().success(function (response) {
+            //Digging into the response to get the relevant data
+            $scope.infoInterventi = response.features[0].properties;
+            /*console.log( $scope.infoInterventi.title);*/
+        });
+		
+		
+		
+		
+		
+		
+		
+		// Resize info window INTERVENTI
+		$(function() {
+			$rootScope.setSidebarHeight("#info-main");
+		}); 
+		$(window).resize(function() { 
+			$rootScope.setSidebarHeight("#info-main");
+		});
+
+//	isGEOservice.getInfoInterventiDashboard().success(function (response) {
+            //Digging into the response to get the relevant data
+//            $scope.graphdata = response;
+//        });
+
+		
+
+
+		
         isGEOservice.getFlickr().success(function (response) {
             $scope.fphoto = response.items;
+			// $rootScope.setSidebarHeight("#info-main");
         });
 
 
@@ -256,6 +349,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.mouseMoveEntity.iotherimp = feature.get('ialtr_imp_fi');
             $scope.mouseMoveEntity.itot = feature.get('itot');
             $scope.mouseMoveEntity.itotimp = feature.get('itot_imp_fi');
+			// idraulica
             $scope.mouseMoveEntity.areatscarsatot = feature.get('ap1kmq');
             $scope.mouseMoveEntity.areatscarsapc = feature.get('ap1_pc');
             $scope.mouseMoveEntity.areatmediatot = feature.get('ap2kmq');
@@ -280,17 +374,92 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.mouseMoveEntity.benimediapc = feature.get('bcp2_pc');
             $scope.mouseMoveEntity.benielevatatot = feature.get('benp3');
             $scope.mouseMoveEntity.benielevatapc = feature.get('bcp3_pc');
+			// frane
+			var defString = "#########";
+			var afr = feature.get('afr');
+			if (afr == undefined ) 
+				afr = defString;
+			var afr = afr.split("#");
+			var popfr = feature.get('popfr');
+			if (popfr == undefined ) 
+				popfr = defString;
+			var popfr = popfr.split("#");
+			var impfr = feature.get('impfr');
+			if (impfr == undefined ) 
+				impfr = defString;
+			var impfr = impfr.split("#");
+			var bcfr = feature.get('bcfr');
+			if (bcfr == undefined ) 
+				bcfr = defString;
+			var bcfr = bcfr.split("#");
+			// superfice
+            $scope.mouseMoveEntity.frareat1tot = afr[0];
+            $scope.mouseMoveEntity.frareat1pc = afr[1];
+			$scope.mouseMoveEntity.frareat2tot = afr[2];
+            $scope.mouseMoveEntity.frareat2pc = afr[3];
+			$scope.mouseMoveEntity.frareat3tot = afr[4];
+            $scope.mouseMoveEntity.frareat3pc = afr[5];
+			$scope.mouseMoveEntity.frareat4tot = afr[6];
+            $scope.mouseMoveEntity.frareat4pc = afr[7];
+			$scope.mouseMoveEntity.frareat5tot = afr[8];
+            $scope.mouseMoveEntity.frareat5pc = afr[9];
+			// popolazione
+            $scope.mouseMoveEntity.frpopt1tot = popfr[0];
+            $scope.mouseMoveEntity.frpopt1pc = popfr[1];
+			$scope.mouseMoveEntity.frpopt2tot = popfr[2];
+            $scope.mouseMoveEntity.frpopt2pc = popfr[3];
+			$scope.mouseMoveEntity.frpopt3tot = popfr[4];
+            $scope.mouseMoveEntity.frpopt3pc = popfr[5];
+			$scope.mouseMoveEntity.frpopt4tot = popfr[6];
+            $scope.mouseMoveEntity.frpopt4pc = popfr[7];
+			$scope.mouseMoveEntity.frpopt5tot = popfr[8];
+            $scope.mouseMoveEntity.frpopt5pc = popfr[9];
+			// imprese
+			$scope.mouseMoveEntity.frimp1tot = impfr[0];
+            $scope.mouseMoveEntity.frimp1pc = impfr[1];
+			$scope.mouseMoveEntity.frimp2tot = impfr[2];
+            $scope.mouseMoveEntity.frimp2pc = impfr[3];
+			$scope.mouseMoveEntity.frimp3tot = impfr[4];
+            $scope.mouseMoveEntity.frimp3pc = impfr[5];
+			$scope.mouseMoveEntity.frimp4tot = impfr[6];
+            $scope.mouseMoveEntity.frimp4pc = impfr[7];
+			$scope.mouseMoveEntity.frimp5tot = impfr[8];
+            $scope.mouseMoveEntity.frimp5pc = impfr[9];
+			// beni
+			$scope.mouseMoveEntity.frbeni1tot = bcfr[0];
+            $scope.mouseMoveEntity.frbeni1pc = bcfr[1];
+			$scope.mouseMoveEntity.frbeni2tot = bcfr[2];
+            $scope.mouseMoveEntity.frbeni2pc = bcfr[3];
+			$scope.mouseMoveEntity.frbeni3tot = bcfr[4];
+            $scope.mouseMoveEntity.frbeni3pc = bcfr[5];
+			$scope.mouseMoveEntity.frbeni4tot = bcfr[6];
+            $scope.mouseMoveEntity.frbeni4pc = bcfr[7];
+			$scope.mouseMoveEntity.frbeni5tot = bcfr[8];
+            $scope.mouseMoveEntity.frbeni5pc = bcfr[9];
+			
+			$rootScope.setSidebarHeight("#info-main")
         }
 
         $scope.$on('openlayers.layers.shape', function(event, feature) {
             $scope.$apply(function(scope) {
                 if (feature && !$scope.selection) {
                     $scope.typeSelection = "shape";
+					var shapeType = '';
+					if (feature.get("nome") == "Italia")
+						shapeType = 'Italia';
+					else if($scope.zoom<9)
+						shapeType = 'regione';
+					else if($scope.zoom<12)
+						shapeType = 'provincia';
+					else if($scope.zoom<15)
+						shapeType = 'comune';
+					else
+						shapeType = 'localita';
+					$scope.mouseMoveEntity.shapeType = shapeType;
                     updateMouseMoveEntity(feature);
                 }else if($scope.selection){
 
                 }else{
-                    console.log('vuoto');
                     $scope.mouseMoveEntity= {};
                 }
             });
@@ -300,7 +469,9 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.$apply(function(scope) {
                 $scope.selection = true;
                 var shapeType = '';
-                if($scope.zoom<9)
+				if (feature.get("nome") == "Italia")
+					shapeType = 'Italia';
+                else if($scope.zoom<9)
                     shapeType = 'regione';
                 else if($scope.zoom<12)
                     shapeType = 'provincia';
@@ -308,6 +479,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     shapeType = 'comune';
                 else
                     shapeType = 'localita';
+				$scope.mouseMoveEntity.shapeType = shapeType;
                 $scope.selected = {name:feature.get('cod'),type:shapeType};
                 $scope.typeSelection = "shape";
                 updateMouseMoveEntity(feature);
@@ -320,9 +492,10 @@ $.extend({},options,{customTooltips: function(tooltip) {
                if($scope.slidertweet && $scope.sliderflickr){
                     scope.$emit('sliderstart');
                     scope.$emit('sliderfstart');
+					// $rootScope.setSidebarHeight("#info-main", 140)
                 }
                 $location.search('exp',null);
-                
+                $scope.expanded = false;
             });
         });
 
@@ -336,10 +509,10 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.mouseMoveIntervento.ente_prop = feature.get('ente_prop');
             $scope.mouseMoveIntervento.imp_finanziato = feature.get('importo_fi');
             $scope.mouseMoveIntervento.posizione = feature.get('posizione');
+			// $rootScope.setSidebarHeight("#info-main");
         }
 
         $scope.$on('openlayers.layers.intervento', function(event, feature) {
-            //console.log("mo int");
             $scope.$apply(function(scope) {
                 if (feature && !$scope.selection) {
                     $scope.typeSelection = "intervento";
@@ -355,11 +528,10 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
         $scope.$on('openlayers.layers.selectIntervento', function(event, feature) {
-
-
             if($scope.sliderInt){
                 $scope.sliderInt.destroySlider();
             }
+				
                 $scope.selection = true;
                 $scope.selected = {name:feature.get('int'),type:'intervento'};
                 $scope.typeSelection = "intervento";
@@ -379,7 +551,58 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     $scope.arrayLotti = $.map(response.lotti, function(el) { return el; });
                     $scope.updateSliderGraph($scope.arrayLotti,0);
                 });
+			$rootScope.setSidebarHeight("#info-main") 
 
+        });
+
+        function updateMouseMoveInterventoBDA(feature){
+            $scope.mouseMoveInterventoBDA.intervento = feature.get('int');
+            $scope.mouseMoveInterventoBDA.titolo_progettoestratto = feature.get('desc_int');
+            $scope.mouseMoveInterventoBDA.programma = feature.get('norma');
+            $scope.mouseMoveInterventoBDA.cup = feature.get('cup');
+            $scope.mouseMoveInterventoBDA.fase_attuale_macro = feature.get('fase_attuale_macro');
+            $scope.mouseMoveInterventoBDA.n_cig = feature.get('n_cig');
+            $scope.mouseMoveInterventoBDA.codice_cig = feature.get('codice_cig');
+            $scope.mouseMoveInterventoBDA.sogg_att = feature.get('ente_prop');
+//            $scope.mouseMoveInterventoBDA.comune = feature.get('comune');
+//            $scope.mouseMoveInterventoBDA.provincia = feature.get('provincia');
+//            $scope.mouseMoveInterventoBDA.regione = feature.get('regione');
+            $scope.mouseMoveInterventoBDA.valore = feature.get('importo_fi');
+	}
+
+        $scope.$on('openlayers.layers.intervento_bda', function(event, feature) {
+            $scope.$apply(function(scope) {
+                if (feature && !$scope.selection) {
+                    $scope.typeSelection = "intervento_bda";
+                    updateMouseMoveInterventoBDA(feature);
+                }else if($scope.selection){
+
+                }else{
+                    //console.log('vuoto');
+                    $scope.mouseMoveInterventoBDA= {};
+                }
+            });
+        });
+
+        $scope.$on('openlayers.layers.selectInterventoBDA', function(event, feature) {
+            if($scope.sliderInt){
+                $scope.sliderInt.destroySlider();
+            }
+				$scope.expanded = false;
+                $scope.selection = true;
+                $scope.selected = {name:feature.get('int'),type:'intervento_bda'};
+                $scope.typeSelection = "intervento_bda";
+                updateMouseMoveInterventoBDA(feature);
+                $location.search('name',$scope.selected.name);
+                $location.search('type',$scope.selected.type);
+                $location.search('zoom',$scope.zoom);
+                var c = ol.proj.transform($scope.map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326');
+                $location.search('lat',c[1]);
+                $location.search('lon',c[0]);
+                if($scope.sliderInt){
+                    $scope.sliderInt.destroySlider();
+                    $scope.sliderInt=false;
+                }
         });
 
         function updateMouseMoveInterventoPN(feature){
@@ -399,7 +622,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
                     $scope.typeSelection = "intervento_pn";
                     updateMouseMoveInterventoPN(feature);
                 }else if($scope.selection){
-
+						
                 }else{
                     //console.log('vuoto');
                     $scope.mouseMoveInterventoPN= {};
@@ -411,6 +634,8 @@ $.extend({},options,{customTooltips: function(tooltip) {
             if($scope.sliderInt){
                 $scope.sliderInt.destroySlider();
             }
+				// $scope.resetSelection();
+				$scope.expanded = false;
                 $scope.selection = true;
                 $scope.selected = {name:feature.get('Codice'),type:'intervento_pn'};
                 $scope.typeSelection = "intervento_pn";
@@ -453,24 +678,20 @@ $.extend({},options,{customTooltips: function(tooltip) {
             var c = ol.proj.transform($scope.map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326');
             $location.search('lat',c[1]);
             $location.search('lon',c[0]);
-                
+            // $rootScope.setSidebarHeight("#info-main");   
         });
 
-
-        $scope.search = function(){
+        $scope.search = function(location){
+		if(location == undefined)
+			return;
+	$scope.location = location;
+		
             isGEOservice.searchLocation($scope.location).then(function(response){
                 response=response.data;
                 if(response.length>0){
-                    console.log(response);
-                    console.log('Best match for ['+$scope.location+']: '+response[0].display_name+' [lon:'+response[0].lon+', lat:'+response[0].lat+']');
                         $scope.center.lat=parseFloat(response[0].lat);
                         $scope.center.lon=parseFloat(response[0].lon);
-			$scope.addLocationMarker($scope.center.lat, $scope.center.lon,"Geolocalizzazione Indirizzo","Il miglior risultato per l'indirizzo richiesto:<br><strong>"+$scope.location+"</strong><br><br>risulta essere:<br><strong> "+response[0].display_name+"</strong><br><br> [lon: "+response[0].lon+", lat:"+response[0].lat+"]");
-                        if ( $scope.location.toLowerCase().includes("via") || $scope.location.toLowerCase().includes("piazza") ) {
-                           $scope.center.zoom=17;
-                        } else {
-                           $scope.center.zoom=12;
-                        }
+                        $scope.center.zoom=12;
                         $scope.center.bbox=response[0].boundingbox;
                 }else{
                     console.log('No result found for ['+$scope.location+']');
@@ -604,11 +825,37 @@ $.extend({},options,{customTooltips: function(tooltip) {
             sliderflickr:false,
             sliderEm:false
         });
-        if (getCookie("cb-enabled")=="accepted") {
+        if (getCookie("cb-enabled")=="accepted"){
           ga('set','page', $location.path());
           ga('send', 'pageview');
         }
-
+		
+		
+		// Resize info window EMERGENZE
+		// nice and pretty scrollbar
+		$("#emergenze-main").niceScroll({
+			// touchbehavior:true,
+			cursorcolor:"#ccc",
+			// cursoropacitymax:0.7,
+			// cursorwidth:8,
+			// background:"transparent",
+			// autohidemode:false,
+			horizrailenabled : false
+		});
+		$( document ).ready(function() {
+			$rootScope.setSidebarHeight("#emergenze-main", -65);
+		}); 
+		$(window).resize(function() {
+			$rootScope.setSidebarHeight("#emergenze-main", 25);
+			if ($(window).height() < 600) {
+				$('#info-main').css('min-height', '378px!important');
+			}
+			else {
+				// $('#info-main').css('min-height' : '310px!important');
+			}
+		});
+		
+		
 
         if($location.search().name){
             $scope.selection=true;
@@ -638,7 +885,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.mouseMoveEntity.importostim_a = feature.get('eistim_a');
             $scope.mouseMoveEntity.importostim_b = feature.get('eistim_b');
             $scope.mouseMoveEntity.importostim_c = feature.get('eistim_c');
-
+			$rootScope.setSidebarHeight("#emergenze-main")
         }
 
         $scope.$on('openlayers.layers.shape', function(event, feature) {
@@ -646,12 +893,12 @@ $.extend({},options,{customTooltips: function(tooltip) {
                 if (feature && !$scope.selection) {
                     updateMouseMoveEmergenza(feature);
                 }else if($scope.selection){
-
+		
                 }else{
-                    console.log('vuoto');
                     $scope.mouseMoveEntity= {};
                 }
             });
+			// $rootScope.setSidebarHeight("#emergenze-main")
         });
         $scope.$on('openlayers.map.pointermove', function(event, coord) {
             $scope.$apply(function(scope) {
@@ -686,7 +933,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
                 if($scope.sliderEm){
                     $scope.sliderEm.destroySlider();
                     $scope.sliderEm=false;
-                }
+				}
                 isGEOservice.getEmergenze(feature.get('cod')).success(function (response) {
                     $scope.arrayEmergenze=response.emergenze;
                 });
@@ -695,10 +942,8 @@ $.extend({},options,{customTooltips: function(tooltip) {
 
         $scope.$watch("selection", function(select) {
             if(select){
-                setTimeout(function(){
-                    $scope.$emit('sliderstart');
-                    $scope.$emit('sliderfstart');
-                }, 500);
+				$scope.$emit('sliderstart');
+				$scope.$emit('sliderfstart');
             }
         });
 
@@ -783,11 +1028,13 @@ $.extend({},options,{customTooltips: function(tooltip) {
         angular.extend($scope, {
             type:'dashboard'
         });
-        if (getCookie("cb-enabled")=="accepted") {
+        if (getCookie("cb-enabled")=="accepted"){
           ga('set','page', $location.path());
           ga('send', 'pageview');
         }
 
+//        console.log('controller root');
+//        console.log($stateParams);
 
         $scope.ambiti_promise = isGEOservice.getAmbiti();
 
@@ -800,6 +1047,8 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerAmbito", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
+//        console.log('controller ambito');
+//        console.log($stateParams);
 
         $scope.current_ambito_promise = $scope.ambiti_promise.then(function(result) {
             var deferred = $q.defer();
@@ -832,6 +1081,8 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerTema", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
+//        console.log('controller tema');
+//        console.log($stateParams);
 
         $scope.current_tema_promise = $scope.temi_promise.then(function(result) {
             var deferred = $q.defer();
@@ -863,6 +1114,8 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("dashboardControllerFormato", function($scope, $http, isGEOservice, $routeParams,$rootScope,$route,$location,$stateParams,$state,$q) {
+//        console.log('controller formato');
+//        console.log($stateParams);
 
         $scope.current_formato_promise = $scope.formati_promise.then(function(result) {
             $scope.formati = result.data.values;
@@ -925,17 +1178,16 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("pageController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
-        if (getCookie("cb-enabled")=="accepted") {
-          ga('set','page', $location.path());
-          ga('send', 'pageview');
-        }
-
         $scope.statusfaq1 = true;
-
         angular.extend($scope, {
             type:'page',
             feedback:{}
         });
+
+        if (getCookie("cb-enabled")=="accepted") {
+          ga('set','page', $location.path());
+          ga('send', 'pageview');
+        }
 
         var originalFeedback = angular.copy($scope.feedback);
         $scope.resetForm = function(feedback_form)
@@ -943,7 +1195,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
             $scope.feedback = angular.copy(originalFeedback);
             $scope.feedback_form.$setPristine();
         };
-
+ 
         $scope.sendComment = function(feedback_form) {
             $scope.submitted = true;
             if (feedback_form.$valid) {
@@ -960,5 +1212,41 @@ $.extend({},options,{customTooltips: function(tooltip) {
             }
         }
 
-    });
-
+    }).controller("guidaController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'guida'
+        });
+	}).controller("opendataController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'opendata'
+        });
+	}).controller("notelegaliController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'notelegali'
+        });
+	}).controller("progettoController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'progetto'
+        });
+	}).controller("creditiController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'crediti'
+        });
+	}).controller("opensourceController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'opensource'
+        });
+	}).controller("feedbackController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+		$scope.statusfaq1 = true;
+        angular.extend($scope, {
+            type:'feedback',
+			feedback:{}
+        });
+	});
+	

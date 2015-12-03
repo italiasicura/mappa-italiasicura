@@ -1,90 +1,108 @@
-<div class="row"><div class="col-md-10 col-md-offset-1">
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main>
+    <!-- h2>Guida page</h2 -->
+<div class="box-standings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div ui-view class="page">
 
-<div class="standing-item panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title" style="font-size:20px;font-weight: bold;">Open Source</h3>
+
+
+						<div class="row"><div class="col-md-10 col-md-offset-1">
+
+							<div class="standing-item panelmain panel panel-default">
+								<div class="panel-heading panelmain">
+									<h4>Open Source</h4>
+								</div>
+								<div class="panel-body">
+
+								  <h4>La realizzazione di #italiasicura</h4>
+								   <p>#italiasicura nasce grazie all'unione di competenze multidisciplinari, ispirata in particolare a:</p>
+								   <ul style="color:#456f8f;">
+									 <li>integrazione e riuso di dati aperti</li>
+									 <li>utilizzo di software open source e tecnologie aperte</li>
+									 <li>produzione e distribuzione come software open source</li>
+								   </ul>
+								   <p>i principali criteri considerati nella costruzione dell'applicazione #italiasicura sono:
+								   </p>
+								   <ul style="color:#456f8f;">
+									 <li>consentire una navigazione semplificata della mappa evitando la logica GIS di "abilita/disabilita layers" e utilizzando invece il contesto locale per la generazione delle informazioni</li>
+									 <li>spingere la risoluzione spaziale fino alla scala sub-comunale (localit&agrave;) e quindi il pi&ugrave; possibile prossime ai cittadini</li>
+									 <li>accedere alle informazioni esplorando l'area di interesse con il mouse e ottenere gli ulteriori dettagli con un solo click</li>
+									 <li>realizzare una applicazione responsive che potesse essere consultata almeno su desktop, tablet e mobile</li>
+									 <li>privilegiare elevate capacit&agrave; di socializzazione delle informazioni</li>
+								   </ul>
+								   <br>
+
+									<h4>#italiasicura e l'Open Source</h4>
+									 <p>L'applicazione &egrave; stata costruita impiegando esclusivamente software, librerie e tool open source:</p>
+									 <ul style="color:#456f8f;">
+										<li><h5><strong>Backend & tools</strong></h5></li>
+										<ul>
+											<li>GNU/Linux <a href="http://www.ubuntu.com/server" target="_blank"><strong>Ubuntu Server </strong><i class="icon-ico_scheda_cantiere"></i></a></li>
+											<li><a href="http://www.postgresql.org/" target="_blank"><strong>PostgreSQL </strong><i class="icon-ico_scheda_cantiere"></i></a> Open Source Database / <a href="http://postgis.net/" target="_blank"><strong>PostGIS </strong><i class="icon-ico_scheda_cantiere"></i></a> GeoSpatial database</li>
+											<li><a href="http://boundlessgeo.com/solutions/solutions-software/geoserver/" target="_blank"><strong>Boundless GeoServer </strong><i class="icon-ico_scheda_cantiere"></i></a> Server Geografico che serve all'applicazione Mappe, Tiles e Features Vettoriali</li>
+											<li><a href="http://www.cs.waikato.ac.nz/~ml/weka/index.html" target="_blank"><strong>WEKA 3 </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria Java e tool per l'analisi dati</li>
+											<li><a href="http://www.qgis.org/en/site/" target="_blank"><strong>QGIS </strong><i class="icon-ico_scheda_cantiere"></i></a> tool per la gestione ed il processamento di file e formati dati geospaziali</li>
+											<li><a href="https://jena.apache.org/" target="_blank"><strong>Apache Jena </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria Java per gestire serializzazione in formato RDF e processore SPARQL</li>
+											<li><a href="http://openrefine.org/" target="_blank"><strong>OpenRefine </strong><i class="icon-ico_scheda_cantiere"></i></a> tool per l'esplorazione ed il processamento di dati tabulari complessi </li>
+											<li><a href="http://tomcat.apache.org/" target="_blank"><strong>Apache Tomcat </strong><i class="icon-ico_scheda_cantiere"></i></a> application server container per java web-application</li>
+											<li><a href="http://jersey.java.net/" target="_blank"><strong>Jersey </strong><i class="icon-ico_scheda_cantiere"></i></a> Libreria Java per gestire Web Services RESTful</li>
+											<li><a href="http://httpd.apache.org/" target="_blank"><strong>Apache HTTPD Server </strong><i class="icon-ico_scheda_cantiere"></i></a> server HTTP</li>
+											<li><a href="http://php.net/" target="_blank"><strong>PHP </strong><i class="icon-ico_scheda_cantiere"></i></a> PHP scripting language</li>
+											<li><a href="https://github.com/J7mbo/twitter-api-php" target="_blank"><strong>Twitter-API-PHP </strong><i class="icon-ico_scheda_cantiere"></i></a> PHP wrapper della API Twitter</li>
+											<li><a href="http://openstreetmap.it/" target="_blank"><strong>OpenStreetMap </strong><i class="icon-ico_scheda_cantiere"></i></a> tiles ed elementi della mappa di base</li>
+										</ul>
+										<li><h5><strong>Frontend & Software Libraries</strong></h5></li>
+										<ul>
+											<li><a href="https://angularjs.org/" target="_blank"><strong>AngularJS </strong><i class="icon-ico_scheda_cantiere"></i></a> framework javascript per la creazione di web application dinamiche</li>
+											<li><a href="http://openlayers.org/" target="_blank"><strong>OpenLayers 3 </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria per la gestione della mappa</li>
+											<li><a href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap </strong><i class="icon-ico_scheda_cantiere"></i></a> framework e componenti HTLM/CSS per web-applications responsive</li>
+											<li><a href="https://jquery.com/" target="_blank"><strong>jQuery </strong><i class="icon-ico_scheda_cantiere"></i></a>Libreria Javascript</li>
+											<li><a href="https://angular-ui.github.io/bootstrap/" target="_blank"><strong>UI Boostrap </strong><i class="icon-ico_scheda_cantiere"></i></a> componenti bootstrap per AngularJS</li>
+											<li><a href="http://darul75.github.io/ng-twitter/" target="_blank"><strong>ng-twitter </strong><i class="icon-ico_scheda_cantiere"></i></a> direttiva Angular per la visualizzazione di messaggi Twitter</li>
+											<li><a href="http://bxslider.com/" target="_blank"><strong>bxSlider </strong><i class="icon-ico_scheda_cantiere"></i></a> componente jQuery per la creazione di slider responsive</li>
+											<li><a href="http://adamwdraper.github.io/Numeral-js/" target="_blank"><strong>Numeral.js </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria Javascript per la formattazione e manipolazione di dati numerici</li>
+											<li><a href="http://www.chartjs.org/" target="_blank"><strong>Chart.js </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria Javascript per la gestione di grafici HTML5</li>
+											<li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><strong>FontAwesome </strong><i class="icon-ico_scheda_cantiere"></i></a> libreria di icone per HTML5</li>
+										</ul>
+									 </ul>
+								  <br>
+
+								  <h4>Includi #italiasicura sul tuo sito</h4>
+								   <p>L'applicazione #italiasicura pu&ograve; essere inserita nelle pagine di un sito esterno. Per farlo &egrave; sufficiente utilizzare questo codice nelle vostre pagine:</p>
+								   <pre>
+							   &lt;iframe 
+									width="558" 
+									height="768" 
+									src="<strong>http://mappa.italiasicura.gov.it/#/interventi</strong>" 
+									frameborder="0" 
+									scrolling="no"&gt;
+							   &lt;/iframe&gt;</pre>
+								   <br>
+								   <p>E' possibile selezionare una qualsiasi URL per il paramentro evidenziato, in modo da caricare una vista particolare della mappa.<br>
+									  Per esempio per fare in modo che venga caricata l'area del fiume Sarno &egrave; possibile utilizzare l'URL:<br>
+									  <a href="http://mappa.italiasicura.gov.it/#/interventi?zoom=12&lat=40.726565774956896&lon=14.577610301269535"><code>http://mappa.italiasicura.gov.it/#/interventi?zoom=12&lat=40.726565774956896&lon=14.577610301269535</code></a><br>
+									  Per ricavare alrte viste e quindi l'URL di una determinata zona &egrave; possibile copiarla dalla barra degli indirizzi durante la navigazione su #italiasicura
+								   </p>
+								   <br>
+
+								   <h4>Partecipa e migliora #italiasicura</h4>
+									 <p>L'applicazione &egrave; rilasciata con licenza <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL v3 <i class="icon-ico_scheda_cantiere"></i></a>. Se sei interessato puoi contribuire <a href="https://github.com/italiasicura/mappa-italiasicura/issues" target="_blank">segnalando bugs o idee <i class="icon-ico_scheda_cantiere"></i></a> oppure <a href="https://github.com/italiasicura/mappa-italiasicura" target="_blank">aiutando nello sviluppo su GitHub <i class="fa fa-github"></i> <i class="icon-ico_scheda_cantiere"></i></a></p>
+									<p></p>
+									<br><br>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+
+				</div>
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-
-      <h4>La realizzazione di #italiasicura</h4>
-       <p>#italiasicura nasce grazie all'unione di competenze multidisciplinari, ispirata in particolare a:</p>
-       <ul style="color:#456f8f;">
-         <li>integrazione e riuso di dati aperti</li>
-         <li>utilizzo di software open source e tecnologie aperte</li>
-         <li>produzione e distribuzione come software open source</li>
-       </ul>
-       <p>i principali criteri considerati nella costruzione dell'applicazione #italiasicura sono:
-       </p>
-       <ul style="color:#456f8f;">
-         <li>consentire una navigazione semplificata della mappa evitando la logica GIS di "abilita/disabilita layers" e utilizzando invece il contesto locale per la generazione delle informazioni</li>
-         <li>spingere la risoluzione spaziale fino alla scala sub-comunale (localit&agrave;) e quindi il pi&ugrave; possibile prossime ai cittadini</li>
-         <li>accedere alle informazioni esplorando l'area di interesse con il mouse e ottenere gli ulteriori dettagli con un solo click</li>
-         <li>realizzare una applicazione responsive che potesse essere consultata almeno su desktop, tablet e mobile</li>
-         <li>privilegiare elevate capacit&agrave; di socializzazione delle informazioni</li>
-       </ul>
-       <br>
-
-        <h4>#italiasicura e l'Open Source</h4>
-         <p>L'applicazione &egrave; stata costruita impiegando esclusivamente software, librerie e tool open source:</p>
-         <ul style="color:#456f8f;">
-            <li><h5><strong>Backend & tools</strong></h5></li>
-            <ul>
-                <li>GNU/Linux <a href="http://www.ubuntu.com/server" target="_blank"><strong>Ubuntu Server </strong><i class="fa fa-external-link fa-1"></i></a></li>
-                <li><a href="http://www.postgresql.org/" target="_blank"><strong>PostgreSQL </strong><i class="fa fa-external-link fa-1"></i></a> Open Source Database / <a href="http://postgis.net/" target="_blank"><strong>PostGIS </strong><i class="fa fa-external-link fa-1"></i></a> GeoSpatial database</li>
-                <li><a href="http://boundlessgeo.com/solutions/solutions-software/geoserver/" target="_blank"><strong>Boundless GeoServer </strong><i class="fa fa-external-link fa-1"></i></a> Server Geografico che serve all'applicazione Mappe, Tiles e Features Vettoriali</li>
-                <li><a href="http://www.cs.waikato.ac.nz/~ml/weka/index.html" target="_blank"><strong>WEKA 3 </strong><i class="fa fa-external-link fa-1"></i></a> libreria Java e tool per l'analisi dati</li>
-                <li><a href="http://www.qgis.org/en/site/" target="_blank"><strong>QGIS </strong><i class="fa fa-external-link fa-1"></i></a> tool per la gestione ed il processamento di file e formati dati geospaziali</li>
-                <li><a href="https://jena.apache.org/" target="_blank"><strong>Apache Jena </strong><i class="fa fa-external-link fa-1"></i></a> libreria Java per gestire serializzazione in formato RDF e processore SPARQL</li>
-                <li><a href="http://openrefine.org/" target="_blank"><strong>OpenRefine </strong><i class="fa fa-external-link fa-1"></i></a> tool per l'esplorazione ed il processamento di dati tabulari complessi </li>
-                <li><a href="http://tomcat.apache.org/" target="_blank"><strong>Apache Tomcat </strong><i class="fa fa-external-link fa-1"></i></a> application server container per java web-application</li>
-                <li><a href="http://jersey.java.net/" target="_blank"><strong>Jersey </strong><i class="fa fa-external-link fa-1"></i></a> Libreria Java per gestire Web Services RESTful</li>
-                <li><a href="http://httpd.apache.org/" target="_blank"><strong>Apache HTTPD Server </strong><i class="fa fa-external-link fa-1"></i></a> server HTTP</li>
-                <li><a href="http://php.net/" target="_blank"><strong>PHP </strong><i class="fa fa-external-link fa-1"></i></a> PHP scripting language</li>
-                <li><a href="https://github.com/J7mbo/twitter-api-php" target="_blank"><strong>Twitter-API-PHP </strong><i class="fa fa-external-link fa-1"></i></a> PHP wrapper della API Twitter</li>
-                <li><a href="http://openstreetmap.it/" target="_blank"><strong>OpenStreetMap </strong><i class="fa fa-external-link fa-1"></i></a> tiles ed elementi della mappa di base</li>
-            </ul>
-            <li><h5><strong>Frontend & Software Libraries</strong></h5></li>
-            <ul>
-                <li><a href="https://angularjs.org/" target="_blank"><strong>AngularJS </strong><i class="fa fa-external-link fa-1"></i></a> framework javascript per la creazione di web application dinamiche</li>
-                <li><a href="http://openlayers.org/" target="_blank"><strong>OpenLayers 3 </strong><i class="fa fa-external-link fa-1"></i></a> libreria per la gestione della mappa</li>
-                <li><a href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap </strong><i class="fa fa-external-link fa-1"></i></a> framework e componenti HTLM/CSS per web-applications responsive</li>
-                <li><a href="https://jquery.com/" target="_blank"><strong>jQuery </strong><i class="fa fa-external-link fa-1"></i></a>Libreria Javascript</li>
-                <li><a href="https://angular-ui.github.io/bootstrap/" target="_blank"><strong>UI Boostrap </strong><i class="fa fa-external-link fa-1"></i></a> componenti bootstrap per AngularJS</li>
-                <li><a href="http://darul75.github.io/ng-twitter/" target="_blank"><strong>ng-twitter </strong><i class="fa fa-external-link fa-1"></i></a> direttiva Angular per la visualizzazione di messaggi Twitter</li>
-                <li><a href="http://bxslider.com/" target="_blank"><strong>bxSlider </strong><i class="fa fa-external-link fa-1"></i></a> componente jQuery per la creazione di slider responsive</li>
-                <li><a href="http://adamwdraper.github.io/Numeral-js/" target="_blank"><strong>Numeral.js </strong><i class="fa fa-external-link fa-1"></i></a> libreria Javascript per la formattazione e manipolazione di dati numerici</li>
-                <li><a href="http://www.chartjs.org/" target="_blank"><strong>Chart.js </strong><i class="fa fa-external-link fa-1"></i></a> libreria Javascript per la gestione di grafici HTML5</li>
-                <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><strong>FontAwesome </strong><i class="fa fa-external-link fa-1"></i></a> libreria di icone per HTML5</li>
-            </ul>
-         </ul>
-      <br>
-
-      <h4>Includi #italiasicura sul tuo sito</h4>
-       <p>L'applicazione #italiasicura pu&ograve; essere inserita nelle pagine di un sito esterno. Per farlo &egrave; sufficiente utilizzare questo codice nelle vostre pagine:</p>
-       <pre>
-   &lt;iframe 
-        width="558" 
-        height="768" 
-        src="<strong>http://mappa.italiasicura.gov.it/#/interventi</strong>" 
-        frameborder="0" 
-        scrolling="no"&gt;
-   &lt;/iframe&gt;</pre>
-       <br>
-       <p>E' possibile selezionare una qualsiasi URL per il paramentro evidenziato, in modo da caricare una vista particolare della mappa.<br>
-          Per esempio per fare in modo che venga caricata l'area del fiume Sarno &egrave; possibile utilizzare l'URL:<br>
-          <a href="http://mappa.italiasicura.gov.it/#/interventi?zoom=12&lat=40.726565774956896&lon=14.577610301269535"><code>http://mappa.italiasicura.gov.it/#/interventi?zoom=12&lat=40.726565774956896&lon=14.577610301269535</code></a><br>
-          Per ricavare alrte viste e quindi l'URL di una determinata zona &egrave; possibile copiarla dalla barra degli indirizzi durante la navigazione su #italiasicura
-       </p>
-       <br>
-
-       <h4>Partecipa e migliora #italiasicura</h4>
-         <p>L'applicazione &egrave; rilasciata con licenza <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL v3 <i class="fa fa-external-link fa-1"></i></a>. Se sei interessato puoi contribuire <a href="https://github.com/italiasicura/mappa-italiasicura/issues" target="_blank">segnalando bugs o idee</a> oppure <a href="https://github.com/italiasicura/mappa-italiasicura" target="_blank">aiutando nello sviluppo su GitHub <i class="fa fa-github"></i></a></p>
-        <p></p>
-        <br><br>
-
-
-    </div>
-</div>
-
-</div></div>
-
+</div> <!--close box-standing -->
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>

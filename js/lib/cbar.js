@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012 PrimeBox (info@primebox.co.uk)
  * 
  * This work is licensed under the Creative Commons
@@ -12,7 +12,6 @@
  * When using this software you use it at your own risk. We hold
  * no responsibility for any damage caused by using this plugin
  * or the documentation provided.
- *
  */
 function getCookie(cname) {
     var name = cname + "=";
@@ -37,7 +36,7 @@ function getCookie(cname) {
                 var acceptednow = false;
 
 		var defaults = {
-			message: 'Il sito mappa.italiasicura.gov.it usa i cookies per offrirti la migliore esperienza di navigazione sul sito. Se non acconsenti all&#39;utilizzo dei cookie di terze parti, alcune di queste funzionalità potrebbero essere non disponibili. Continuando a navigare accetti l&#39;utilizzo dei cookies.', //Message displayed on bar
+			message: 'Utilizziamo i cookie solo ai fini delle statistiche di accesso', //Message displayed on bar
 			acceptButton: true, //Set to true to show accept/enable button
 			acceptText: 'Accetto', //Text on accept/enable button
 			acceptFunction: function(cookieValue){if(cookieValue!='enabled' && cookieValue!='accepted') window.location = window.location.href;}, //Function to run after accept
@@ -45,7 +44,7 @@ function getCookie(cname) {
 			declineText: 'Disabilita i Cookies', //Text on decline/disable button
 			declineFunction: function(cookieValue){if(cookieValue=='enabled' || cookieValue=='accepted') window.location = window.location.href;}, //Function to run after decline
 			policyButton: true, //Set to true to show Privacy Policy button
-			policyText: 'Per ulteriori informazioni ti invitiamo a consultare le note legali', //Text on Privacy Policy button
+			policyText: 'ulteriori dettagli sulle note legali', //Text on Privacy Policy button
 			policyURL: '#/notelegali', //URL of Privacy Policy
 			autoEnable: true, //Set to true for cookies to be accepted automatically. Banner still shows
 			acceptOnContinue: false, //Set to true to silently accept cookies when visitor moves to another page
@@ -175,7 +174,6 @@ function getCookie(cname) {
                                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
                                  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
                                  ga('create', 'UA-38033959-4', 'auto');
-                                 ga('set', 'anonymizeIp', true);
                                  ga('send', 'pageview');
                                  acceptednow = true;
 			};
@@ -219,7 +217,6 @@ function getCookie(cname) {
                      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
                    ga('create', 'UA-38033959-4', 'auto');
-                   ga('set', 'anonymizeIp', true);
                    ga('send', 'pageview');
                 }
 	};

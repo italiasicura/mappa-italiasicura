@@ -67,7 +67,8 @@
 angular.module('ItaliasicuraApp.services', [])
     .factory('isGEOservice', function($http) {
     
-    var api_entry_point = 'http://mappa.italiasicura.gov.it/italiasicura';
+    // var api_entry_point = 'http://mappa.italiasicura.gov.it/italiasicura';
+	var api_entry_point = '/italiasicura';
     //var api_entry_point = '/v1/italiasicura';
 
     var isGEO = {};

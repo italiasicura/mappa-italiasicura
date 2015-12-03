@@ -17,12 +17,21 @@ main{
 .home .center img{
     margin: 0 auto;
 }
+.home .payoff {
+	color: #666;
+    font-size: 1.8em;
+	line-height: 130%;
+	display: block;
+    padding-top: 0;
+    width: 100%;
+}
 .home .claim{
     padding:20px 0;
-    text-align: justify;
+    text-align: center;
     color:#456f8f;
     font-size:1.2em;
     font-weight: lighter;
+	clear: both;
 }
 
 .home footer{

@@ -65,6 +65,7 @@
 *
 */
 var api_endpoint = 'http://mappa.italiasicura.gov.it';
+var api_endpoint_local = '';
 
 angular.module('ItaliasicuraApp.directive', [])
     .directive('mapObject',  ['$location', function($location){
@@ -156,7 +157,7 @@ angular.module('ItaliasicuraApp.directive', [])
                     source: new ol.source.TileWMS(({
                         url: api_endpoint + '/geoserver/italiasicura/wms',
                         params: {
-                            'LAYERS': 'italiasicura:pericolositaitalia',
+                            'LAYERS': 'italiasicura:geo_pericolosita',
                             'tiled': true,
                             'format': 'image/png8'
                         },
@@ -168,12 +169,12 @@ angular.module('ItaliasicuraApp.directive', [])
                 if($scope.type=="interventi"){
                     italiaSource = new ol.source.GeoJSON({
                         projection: 'EPSG:3857',
-			            url: api_endpoint + '/italiasicura/italia/interventi'
+			            url: api_endpoint_local + '/italiasicura/italia/interventi'
                     });
                 }else{
                     italiaSource = new ol.source.GeoJSON({
                         projection: 'EPSG:3857',
-			            url: api_endpoint + '/italiasicura/italia/emergenze'
+			            url: api_endpoint_local + '/italiasicura/italia/emergenze'
                     });
                 }
 
@@ -185,7 +186,7 @@ angular.module('ItaliasicuraApp.directive', [])
                 var regioniLayer = new ol.layer.Vector({
                     source: new ol.source.GeoJSON({
                         projection: 'EPSG:3857',
-url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura%3Aregioni_i_web&maxFeatures=50&outputformat=application%2Fjson'
+url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura_exp%3Aregioni_exp_i_web&maxFeatures=50&outputformat=application%2Fjson'
                     }),
                     minResolution: 600,
                     maxResolution: 10000,
@@ -197,7 +198,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                 var regionieLayer = new ol.layer.Vector({
                     source: new ol.source.GeoJSON({
                         projection: 'EPSG:3857',
-url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura%3Aregioni_e_web&maxFeatures=50&outputformat=application%2Fjson'	
+url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura_exp%3Aregioni_e_web&maxFeatures=50&outputformat=application%2Fjson'	
                     }),
                     minResolution: 600,
                     maxResolution: 10000,
@@ -214,7 +215,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                 var provinceLayer = new ol.layer.Vector({
                     source: new ol.source.GeoJSON({
                         projection: 'EPSG:3857',
-                        url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura%3Aprovince_i_web&maxFeatures=200&outputformat=json'
+                        url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura_exp%3Aprovince_exp_i_web&maxFeatures=200&outputformat=json'
                     }),
                     minResolution: 70,
                     maxResolution: 500,
@@ -268,8 +269,8 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  */
 
                 var comuniLoader = function(extent, resolution, projection) {
-                    var url = api_endpoint + '/geoserver/italiasicura/ows?service=WFS&' +
-                        'version=1.1.0&request=GetFeature&typename=italiasicura:comuni&' +
+                    var url = api_endpoint + '/geoserver/italiasicura_exp/ows?service=WFS&' +
+                        'version=1.1.0&request=GetFeature&typename=italiasicura_exp:comuni_exp_i_web&' +
                         'outputFormat=text/javascript' +
                         '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
                     $.ajax({
@@ -325,8 +326,8 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  * ============================================
                  */
                 var localitaLoader = function(extent, resolution, projection) {
-                    var url = api_endpoint + '/geoserver/italiasicura/ows?service=WFS&' +
-                        'version=1.1.0&request=GetFeature&typename=italiasicura:localita_i_web&' +
+                    var url = api_endpoint + '/geoserver/italiasicura_exp/ows?service=WFS&' +
+                        'version=1.1.0&request=GetFeature&typename=italiasicura_exp:localita_exp_i_web&' +
                         'outputFormat=text/javascript' +
                         '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
                     $.ajax({
@@ -377,7 +378,8 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  */
                 var lottiStaticSource = new ol.source.GeoJSON({
                     projection: 'EPSG:3857',
-                    url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura%3Ascheda_interventi&maxFeatures=10000&outputformat=json'
+                    url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=italiasicura_exp%3Ascheda_exp_interventi&maxFeatures=10000&outputformat=json'
+                    //url: 'data/interventi.geojson'
                 });
 
                 lottiVectorLayer=false;
@@ -400,7 +402,6 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                         distance: dist
                     });
 
-                    console.log('Distance: '+dist);
                     lottiVectorLayer = new ol.layer.Vector({
                         source: lottiCluster,
                         style: clusterStyleFunction,
@@ -465,8 +466,10 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     var stato=feature.get('posizione');
                     if(stato=='c'){
                         src='img/marker-intervento-c.png'
-                    }else{
+                    }else if(stato=='g'){
                         src='img/marker-intervento.png'
+                    }else{
+                        src='img/marker-intervento-bda.png'
                     }
                     return new ol.style.Style({
                         geometry: feature.getGeometry(),
@@ -532,10 +535,12 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                         style = [createInterventoStyle(originalFeature)];
                         if($scope.selection && $scope.selected.type=='intervento' && originalFeature.get('int') === $scope.selected.name){
                             select.getFeatures().push(originalFeature);   
-                        }
+                        }else if($scope.selection && $scope.selected.type=='intervento_bda' && originalFeature.get('int') === $scope.selected.name){
+                            select.getFeatures().push(originalFeature);   
+			}
                     }
                     return style;
-                 }
+                }
 
 
 
@@ -544,6 +549,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                  * (8) GEOLOCATION & LOADER
                  * ============================================
                  */
+
                 var geolocVectorSource = new ol.source.Vector({
                    projection: 'EPSG:3857'
                 });
@@ -598,7 +604,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
 
                     var this_ = this;
                     var geolocating = function(e) {
-                        geolocate.setTracking(true);
+        	        geolocate.setTracking(true);
                     };
 
                     button.addEventListener('click', geolocating, false);
@@ -642,7 +648,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                             provinceLayer,
                             comuniVectorLayer,
                             localitaVectorLayer,
-                            geolocVectorLayer
+			    geolocVectorLayer
                         ],
                         view: new ol.View({
                             center: [$scope.center.lat,$scope.center.lon],
@@ -702,16 +708,26 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                             //avoid to apply style
                             select.getFeatures().remove(e.element);
                             $scope.$emit('openlayers.layers.selectIntervento', e.element);
+                        }else if(type === 'bda'){
+                            t='intevento_bda';
+                            //avoid to apply style
+                            select.getFeatures().remove(e.element);
+                            $scope.$emit('openlayers.layers.selectInterventoBDA', e.element);
                         }else if(type === 'pn'){
                             t='intevento_pn';
                             //avoid to apply style
                             select.getFeatures().remove(e.element);
 			    $scope.$emit('openlayers.layers.selectInterventoPN', e.element);
-			}else if(e.element.get('features').length==1){
+			}else if(e.element.get('features').length==1 && e.element.get('features')[0].get('t')==='i'){
                             t='intevento';
                             //avoid to apply style
                             select.getFeatures().remove(e.element);
                             $scope.$emit('openlayers.layers.selectIntervento', e.element.get('features')[0]);
+			}else if(e.element.get('features').length==1 && e.element.get('features')[0].get('t')==='bda'){
+                            t='intevento_bda';
+                            //avoid to apply style
+                            select.getFeatures().remove(e.element);
+                            $scope.$emit('openlayers.layers.selectInterventoBDA', e.element.get('features')[0]);
                         }else{
                             t=false;
                             //avoid to apply style
@@ -721,6 +737,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     }
                 });
 
+
                 $scope.resetSelection= deselectAllFeatures = function(){
                     var feats = select.getFeatures();
                     if(feats.getLength()>0){
@@ -728,14 +745,16 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                         for(var i=feats.getLength() ; i>0 ; i--){
                             feats.removeAt(i-1);
                         }
-                    }
+                    } 
                     $scope.selection = false;
                     $scope.selected = null;
                     $location.search('name',null);
                     $location.search('type',null);
-		    $location.search('exp',null);
+					$location.search('exp',null);
+					$scope.expanded=false;
                     $('.box-lotti').removeClass('active');
                     $('#right-panel').removeClass('active');
+					$('.emergenze').find('.eactive h4').html('');
                 };
 
 
@@ -783,14 +802,7 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                                    .attr('data-content', '<strong>Codice istruttoria: </strong><span class="istruttoria">'+feature.get('Codice')+'</span><br><strong>Descrizione: </strong>'+feature.get('Titolo')+'<br><strong>Area di riferimento: </strong>'+feature.get('citta')+'<br><strong>Livello progettazione: </strong>'+feature.get('prog')+'<br><strong>Importo totale: </strong>'+feature.get('imptot'))
                                    .popover('fixTitle')
                                    .popover('toggle');*/
-                            } else if (type === 'geoloc') {
-                                t = 'geoloc';
-                                info.popover('hide')
-                                    .attr('data-original-title','<strong>'+feature.get('title')+'</strong>')
-                                    .attr('data-content',feature.get('addr'))
-                                    .popover('fixTitle')
-                                    .popover('toggle');          
-                            } else{
+                            }else{
                                 info.popover('hide');
                                 t=false;
                             }
@@ -803,8 +815,11 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                             if(f.length>1){
                                 t = false;
                                 return false;
-                            }else{
+                            }else if(f[0].get('t')==='i'){
                                 t = 'intervento';
+                                return f[0];
+                            }else if(f[0].get('t')==='bda'){
+                                t = 'intervento_bda';
                                 return f[0];
                             }
 
@@ -892,7 +907,6 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                     }
 
                     $scope.zoom=map.getView().getZoom();
-                    console.log('ZOOM LEVEL/RESOLUTION: ' + map.getView().getZoom()+' / '+map.getView().getResolution() );
                     //console.log('MAP OPTIONS: ' + map.getView().getProjection().getCode() );
                     $scope.$emit('openlayers.map.zoom',type);
                         
@@ -901,7 +915,6 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
                 $scope.map=map;
 
                 $scope.$watchCollection("center", function(center) {
-                    console.log($scope.center);
                     /*if($scope.center.bbox){
                         $scope.map.getView().fitExtent($scope.center.bbox,$scope.map.getSize());
                         console.log($scope.map.getSize());
@@ -1042,51 +1055,51 @@ url: '/geoserver/italiasicura/ows?service=WFS&version=1.0.0&request=GetFeature&t
             templateUrl : 'templates/graphpanel.html',
             link: function ($scope, element, attr) {
 
-                var charts = $('#charts');
+            var charts = $('#charts');
                 $scope.slide = function(){
-		    var direction = (screen.width<768)?'up':'left';
-                    if (!$scope.expanded) {
-			if(screen.width>=768){
-				charts.css('min-height',$('#info-main').height());
-				$('.info-interventi').css('min-height',charts.height()-24-23-28);
-			}
-			charts.show('slide',{direction:direction},1000);
-                        $location.search('exp',true);
-                        $scope.expanded=true;
-			$scope.createGraph();
-                    } else {
-                        charts.hide('slide',{direction:direction},1000,function(){
-                            $scope.expanded=false;
-                        });
-                        $location.search('exp',null);
-                    }
+					var direction = (screen.width<768)?'up':'left';
+							if (!$scope.expanded) {
+					if(screen.width>=768){
+						charts.css('min-height',$('#info-main').height());
+						$('.info-interventi').css('min-height',charts.height()-24-23-28);
+					}
+					charts.show();
+					// // charts.show('slide',{direction:direction},2);
+						$location.search('exp',true);
+						$scope.expanded=true;
+					$scope.createGraph();
+							} else {
+								charts.hide();
+								//// charts.hide('slide',{direction:direction},2, function(){
+									$scope.expanded=false;
+								//// });
+								$location.search('exp',null);
+							}
                 };
 
 
 		var polling = $interval(function() {
 			try{
-				//console.log(charts.is(':visible'));
-				if(charts.is(':visible') && $('.overview-lotto').is(':visible')){
+				if($location.search().exp && $('.overview-lotto').is(':visible')){
 					$interval.cancel(polling);
 					if(screen.width>=768){
-						console.log(screen.width>=768);
 						$('#charts').css('min-height',$('#info-main').height());
-			                        $('.info-interventi').css('min-height',$('#charts').height()-24-23-28);
+			            $('.info-interventi').css('min-height',$('#charts').height()-24-23-28);
 					}	
 					$location.search('exp',true);
-		                        $scope.expanded=true;
-                		        $scope.createGraph();
+					$scope.expanded=true;
+					$scope.createGraph(); 
 				}
 			}catch(error){
 				console.error(error);
 				$interval.cancel(polling);
 			}
-            	}, 35);
+            }, 35);
 
                 // Extended Graph
                 $scope.graphlabel.tipologia=['alluvione','incendio','valanga','frana','costiero','misto','non definito'];
 
-                $scope.graphlabel.fase=['definanziati o sostitutivi','concluso','in esecuzione','in progettazione','da avviare','dati non comunicati'];
+                $scope.graphlabel.fase=['definanziati o sostitutivi','concluso','in progettazione','in esecuzione','da avviare','dati non comunicati'];
                 $scope.graphlabel.ente=['comune','città metropolitana o provincia','regione','altro'];
                 $scope.graphlabel.costi=['+25 Mln','5 Mln','1 Mln','500 mila','200 mila'];
                 $scope.graphlabel.anno=['2015','2010','2005','2000'];

@@ -1,38 +1,60 @@
-<div class="row"><div class="col-md-10 col-md-offset-1">
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main>
+    <!-- h2>Guida page</h2 -->
+<div class="box-standings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div ui-view class="page">
 
-<div class="standing-item panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Aiutaci a migliorare</h3>
-	</div>
-	<div class="panel-body">
-        <form name="feedback_form" novalidate id="feedback_form" ng-submit="sendComment(feedback_form)">
-			<div id="result"></div>
-                        <p>Segnalaci malfunzionamenti o semplicemente le tue idee</p>
-			<div class="control-group">
-				<label class="control-label" for="feedback_nome">Nome<sup>*</sup></label>
-				<div class="controls">
-					<input type="text" id="feedback_nome" name="nome" ng-model="feedback.nome" required/>
-					<span ng-show="feedback_form.nome.$invalid && submitted" class="help-inline error">Inserisci il tuo nome</span>
+
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+
+							<div class="standing-item panelmain panel panel-default">
+								<div class="panel-heading panelmain">
+									<h4>Aiutaci a migliorare</h4>
+								</div>
+								<div class="panel-body">
+									<form name="feedback_form" novalidate id="feedback_form" ng-submit="sendComment(feedback_form)">
+										<div id="result"></div>
+													<p>Segnalaci malfunzionamenti o semplicemente le tue idee</p>
+										<div class="control-group">
+											<label class="control-label" for="feedback_nome">Nome<sup>*</sup></label>
+											<div class="controls">
+												<input type="text" id="feedback_nome" name="nome" ng-model="feedback.nome" required/>
+												<span ng-show="feedback_form.nome.$invalid && submitted" class="help-inline error">Inserisci il tuo nome</span>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="feedback_email">Email<sup>*</sup></label>
+											<div class="controls">
+												<input type="email" id="feedback_email" name="email" ng-model="feedback.email" required/>
+												<span ng-show="feedback_form.email.$invalid && submitted" class="help-inline error">Inserisci una email valida</span>
+											</div>
+										</div>
+										<div class="control-group">
+											<label for="feedback_commento" class="control-label">Commento<sup>*</sup></label>
+											<div class="controls">
+												<textarea rows="4" id="feedback_commento" name="commento" ng-model="feedback.commento" required></textarea>
+												<span ng-show="feedback_form.commento.$invalid && submitted" class="help-inline error">Inserisci un commento</span>
+											</div>
+										</div>
+										<div class="control-group form-button-offset">
+											<button type="submit" class="submit_btn btn" id="submit_btn">Invia Feedback</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="feedback_email">Email<sup>*</sup></label>
-				<div class="controls">
-					<input type="email" id="feedback_email" name="email" ng-model="feedback.email" required/>
-					<span ng-show="feedback_form.email.$invalid && submitted" class="help-inline error">Inserisci una email valida</span>
-				</div>
-			</div>
-			<div class="control-group">
-				<label for="feedback_commento" class="control-label">Commento<sup>*</sup></label>
-				<div class="controls">
-					<textarea rows="4" id="feedback_commento" name="commento" ng-model="feedback.commento" required></textarea>
-					<span ng-show="feedback_form.commento.$invalid && submitted" class="help-inline error">Inserisci un commento</span>
-				</div>
-			</div>
-			<div class="control-group form-button-offset">
-				<button type="submit" class="submit_btn btn" id="submit_btn">Invia Feedback</button>
-			</div>
-        </form>
-	</div>
-</div>
-</div></div>
+            </div>
+        </div>
+    </div>
+</div> <!--close box-standing -->
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>

@@ -1,0 +1,92 @@
+<header class="navigation-bar">
+    <div class="row"> 
+		<span class="label-background"></span>
+		<div class="col-sm-5 col-xs-5">
+
+				<div class="row">
+					<div class="col-sm-12">
+						<ul id="main-menu" class="nav nav-pills navigation-block">
+							<li role="presentation">
+								<span class="menu-toggle">
+									<i class="fa fa-bars"></i>
+								</span>
+							</li>
+							<li class="search" role="presentation" ng-show="type == 'interventi'">
+								<form class="form-inline" ng-submit="search(location)">
+									<div class="form-group">
+										<span id="search-button" ng-click="search(location)"><i class="icon-icon-search"></i></span>
+										<input type="text" class="form-control" id="search-place" placeholder="Cerca su italiasicura" ng-model="location" />
+									</div>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+		</div>
+		<div class="col-sm-2 col-xs-2 brand">  
+			<a class="logo" ui-sref="home">
+				<img src="img/logo.png" class="img-responsive" alt="italiasicura" title="#italiasicura beta" />
+			</a>
+			<a class="logo-small" href="/#/home">
+				<img src="img/logo-small.png" class="img-responsive" alt="italiasicura" title="#italiasicura beta" />
+			</a>
+		</div>
+		<div class="col-sm-5 col-xs-5">
+			<nav class="navigation-block right-nav">
+				<ul class="nav nav-pills nav-justified">
+                    <li role="presentation" ng-class="{'active' : type == 'interventi'}" >
+                        <a ui-sref="interventi">
+                            <i class="icon-ico_interventi"></i><span>Interventi</span>
+                        </a>
+                    </li>
+                    <li role="presentation" ng-class="{'active' : type == 'emergenze'}">
+                        <a ui-sref="emergenze">
+                            <i class="icon-ico_emergenze"></i><span>Emergenze</span>
+                        </a>
+                    </li>
+                    <li role="presentation" ng-class="{'active' : type == 'dashboard'}"> 
+                        <a ui-sref="sintesi">
+                            <i class="icon-ico_sintesi"></i><span>Sintesi</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+		</div>
+	</div>
+</header>
+
+<!-- sidebar menu -->
+<div class="row">
+	<div id="side-menu" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+		<ul data-spy="affix" data-offset-top="120" id="affix" class="nav nav-stacked">
+			<li id="menu-claim">Il Governo a lavoro contro frane e alluvioni.</li>
+			
+			<li ng-class="{'active' : type == 'guida'}"> <a ui-sref="guida">Guida</a></li>
+			<li ng-class="{'active' : type == 'progetto'}"><a ui-sref="progetto">Il progetto</a></li>
+			<li ng-class="{'active' : type == 'crediti'}"><a ui-sref="crediti">Crediti</a></li>
+			<li ng-class="{'active' : type == 'opendata'}"><a ui-sref="opendata">Open Data</a></li>
+			<li ng-class="{'active' : type == 'opensource'}"><a ui-sref="opensource">Open Source</a></li>
+			<li ng-class="{'active' : type == 'feedback'}"><a ui-sref="feedback">Aiutaci a migliorare</a></li>
+			<li ng-class="{'active' : type == 'notelegali'}"><a ui-sref="notelegali">Note Legali</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+
+<script>
+
+ 
+$( document ).ready(function() {
+	$(".menu-toggle").click(function() { 
+		$(this).toggleClass("active"); 
+		$("#side-menu").toggleClass("active");
+	});
+	$("#search-button").click(function() {
+		$(this).parent().toggleClass("active");   
+	});
+	
+}); 
+
+</script>

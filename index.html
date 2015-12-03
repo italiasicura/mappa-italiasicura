@@ -63,7 +63,7 @@
 * @link         http://mappa.italiasicura.gov.it
 * @since        Version 1.1.0
 * @filesource   http://github.com/italiasicura/mappa.italiasicura
-* 
+*
 */
 -->
 <!doctype html>
@@ -107,7 +107,7 @@
     <meta property="og:image" content="img/logo-big.png" />
     <meta property="og:description" content="Il Governo al lavoro contro frane ed alluvioni" />
     <meta property="og:site_name" content="#italiasicura" />
-
+    <!--base href="/"--> 
 </head>
 
 <body  ng-app="ItaliasicuraApp">
@@ -118,7 +118,7 @@
     <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/bootstrap-select.js"></script>
     <script src="js/lib/jquery.bxslider.min.js"></script>
-    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular.min.js"></script> 
     <script src="js/lib/angular-sanitize.min.js"></script>
     <script src="js/lib/angular-locale_it-it.js"></script>
     <script src="js/lib/angular-route.min.js"></script>
@@ -127,13 +127,15 @@
     <script src="js/lib/ng-twitter.js"></script>
     <script src="js/lib/ui-bootstrap-tpls-0.12.1.min.js"></script>
     <script src="http://openlayers.org/en/v3.4.0/build/ol.js"></script>
+	<script src="js/lib/jquery.nicescroll.min.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/app.js"></script>
+	<script src="js/app.js"></script>
+	
     <script src="js/lib/Chart.min.js"></script>
-    <script src="js/lib/cbar.js"></script>
+    <script src="js/lib/cbar.js"></script> 
 </body>
 </html>
 
@@ -143,4 +145,3 @@
         });
     });
 </script>
-

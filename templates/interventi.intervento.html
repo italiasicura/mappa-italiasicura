@@ -6,6 +6,9 @@
                 vai alla scheda Rendis <i class="fa fa-external-link fa-1"></i></a></h4>
         </div>
 -->
+		<div class="title-intervento" ng-show="typeSelection == 'intervento'">
+			<h4><strong></strong></h4>
+		</div>
         <div class="box-int-info">
             <div>
                 <span>Norma di Riferimento</span>
@@ -24,9 +27,10 @@
                 <span class="number">{{mouseMoveIntervento.imp_finanziato | currency}}</span>
             </div>
         </div>
-        <div ng-if="!selected" class="title-lotti" >
+		<div ng-show="!selected" class="title-lotti" >
             <h4>{{ mouseMoveIntervento.nr_lotti }} Cantier{{mouseMoveIntervento.nr_lotti>1 | iif : "i" : "e"}}</h4>
-        </div>
+        </div> 
+       
         <ng-include ng-if="selected" src="'templates/interventi.intervento.lotti.html'"></ng-include>   
     </div>
 </div>

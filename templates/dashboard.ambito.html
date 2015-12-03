@@ -12,10 +12,13 @@
 <div class="collapse navbar-collapse" id="dash-menu">
     <ul class="nav navbar-nav">
         <li ng-repeat="ambito in ambiti">
-            <a href="#/sintesi/{{ambito.name}}" ng-class="{selected: ambito.name==current_ambito.name}" 
+            <a ui-sref="sintesi.ambito({ ambito: ambito.name })" ng-class="{selected: ambito.name==current_ambito.name}" 
 		tooltip-placement="bottom"  tooltip="{{ambito.tip}}">{{ambito.label}}</a>
         </li>
     </ul>
+	<div class="pull-right" id="data-aggiornamento">
+		Aggiornato al {{dataUpdateDate}}
+	</div>
 </div>
 <!-- /.navbar-collapse -->
 <div ui-view></div>

@@ -1,3 +1,4 @@
+<!--
 <header>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -7,7 +8,7 @@
                         <div class="header-panel">
                             <div class="row">
                                 <div class="col-sm-8 brand">
-                                    <a class="logo" href="/#/home">
+                                    <a class="logo" ui-sref="home">
                                         <img src="img/logo.png" class="img-responsive"/>
                                     </a>
                                     <span class="payoff">Il Governo a lavoro contro frane ed alluvioni</span>
@@ -19,22 +20,22 @@
                         <nav class="navigation-block">
                             <ul class="nav nav-pills nav-justified">
                                 <li role="presentation" >
-                                    <a href="#/interventi">
+                                    <a ui-sref="interventi">
                                         <i class="icon-icon-interventi"></i><span>Interventi</span>
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#/emergenze">
+                                    <a ui-sref="emergenze">
                                         <i class="icon-icon-emergenze"></i><span>Emergenze</span>
                                     </a>
                                 </li>
                                 <li role="presentation" class="active">
-                                    <a href="#/sintesi">
+                                    <a ui-sref="sintesi">
                                         <i class="icon-icon-bar"></i><span>Sintesi</span>
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#/guida">
+                                    <a ui-sref="guida">
                                         <i class="icon-icon-info"></i><span>Guida</span>
                                     </a>
                                 </li>
@@ -44,10 +45,11 @@
                 </div>
             </div>
         </div>
-        <!-- /.container-fluid -->
     </nav>
-</header>
-<main>
+</header> 
+-->    
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main> 
     <div ui-view></div>
 </main>
 <div class="modal fade" id="socialModal" tabindex="-1" role="dialog" aria-labelledby="socialShare" aria-hidden="true">

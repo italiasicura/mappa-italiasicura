@@ -1,45 +1,66 @@
-<div class="row"><div class="col-md-10 col-md-offset-1">
+<ng-include src="'templates/navbar.html'"></ng-include>
+<main>
+    <!-- h2>Guida page</h2 -->
+<div class="box-standings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div ui-view class="page">
+				
+				
 
-<div class="standing-item panel panel-default">
-    <div class="panel-heading">
-<h3 class="panel-title" style="font-size:20px;font-weight: bold;">Il Progetto</h3>
+					<div class="row"><div class="col-md-10 col-md-offset-1">
+
+					<div class="standing-item panelmain panel panel-default">
+						<div class="panel-heading panelmain">
+							<h4>Il Progetto</h4>
+						</div>
+						<div class="panel-body">
+
+						<h4>#italiasicura</h4>
+						<p><a ui-sref="home">#italiasicura</a> presenta la mappa sempre aggiornata degli interventi messi in campo dal Governo per la mitigazione del rischio idrogeologico. Ogni azione è rappresentata geograficamente nel contesto della pericolosità del luogo, anche con indici di rischio. Al contempo riporta anche il quadro delle emergenze idrogeologiche per le quali è stato dichiarato lo stato di emergenza nazionale. 
+						</p> 
+					   
+						<h4>Due viste</h4>
+						<p>Queste due viste non sono collegate tra loro ma rappresentano due ambiti su cui si concentra l’azione del Governo rispetto al dissesto idrogeologico. Gli <a ui-sref="interventi">interventi</a>, infatti, si riferiscono a cosa il Governo fa per la prevenzione del rischio idrogeologico con azioni programmate su base pluriennale, le <a ui-sref="emergenze">emergenze</a> invece descrivono cosa viene messo in campo quando il rischio diventa calamità. I dati relativi agli interventi sono forniti da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a> attraverso il progetto <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="icon-ico_scheda_cantiere"></i></a>, mentre quelli relativi alle emergenze sono forniti dal <a href="http://www.protezionecivile.gov.it/" target="_blank">Dipartimento della Protezione Civile <i class="icon-ico_scheda_cantiere"></i></a>.
+						</p>
+
+						<h4>Il contesto</h4>
+						<p>L'obiettivo è rappresentare questa azione nel contesto della fragilità idrogeologica del nostro Paese, contribuendo a rendere sempre più percepibile un problema, quello della lotta al dissesto, che trova proprio nella consapevolezza dei cittadini uno dei suoi più potenti alleati. Anche in questo caso il quadro (e non potrebbe essere altrimenti) è in continuo aggiornamento, i dati dinamici e "vivi", destinati a una progressiva integrazione.
+						</p>
+					 
+						<h4>Gli interventi</h4>
+						<p>Gli interventi fanno riferimento alle attività di prevenzione strutturale finanziate e realizzate nell’ambito dei programmi di difesa del suolo. Si tratta di interventi pianificati soprattutto sul medio e lungo periodo, per mitigare il rischio idrogeologico. La mappa degli interventi ha come sfondo il mosaico delle aree a pericolosità da alluvione, prodotte dalle Autorità di bacino, dalle Regioni e dalle Province Autonome, sulla base della <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2007:288:0027:0034:IT:PDF" target="_blank">direttiva europea <i class="icon-ico_scheda_cantiere"></i></a> "alluvioni", e del <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2010-02-23;49!vig=" target="_blank">decreto <i class="icon-ico_scheda_cantiere"></i></a> di recepimento e poi raccolte da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a>. iIl mosaico delle aree a pericolosità  alluvione non è definitivo e verrà costantemente e tempestivamente aggiornato ogni volta che si renderanno disponibili integrazioni o variazioni.
+						</p>
+
+						<h4>Gli indici di rischio da alluvione sul territorio</h4>
+						<p>La pericolosità costituisce soltanto un aspetto del problema che può essere integrato con indici del danno che l’alluvione può determinare. Per questo nella mappa relativa agli interventi sono disponibili alcuni indici di rischio elaborati da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="icon-ico_scheda_cantiere"></i></a> egati alle aree a bassa, media ed elevata pericolosità e a parametri quali la superficie di territorio, la popolazione, le scuole e i beni culturali potenzialmente esposti.
+						</p>
+
+					   <h4>Le emergenze</h4>
+					   <p>Il nostro Paese è costantemente interessato da situazioni di emergenza idrogeologica che determinano danni molto ingenti e comportano l’attivazione del Servizio nazionale di protezione civile per l’assistenza alla popolazione e il ritorno verso la normalità. Nella sezione emergenze sono riportati gli stati di emergenza nazionali dichiarati con deliberazione del Consiglio dei Ministri per eccezionali eventi meteorologici, alluvioni e frane, con l’obiettivo di rappresentare il flusso delle risorse stanziate per le emergenze. La mappa delle emergenze e la mappa degli interventi non sono collegate, ma rappresentano due diverse azioni del Governo verso il dissesto idrogeologico: una di risposta alle calamità, l’altra di prevenzione del rischio. 
+					   </p>
+
+						<h4>La lettura geografica "multilivello"</h4>
+						<p>I dati degli interventi sono presentati con l'aiuto di una finestra di testo che si configura e li aggrega, in maniera automatica, secondo la posizione del mouse. In particolare l'aggregazione si adatta al livello di zoom alla scala dell'intero paese, della regione, della provincia, del comune e della singola località <a href="http://www.istat.it/it/archivio/104317" target="_blank">ISTAT <i class="icon-ico_scheda_cantiere"></i></a>.  Questo consente una esplorazione a diverso livello di dettaglio che, pur tenendo presente che i dati forniscono una fotografia necessariamente provvisoria e parziale, è di assoluto interesse e novità. Per la parte delle emergenze l’aggregazione è a livello regionale, perché è quella che meglio garantisce l’omogeneità di rappresentazione dei dati.
+						</p>
+
+					   <h4>La partecipazione e la collaborazione attraverso i social</h4>
+					   <p>Partecipazione e collaborazione sono i due pilastri fondamentali di ogni progetto di e-government oltreché delle strategie di contrasto del dissesto. #italiasicura ha una sofisticata gestione social che consente di condividere con efficacia e puntualità ogni contesto, visualizzazione o scheda nella quale l’utente si venga a trovare. L'applicazione è molto potente anche nella versione <i>responsive.</i> supportanto sia la modalità tablet che mobile
+					   </p>
+
+						</div>
+					</div>
+
+
+					</div></div>
+
+
+
+				</div>
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-
-    <h4>#italiasicura</h4>
-    <p><a href="#/">#italiasicura</a> presenta la mappa sempre aggiornata degli interventi messi in campo dal Governo per la mitigazione del rischio idrogeologico. Ogni azione è rappresentata geograficamente nel contesto della pericolosità del luogo, anche con indici di rischio. Al contempo riporta anche il quadro delle emergenze idrogeologiche per le quali è stato dichiarato lo stato di emergenza nazionale. 
-    </p> 
-   
-    <h4>Due viste</h4>
-    <p>Queste due viste non sono collegate tra loro ma rappresentano due ambiti su cui si concentra l’azione del Governo rispetto al dissesto idrogeologico. Gli <a href="#/interventi">interventi</a>, infatti, si riferiscono a cosa il Governo fa per la prevenzione del rischio idrogeologico con azioni programmate su base pluriennale, le <a href="#/emergenze">emergenze</a> invece descrivono cosa viene messo in campo quando il rischio diventa calamità. I dati relativi agli interventi sono forniti da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a> attraverso il progetto <a href="http://www.rendis.isprambiente.it/rendisweb/" target="_blank">ReNDiS <i class="fa fa-external-link fa-1"></i></a>, mentre quelli relativi alle emergenze sono forniti dal <a href="http://www.protezionecivile.gov.it/" target="_blank">Dipartimento della Protezione Civile <i class="fa fa-external-link fa-1"></i></a>.
-    </p>
-
-    <h4>Il contesto</h4>
-    <p>L'obiettivo è rappresentare questa azione nel contesto della fragilità idrogeologica del nostro Paese, contribuendo a rendere sempre più percepibile un problema, quello della lotta al dissesto, che trova proprio nella consapevolezza dei cittadini uno dei suoi più potenti alleati. Anche in questo caso il quadro (e non potrebbe essere altrimenti) è in continuo aggiornamento, i dati dinamici e "vivi", destinati a una progressiva integrazione.
-    </p>
- 
-    <h4>Gli interventi</h4>
-    <p>Gli interventi fanno riferimento alle attività di prevenzione strutturale finanziate e realizzate nell’ambito dei programmi di difesa del suolo. Si tratta di interventi pianificati soprattutto sul medio e lungo periodo, per mitigare il rischio idrogeologico. La mappa degli interventi ha come sfondo il mosaico delle aree a pericolosità da alluvione, prodotte dalle Autorità di bacino, dalle Regioni e dalle Province Autonome, sulla base della <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2007:288:0027:0034:IT:PDF" target="_blank">direttiva europea <i class="fa fa-external-link fa-1"></i></a> "alluvioni", e del <a href="http://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2010-02-23;49!vig=" target="_blank">decreto <i class="fa fa-external-link fa-1"></i></a> di recepimento e poi raccolte da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a>. iIl mosaico delle aree a pericolosità  alluvione non è definitivo e verrà costantemente e tempestivamente aggiornato ogni volta che si renderanno disponibili integrazioni o variazioni.
-    </p>
-
-    <h4>Gli indici di rischio da alluvione sul territorio</h4>
-    <p>La pericolosità costituisce soltanto un aspetto del problema che può essere integrato con indici del danno che l’alluvione può determinare. Per questo nella mappa relativa agli interventi sono disponibili alcuni indici di rischio elaborati da <a href="http://www.isprambiente.gov.it/it" target="_blank">ISPRA <i class="fa fa-external-link fa-1"></i></a> egati alle aree a bassa, media ed elevata pericolosità e a parametri quali la superficie di territorio, la popolazione, le scuole e i beni culturali potenzialmente esposti.
-    </p>
-
-   <h4>Le emergenze</h4>
-   <p>Il nostro Paese è costantemente interessato da situazioni di emergenza idrogeologica che determinano danni molto ingenti e comportano l’attivazione del Servizio nazionale di protezione civile per l’assistenza alla popolazione e il ritorno verso la normalità. Nella sezione emergenze sono riportati gli stati di emergenza nazionali dichiarati con deliberazione del Consiglio dei Ministri per eccezionali eventi meteorologici, alluvioni e frane, con l’obiettivo di rappresentare il flusso delle risorse stanziate per le emergenze. La mappa delle emergenze e la mappa degli interventi non sono collegate, ma rappresentano due diverse azioni del Governo verso il dissesto idrogeologico: una di risposta alle calamità, l’altra di prevenzione del rischio. 
-   </p>
-
-    <h4>La lettura geografica "multilivello"</h4>
-    <p>I dati degli interventi sono presentati con l'aiuto di una finestra di testo che si configura e li aggrega, in maniera automatica, secondo la posizione del mouse. In particolare l'aggregazione si adatta al livello di zoom alla scala dell'intero paese, della regione, della provincia, del comune e della singola località <a href="http://www.istat.it/it/archivio/104317" target="_blank">ISTAT <i class="fa fa-external-link fa-1"></i></a>.  Questo consente una esplorazione a diverso livello di dettaglio che, pur tenendo presente che i dati forniscono una fotografia necessariamente provvisoria e parziale, è di assoluto interesse e novità. Per la parte delle emergenze l’aggregazione è a livello regionale, perché è quella che meglio garantisce l’omogeneità di rappresentazione dei dati.
-    </p>
-
-   <h4>La partecipazione e la collaborazione attraverso i social</h4>
-   <p>Partecipazione e collaborazione sono i due pilastri fondamentali di ogni progetto di e-government oltreché delle strategie di contrasto del dissesto. #italiasicura ha una sofisticata gestione social che consente di condividere con efficacia e puntualità ogni contesto, visualizzazione o scheda nella quale l’utente si venga a trovare. L'applicazione è molto potente anche nella versione <i>responsive.</i> supportanto sia la modalità tablet che mobile
-   </p>
-
-    </div>
-</div>
-
-
-</div></div>
+</div> <!--close box-standing -->
+</main>
+<ng-include src="'templates/footer.html'"></ng-include>

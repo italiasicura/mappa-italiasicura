@@ -1,5 +1,5 @@
 <div class="box-emergenze">
-    <div class="eactive">
+    <div class="eactive" ng-show="selected && sizeOf(arrayEmergenze)>0">
         <div class="controls-emergenze">
             <div id="lprev"></div>
             <div id="lnext"></div>
@@ -9,9 +9,6 @@
     <ul class="sliderEmergenze">
         <li ng-repeat="emergenza in arrayEmergenze" on-finish-render="sliderestart">
             <div class="overview-emergenza">
-                <div class="link-rendis">
-                    <h4><!-- EMERGENZA NR. {{emergenza.id}} --><a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?contentId={{emergenza.emlink}}" target="_blank">VAI ALLA DELIBERAZIONE DEL CDM <i class="fa fa-external-link fa-1"></i></a></h4>
-                </div>
 <div><span>Evento (stato di emergenza {{emergenza.stato | uppercase}})</span><span class="number"><strong>{{emergenza.evento}}</strong></span></div>
 <div><span>Province o Citt&agrave; Metropolitane</span><span class="number">{{emergenza.provincia!=""?emergenza.provincia:"Tutte" }} </span></div>
 <div><span>Data di dichiarazione | proroghe | scadenza</span><span class="number">{{emergenza.dichiarazione}} | {{emergenza.proroga_1!=""?emergenza.proroga_1:" - "}}{{emergenza.proroga_2!=""?" / "+emergenza.proroga_2:" - "}} | {{emergenza.scadenza}}</span></div>
@@ -28,7 +25,9 @@
 <div><span>Importo delibera CDM <i class="fa fa-long-arrow-right"></i> Importo trasferito al Commissario</span><span class="number">{{emergenza.importo_delibera_cdm | currency}} <i class="fa fa-long-arrow-right"></i> {{emergenza.importo_trasferito | currency}}</span></div>
 <div><span>Importo danni accertati dal Commissario</span><span class="number"><u><strong>totale:</strong></u> {{emergenza.fabbisogni!=0?(emergenza.fabbisogni | currency ):"importo non ancora disponibile"}}, <u><strong>(a)</strong></u> {{emergenza.fabbisogni_a!=0?(emergenza.fabbisogni_a | currency ):"N/D"}}, <u><strong>(b)</strong></u> {{emergenza.fabbisogni_b!=0?(emergenza.fabbisogni_b | currency ):"N/D"}}, <u><strong>(c)</strong></u> {{emergenza.fabbisogni_c!=0?(emergenza.fabbisogni_c | currency ):"N/D"}} </span></div>
 <div ng-show="emergenza.note !='' "><span>Note</span><span class="number">{{ emergenza.note }}</span></div>
-
+				<div class="link-rendis">
+                    <h4><!-- EMERGENZA NR. {{emergenza.id}} --><a href="http://www.protezionecivile.gov.it/jcms/it/view_prov.wp?contentId={{emergenza.emlink}}" target="_blank">VAI ALLA DELIBERAZIONE DEL CDM <i class="icon-ico_scheda_cantiere"></i></a></h4>
+                </div>
             </div>
         </li>
     </ul>
