@@ -818,6 +818,19 @@ font-size: 0.7em;}
     width:100%;
 }
 
+.ol-attribution.ol-uncollapsible {
+    bottom: 15px;
+    line-height: 0;
+}
+.ol-attribution.ol-uncollapsible img {
+    display: none;
+}
+.ol-attribution.ol-attr-emergenze.ol-uncollapsible {
+    bottom: 80px;
+    line-height: 0;
+}
+
+
 .bottom-box{
 	background: #fff;
     position: absolute;
@@ -1033,6 +1046,9 @@ font-size: 0.7em;}
         padding: 20px 0px 20px 0  !important;
     }
 
+    .ol-attribution.ol-uncollapsible {
+        display: none;
+    }
     #wrap-map{
         position:relative;
         height:360px;

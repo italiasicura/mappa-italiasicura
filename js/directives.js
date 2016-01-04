@@ -141,11 +141,16 @@ angular.module('ItaliasicuraApp.directive', [])
 
                 /*
                  * ============================================
-                 * (1)  BASE MAP PURE OSM
+                 * (1)  BASE MAP PURE OSM CYCLEMAP
                  * ============================================
                  */
                 var osmLayer = new ol.layer.Tile({
-                    source: new ol.source.OSM({'url': '//{a-c}.tile.opencyclemap.org/landscape/{z}/{x}/{y}.png'})
+                    source: new ol.source.OSM({
+	                attributions: [
+        	             new ol.Attribution({html: 'Map data &copy; by <a href="/#/opendata">ISPRA, DPC, ISTAT</a> - BaseMap &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'})
+	                ],
+                       url: '//{a-c}.tile.opencyclemap.org/landscape/{z}/{x}/{y}.png'
+                    })
                 });
 
                 /*
@@ -628,7 +633,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                  * ============================================
                  */
                 var interactions = ol.interaction.defaults({pinchRotate:false});
-
+		var attrib = new ol.control.Attribution({collapsible: false});
 
                 if($scope.type=="interventi"){
                     var map = new ol.Map({
@@ -637,7 +642,8 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                               new ol.control.ZoomSlider({target: document.getElementById('right-addons'),
                                   maxResolution: 2444.98490512564,
                                   minResolution: 1.194328566955879
-                              })
+                              }),
+                              attrib
                             ]),
                         interactions: interactions,
                         target: 'olmap',
@@ -667,7 +673,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                     });
                 }else{
                     var map = new ol.Map({
-                        controls: [],
+                        controls: ol.control.defaults({attribution:false}).extend([ new ol.control.Attribution({collapsible: false, className: "ol-attribution ol-attr-emergenze"}) ]),
                         interactions: interactions,
                         target: 'olmap',
                         layers: [
