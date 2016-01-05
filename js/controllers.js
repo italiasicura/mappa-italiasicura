@@ -1178,6 +1178,7 @@ $.extend({},options,{customTooltips: function(tooltip) {
         });
 
     }).controller("pageController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
+console.log('pageController');
         $scope.statusfaq1 = true;
         angular.extend($scope, {
             type:'page',
@@ -1187,29 +1188,6 @@ $.extend({},options,{customTooltips: function(tooltip) {
         if (getCookie("cb-enabled")=="accepted") {
           ga('set','page', $location.path());
           ga('send', 'pageview');
-        }
-
-        var originalFeedback = angular.copy($scope.feedback);
-        $scope.resetForm = function(feedback_form)
-        {
-            $scope.feedback = angular.copy(originalFeedback);
-            $scope.feedback_form.$setPristine();
-        };
- 
-        $scope.sendComment = function(feedback_form) {
-            $scope.submitted = true;
-            if (feedback_form.$valid) {
-                post_data = {'userName':$scope.feedback.nome, 'userEmail':$scope.feedback.email, 'userMessage':$scope.feedback.commento};
-
-                //Ajax post data to server
-                $.post('templates/sendmail.php', post_data, function(response){
-                    $("#result").removeClass().addClass(response.type).html(response.text).slideDown().delay('4000').slideUp();
-                    if(response.type=="success"){
-                        $scope.resetForm(feedback_form);
-                    }
-
-                }, 'json');
-            }
         }
 
     }).controller("guidaController", function($scope, $http, isGEOservice, $routeParams,$rootScope,$location) {
@@ -1248,5 +1226,20 @@ $.extend({},options,{customTooltips: function(tooltip) {
             type:'feedback',
 			feedback:{}
         });
+        $scope.sendComment = function(feedback) {
+//		console.log(feedback);
+                post_data = {'userName':feedback.nome, 'userEmail':feedback.email, 'userMessage':feedback.commento};
+
+                //Ajax post data to server
+                $.post('templates/sendmail.php', post_data, function(response){
+                    $("#result").removeClass().addClass(response.type).html(response.text).slideDown().delay('4000').slideUp();
+                    if(response.type=="success"){
+			$scope.feedback = {};
+                    }
+
+                }, 'json');
+        }
+
+
 	});
 	

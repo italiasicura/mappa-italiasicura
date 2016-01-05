@@ -16,32 +16,32 @@
 									<h4>Aiutaci a migliorare</h4>
 								</div>
 								<div class="panel-body">
-									<form name="feedback_form" novalidate id="feedback_form" ng-submit="sendComment(feedback_form)">
+									<form name="feedback_form" id="feedback_form" ng-init="feedback = {}">
 										<div id="result"></div>
 													<p>Segnalaci malfunzionamenti o semplicemente le tue idee</p>
 										<div class="control-group">
 											<label class="control-label" for="feedback_nome">Nome<sup>*</sup></label>
 											<div class="controls">
-												<input type="text" id="feedback_nome" name="nome" ng-model="feedback.nome" required/>
+												<input type="text" id="feedback_nome" name="nome" ng-model="feedback.nome" ng-class="{ 'has-error' : feedback_form.nome.$dirty && feedback_form.nome.$invalid }" required autofocus/>
 												<span ng-show="feedback_form.nome.$invalid && submitted" class="help-inline error">Inserisci il tuo nome</span>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="feedback_email">Email<sup>*</sup></label>
 											<div class="controls">
-												<input type="email" id="feedback_email" name="email" ng-model="feedback.email" required/>
+												<input type="email" id="feedback_email" name="email" ng-model="feedback.email" ng-class="{ 'has-error' : feedback_form.email.$dirty && feedback_form.email.$invalid }" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required/>
 												<span ng-show="feedback_form.email.$invalid && submitted" class="help-inline error">Inserisci una email valida</span>
 											</div>
 										</div>
 										<div class="control-group">
 											<label for="feedback_commento" class="control-label">Commento<sup>*</sup></label>
 											<div class="controls">
-												<textarea rows="4" id="feedback_commento" name="commento" ng-model="feedback.commento" required></textarea>
+												<textarea rows="4" id="feedback_commento" name="commento" ng-model="feedback.commento" ng-class="{ 'has-error' : feedback_form.commento.$dirty && feedback_form.commento.$invalid }" required></textarea>
 												<span ng-show="feedback_form.commento.$invalid && submitted" class="help-inline error">Inserisci un commento</span>
 											</div>
 										</div>
 										<div class="control-group form-button-offset">
-											<button type="submit" class="submit_btn btn" id="submit_btn">Invia Feedback</button>
+											<button type="submit" class="submit_btn btn" id="submit_btn"  ng-disabled="feedback_form.$invalid" ng-click="sendComment(feedback)">Invia Feedback</button>
 										</div>
 									</form>
 								</div>

@@ -51,8 +51,10 @@ h3.panel-title {
     background: rgba(255,96,0,0.7);
 }
 
-#feedback_form input.ng-valid,
-#feedback_form textarea.ng-valid{
+#feedback_form .ng-valid{
     border:1px solid #66b42a;
 }
 
+#feedback_form .has-error{
+    border:1px solid red;
+}
