@@ -472,6 +472,7 @@ h4 { font-size: 1.5em }
 	width: 100%;
 	max-width:450px;
 	background: white;
+        margin-top: 20px;
 }
 
 .app-panel .coord,
@@ -1037,7 +1038,7 @@ font-size: 0.7em;}
 	}
     .app-panel{
         min-width: 100%;
-        padding:0;
+        padding:20px;
     }
     .app-panel .pullright {
         text-align:left !important;
@@ -1045,10 +1046,18 @@ font-size: 0.7em;}
     .app-panel .info .interventi > div {
         padding: 20px 0px 20px 0  !important;
     }
-
-    .ol-attribution.ol-uncollapsible {
-        display: none;
+    .ol-attribution {
+       max-width: 98%;
     }
+    .ol-attribution.ol-uncollapsible {
+        /*display: none;*/
+       height: 4.1em;
+       bottom: 0;
+    }
+    .ol-attribution.ol-attr-emergenze.ol-uncollapsible {
+       bottom: 0;
+    }
+
     #wrap-map{
         position:relative;
         height:360px;
@@ -1086,8 +1095,8 @@ font-size: 0.7em;}
         width:80%;
         margin:0 auto 10px auto;
         min-width: 80%;
-		position:relative;
-		top:0;
+	position:relative;
+	top:0;
     }
     .navigation-addons{
         display: none;
