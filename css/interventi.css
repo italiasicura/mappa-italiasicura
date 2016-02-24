@@ -121,29 +121,29 @@
     border-style: solid none none none;
 }
 .app-panel .info .pericolosita #parea tbody tr:nth-child(1){
-    background: #d5ebf7;
+    background: #b6e1e1; /*#d5ebf7;*/
 }
 .app-panel .info .pericolosita #parea tbody tr:nth-child(2){
-    background: #c1daef;
+    background: #77deed;/*c1daef;*/
 }
 .app-panel .info .pericolosita #parea tbody tr:nth-child(3){
-    background: #acc7e0;
+    background: #4098f8; /*acc7e0;*/
 }
 
 .app-panel .info .pericolosita #farea tbody tr:nth-child(1){
-    background: #fae693;
+    background: #f5f7b5; /*fae693;*/
 }
 .app-panel .info .pericolosita #farea tbody tr:nth-child(2){
-    background: #fbd171;
+    background: #e6d692; /*fbd171;*/
 }
 .app-panel .info .pericolosita #farea tbody tr:nth-child(3){
-    background: #fabc72;
+    background: #e8c87f; /*fabc72;*/
 }
 .app-panel .info .pericolosita #farea tbody tr:nth-child(4){
-    background: #faa072;
+    background: #dc7872; /*faa072;*/
 }
 .app-panel .info .pericolosita #farea tbody tr:nth-child(5){
-    background: #ef828a;
+    background: #b78482; /*ef828a;*/
 }
 
 
