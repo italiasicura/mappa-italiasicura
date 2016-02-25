@@ -59,7 +59,8 @@
 			<table id="parea" class="table table-condensed">
 				<thead>
 				<tr>
-				<td>Popolazione <i class="fa fa-exclamation-triangle" tooltip="Ove è riportato un valore = 0 di Popolazione, Scuole o Beni culturali esposti ad alluvioni, il rischio potrebbe non essere nullo, in quanto l’elemento esposto potrebbe trovarsi in una zona del reticolo idrografico minore che non è stata oggetto di mappatura" ></i></td>
+                                <td style="width:5px;padding-right:0;"></td>
+				<td>Popolazione <i class="fa fa-exclamation-triangle" tooltip-placement="top-left" tooltip="Ove è riportato un valore = 0 di Popolazione, Scuole o Beni culturali esposti ad alluvioni, il rischio potrebbe non essere nullo, in quanto l’elemento esposto potrebbe trovarsi in una zona del reticolo idrografico minore che non è stata oggetto di mappatura" ></i></td>
 					<td>Territorio (km<sup>2</sup>)</td>
 					<td>Scuole</td>
 					<td>Beni Culturali</td>
@@ -67,18 +68,21 @@
 				</thead>
 				<tbody>
 				<tr class="low">
+                                        <td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità idraulica Bassa P1 con scarsa probabilità di alluvioni o scenari di eventi estremi"></i></td>
 					<td>{{mouseMoveEntity.poptscarsatot!=undefined | iif : mouseMoveEntity.poptscarsatot+' ('+mouseMoveEntity.poptscarsapc+'%)' : 'n.d.'}}</td>
-					<td>{{mouseMoveEntity.areatscarsatot!=undefined | iif : mouseMoveEntity.areatscarsatot+' ('+mouseMoveEntity.areatscarsapc+'%)' : 'n.d.'}}</td>
+				<td>{{mouseMoveEntity.areatscarsatot!=undefined | iif : mouseMoveEntity.areatscarsatot+' ('+mouseMoveEntity.areatscarsapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.scuolescarsatot!=undefined | iif : mouseMoveEntity.scuolescarsatot+' ('+mouseMoveEntity.scuolescarsapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.beniscarsatot!=undefined | iif : mouseMoveEntity.beniscarsatot+' ('+mouseMoveEntity.beniscarsapc+'%)' : 'n.d.'}}</td>
 				</tr>
 				<tr class="medium">
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità idraulica Media P2 con tempo di ritorno fra 100 e 200 anni"></i></td>
 					<td>{{mouseMoveEntity.poptmediatot!=undefined | iif : mouseMoveEntity.poptmediatot+' ('+mouseMoveEntity.poptmediapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.areatmediatot!=undefined | iif : mouseMoveEntity.areatmediatot+' ('+mouseMoveEntity.areatmediapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.scuolemediatot!=undefined | iif : mouseMoveEntity.scuolemediatot+' ('+mouseMoveEntity.scuolemediapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.benimediatot!=undefined | iif : mouseMoveEntity.benimediatot+' ('+mouseMoveEntity.benimediapc+'%)' : 'n.d.'}}</td>
 				</tr>
 				<tr  class="high">
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità idraulica Elevata P3 con tempo di ritorno fra 20 e 50 anni"></i></td>
 					<td>{{mouseMoveEntity.poptelevatatot!=undefined | iif : mouseMoveEntity.poptelevatatot+' ('+mouseMoveEntity.poptelevatapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.areatelevatatot!=undefined | iif : mouseMoveEntity.areatelevatatot+' ('+mouseMoveEntity.areatelevatapc+'%)' : 'n.d.'}}</td>
 					<td>{{mouseMoveEntity.scuoleelevatatot!=undefined | iif : mouseMoveEntity.scuoleelevatatot+' ('+mouseMoveEntity.scuoleelevatapc+'%)' : 'n.d.'}}</td>
@@ -98,7 +102,8 @@
 			<table id="farea" class="table table-condensed">
 				<thead>
 				<tr>
-				<td>Popolazione <i class="fa fa-exclamation-triangle" tooltip="Ove è riportato un valore = 0 di Popolazione, Scuole o Beni culturali esposti ad alluvioni, il rischio potrebbe non essere nullo, in quanto l’elemento esposto potrebbe trovarsi in una zona del reticolo idrografico minore che non è stata oggetto di mappatura" ></i></td>
+				<td style="width:5px;padding-right:0;"></td>
+				<td>Popolazione <i class="fa fa-exclamation-triangle" tooltip-placement="top-left" tooltip="Ove è riportato un valore = 0 di Popolazione, Scuole o Beni culturali esposti ad alluvioni, il rischio potrebbe non essere nullo, in quanto l’elemento esposto potrebbe trovarsi in una zona del reticolo idrografico minore che non è stata oggetto di mappatura" ></i></td>
 					<td>Territorio (km<sup>2</sup>)</td>
 					<td>Imprese</td>
 					<td>Beni Culturali</td>
@@ -106,7 +111,8 @@
 				</thead>
 				<tbody>
 
-				<tr> 
+				<tr>
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Aree di Attenzione AA"></i></td> 
 					<td>{{mouseMoveEntity.frpopt5tot}} ({{mouseMoveEntity.frpopt5pc}}%)</td>
 					<td>{{mouseMoveEntity.frareat5tot}} ({{mouseMoveEntity.frareat5pc}}%)
 					</td>
@@ -115,6 +121,7 @@
 				</tr>
 	
 				<tr> 
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità da frana moderata P1"></i></td>
 					<td>{{mouseMoveEntity.frpopt1tot}} ({{mouseMoveEntity.frpopt1pc}}%)</td>
 					<td>{{mouseMoveEntity.frareat1tot}} ({{mouseMoveEntity.frareat1pc}}%)
 					</td>
@@ -123,6 +130,7 @@
 				</tr>
 				
 				<tr> 
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità da frana media P2"></i></td>
 					<td>{{mouseMoveEntity.frpopt2tot}} ({{mouseMoveEntity.frpopt2pc}}%)</td>
 					<td>{{mouseMoveEntity.frareat2tot}} ({{mouseMoveEntity.frareat2pc}}%)
 					</td>
@@ -131,6 +139,7 @@
 				</tr>
 				
 				<tr> 
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità da frana elevata P3"></i></td>
 					<td>{{mouseMoveEntity.frpopt3tot}} ({{mouseMoveEntity.frpopt3pc}}%)</td>
 					<td>{{mouseMoveEntity.frareat3tot}} ({{mouseMoveEntity.frareat3pc}}%)
 					</td>
@@ -139,6 +148,7 @@
 				</tr>
 				
 				<tr> 
+					<td style="width:5px;padding-right:0;"><i class="fa fa-question" tooltip-placement="right" tooltip="Pericolosità da frana molto elevata P4"></i></td>
 					<td>{{mouseMoveEntity.frpopt4tot}} ({{mouseMoveEntity.frpopt4pc}}%)</td>
 					<td>{{mouseMoveEntity.frareat4tot}} ({{mouseMoveEntity.frareat4pc}}%)
 					</td>
