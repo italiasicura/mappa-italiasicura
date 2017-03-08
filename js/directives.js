@@ -150,7 +150,7 @@ angular.module('ItaliasicuraApp.directive', [])
         	             new ol.Attribution({html: 'Map data &copy; by <a href="/#/opendata">ISPRA, DPC, ISTAT</a> - BaseMap &copy; <a href="http://www.thunderforest.com/" target="_blank">Thunderforest</a> - BaseMap Data <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'})
 	                ],
                        //url: '//{a-c}.tile.opencyclemap.org/landscape/{z}/{x}/{y}.png'
-		       url: '//{a-c}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png'
+		       url: '//{a-c}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=b3663db2dc924e9592e7678e40073e77'
                     })
                 });
 
