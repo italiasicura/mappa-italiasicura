@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" style="background: rgba(0, 102, 204, 0);">
     <div class="container-fluid">
         <div class="row">
 <!--
@@ -14,8 +14,15 @@
                 <a ui-sref="feedback">Aiutaci a migliorare</a>
             </div>
 -->
-            <div class="col-sm-3" style="background: rgb(0, 102, 204);">
-                    <span id="lastupdate"><strong>Aggiornato al {{dataUpdateDate}}</strong></span>
+<style>
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+</style>
+            <div class="col-sm-4" style="background: rgb(0, 102, 204);">
+                    <span style="font-size:1.9em;font-weight:bold;color:#ffb9f0;text-decoration: blink; -webkit-animation-name: blinker; -webkit-animation-duration: 0.6s; -webkit-animation-iteration-count:infinite; -webkit-animation-timing-function:ease-in-out; -webkit-animation-direction: alternate;">MAPPA IN AGGIORNAMENTO</span>
+                    <!-- span id="lastupdate"><strong>Aggiornato al {{dataUpdateDate}}</strong></span -->
             </div>
 <!--
             <div class="col-sm-4 text-right">
