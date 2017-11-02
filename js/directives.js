@@ -400,9 +400,11 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                     if(lottiVectorLayer){
                         map.removeLayer(lottiVectorLayer);
                     }
+/*
 		    if(pianoNazionaleVectorLayer){
                         map.removeLayer(pianoNazionaleVectorLayer);
                     }
+*/
                     lottiCluster=new ol.source.Cluster({
                         source: lottiStaticSource,
                         distance: dist
@@ -416,7 +418,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                     });
                     if($scope.type=='interventi') {
                         map.addLayer(lottiVectorLayer);
-			map.addLayer(pianoNazionaleVectorLayer);
+		/*	map.addLayer(pianoNazionaleVectorLayer);*/
 	            }
                 };
 
@@ -426,6 +428,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                  * (6A) INTERVENTI PIANO NAZIONALE
                  * ============================================
                  */
+/*
                  var pnStyle = new ol.style.Style({
                     image: new ol.style.Icon( ({
                             anchor: [0.5, 0.85],
@@ -444,7 +447,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                    source: lottiPianoNazionaleSource
                    ,style: pnStyle 
                  });
-
+*/
                 /*
                  * ============================================
                  * (7) INTERVENTI MARKER
@@ -852,6 +855,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                 });
 
 		//load interventi pn shape on start if selected from url
+/*
                 lottiPianoNazionaleSource.on('change', function() {
                   if (lottiPianoNazionaleSource.getState() == 'ready' && $scope.selection && $scope.selected.type=='intervento_pn') {
                        var features = lottiPianoNazionaleSource.getFeatures();
@@ -863,7 +867,7 @@ url: '/geoserver/italiasicura_exp/ows?service=WFS&version=1.0.0&request=GetFeatu
                         }
                   }
                 });
-
+*/
                 map.on('pointermove', function(e) {
                     var coord = e.coordinate;
                     var proj = map.getView().getProjection().getCode();
